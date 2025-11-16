@@ -278,7 +278,7 @@ export default function Companies() {
               </div>
               <div className="text-center">
                 <div className="text-5xl md:text-6xl font-bold text-black mb-2">
-                  500+
+                  22
                 </div>
                 <div className="text-gray-600 font-medium">Projects Delivered</div>
               </div>

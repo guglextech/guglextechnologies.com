@@ -15,12 +15,12 @@ export default function Home() {
             <div className="text-center animate-fade-in">
               <div className="inline-block mb-6 px-4 py-2 bg-gray-100 text-sm font-medium text-gray-700 border border-gray-200">
                 <span className="w-2 h-2 inline-block bg-black mr-2"></span>
-                Trusted by 200+ Companies Worldwide
+                Trusted by 22+ Companies Worldwide
               </div>
               
               <h1 className="text-6xl md:text-8xl font-extrabold mb-6 leading-tight text-black">
-                Build the Future
-                <span className="block mt-2">with Technology</span>
+                 Leverage,Build 
+                <span className="block mt-2"> Scale</span>
               </h1>
               
               <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
@@ -55,7 +55,7 @@ export default function Home() {
                   <svg className="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>10+ Years Experience</span>
+                  <span>7+ Years Experience</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <svg className="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
@@ -171,10 +171,10 @@ export default function Home() {
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               {[
-                { number: '500+', label: 'Projects Completed', delay: '0s' },
+                { number: '22', label: 'Projects Completed', delay: '0s' },
                 { number: '200+', label: 'Happy Clients', delay: '0.2s' },
                 { number: '50+', label: 'Team Members', delay: '0.4s' },
-                { number: '10+', label: 'Years Experience', delay: '0.6s' }
+                { number: '7', label: 'Years Experience', delay: '0.6s' }
               ].map((stat, index) => (
                 <div key={index} className="animate-fade-in" style={{ animationDelay: stat.delay }}>
                   <div className="text-6xl md:text-7xl font-extrabold text-white mb-3">{stat.number}</div>

@@ -47,7 +47,7 @@ export default function UseCases() {
       results: [
         '10x faster data processing',
         '90% reduction in report generation time',
-        '500+ enterprise customers'
+        '22 enterprise customers'
       ],
       gradient: 'bg-black',
       icon: '📊'

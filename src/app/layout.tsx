@@ -11,7 +11,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "Guglex Technologies - Innovating Tomorrow's Technology Today",
-  description: "Transform your business with cutting-edge technology solutions. Web development, mobile apps, cloud solutions, AI/ML, and more. Trusted by 200+ companies worldwide.",
+  description: "Transform your business with cutting-edge technology solutions. Web development, mobile apps, cloud solutions, AI/ML, and more. 7 years of experience, 22 projects completed.",
   keywords: "technology solutions, web development, mobile apps, cloud services, AI, machine learning, software development",
   other: {
     'google-fonts': 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap',
