@@ -30,111 +30,18 @@ We offer six distinct packages tailored to different business needs and budgets.
 
 ### Package Comparison Table
 
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Small Business</th>
-<th>Corporate</th>
-<th>Professional</th>
-<th>NGO</th>
-<th>Online Store</th>
-<th>Custom Design</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Price</strong></td>
-<td>GHC 2,500</td>
-<td>GHC 3,200</td>
-<td>GHC 4,500</td>
-<td>GHC 3,000</td>
-<td>GHC 3,200</td>
-<td>From GHC 6,500</td>
-</tr>
-<tr>
-<td><strong>Free Domain Name</strong></td>
-<td>✓ 1 Year</td>
-<td>✓ 1 Year</td>
-<td>✓ 1 Year</td>
-<td>✓ 1 Year</td>
-<td>✓ 1 Year</td>
-<td>✓ 1 Year</td>
-</tr>
-<tr>
-<td><strong>Free Hosting</strong></td>
-<td>8GB</td>
-<td>12GB</td>
-<td>Unlimited</td>
-<td>12GB</td>
-<td>8GB</td>
-<td>Unlimited</td>
-</tr>
-<tr>
-<td><strong>Free SSL Certificate</strong></td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-</tr>
-<tr>
-<td><strong>Pages</strong></td>
-<td>Up to 5</td>
-<td>Up to 10</td>
-<td>Up to 30</td>
-<td>Up to 10</td>
-<td>Up to 5</td>
-<td>Unlimited</td>
-</tr>
-<tr>
-<td><strong>SEO</strong></td>
-<td>Basic</td>
-<td>Free SEO</td>
-<td>Comprehensive</td>
-<td>Free SEO</td>
-<td>Basic</td>
-<td>Comprehensive</td>
-</tr>
-<tr>
-<td><strong>Local Directory Listing</strong></td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-</tr>
-<tr>
-<td><strong>Social Media Integration</strong></td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-</tr>
-<tr>
-<td><strong>Contact Forms</strong></td>
-<td>1</td>
-<td>2</td>
-<td>5</td>
-<td>2</td>
-<td>1</td>
-<td>30</td>
-</tr>
-<tr>
-<td><strong>Completion Time</strong></td>
-<td>5 Days</td>
-<td>10 Days</td>
-<td>15-20 Days</td>
-<td>7-10 Days</td>
-<td>10-15 Days</td>
-<td>TBD</td>
-</tr>
-</tbody>
-</table>
+| Feature | Small Business | Corporate | Professional | NGO | Online Store | Custom Design |
+|---------|---------------|-----------|--------------|-----|--------------|---------------|
+| **Price** | GHC 2,500 | GHC 3,200 | GHC 4,500 | GHC 3,000 | GHC 3,200 | From GHC 6,500 |
+| **Free Domain Name** | ✓ 1 Year | ✓ 1 Year | ✓ 1 Year | ✓ 1 Year | ✓ 1 Year | ✓ 1 Year |
+| **Free Hosting** | 8GB | 12GB | Unlimited | 12GB | 8GB | Unlimited |
+| **Free SSL Certificate** | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| **Pages** | Up to 5 | Up to 10 | Up to 30 | Up to 10 | Up to 5 | Unlimited |
+| **SEO** | Basic | Free SEO | Comprehensive | Free SEO | Basic | Comprehensive |
+| **Local Directory Listing** | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| **Social Media Integration** | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| **Contact Forms** | 1 | 2 | 5 | 2 | 1 | 30 |
+| **Completion Time** | 5 Days | 10 Days | 15-20 Days | 7-10 Days | 10-15 Days | TBD |
 
 ### Detailed Package Information
 
@@ -293,32 +200,11 @@ Every package includes one free domain name for the first year. This is your web
 ### Free Hosting
 Hosting is where your website files are stored and made accessible to visitors. Different packages offer different storage capacities:
 
-<table>
-<thead>
-<tr>
-<th>Hosting Capacity</th>
-<th>Suitable For</th>
-<th>Packages</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>8GB</strong></td>
-<td>Small websites with basic content</td>
-<td>Small Business, Online Store</td>
-</tr>
-<tr>
-<td><strong>12GB</strong></td>
-<td>Medium-sized websites with moderate content</td>
-<td>Corporate, NGO</td>
-</tr>
-<tr>
-<td><strong>Unlimited</strong></td>
-<td>Large websites with extensive content and media</td>
-<td>Professional, Custom Design</td>
-</tr>
-</tbody>
-</table>
+| Hosting Capacity | Suitable For | Packages |
+|------------------|--------------|----------|
+| **8GB** | Small websites with basic content | Small Business, Online Store |
+| **12GB** | Medium-sized websites with moderate content | Corporate, NGO |
+| **Unlimited** | Large websites with extensive content and media | Professional, Custom Design |
 
 ### Free SSL Certificate
 SSL (Secure Sockets Layer) encrypts data between your website and visitors, ensuring secure transactions and protecting user information. It's essential for building trust and is required for e-commerce sites.
@@ -335,32 +221,11 @@ The number of pages determines how much content you can include. A typical page 
 ### SEO (Search Engine Optimization)
 SEO helps your website appear in search engine results when people search for your products or services.
 
-<table>
-<thead>
-<tr>
-<th>SEO Type</th>
-<th>Included Features</th>
-<th>Available In</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Basic SEO</strong></td>
-<td>• Meta tags optimization<br>• Keyword optimization<br>• Site structure optimization<br>• Mobile-friendly design</td>
-<td>Small Business, Online Store</td>
-</tr>
-<tr>
-<td><strong>Free SEO</strong></td>
-<td>• All Basic SEO features<br>• Enhanced keyword research<br>• Improved site structure</td>
-<td>Corporate, NGO</td>
-</tr>
-<tr>
-<td><strong>Comprehensive SEO</strong></td>
-<td>• All Free SEO features<br>• Content optimization<br>• Link building strategies<br>• Technical SEO audits<br>• Performance optimization<br>• Ongoing SEO monitoring</td>
-<td>Professional, Custom Design</td>
-</tr>
-</tbody>
-</table>
+| SEO Type | Included Features | Available In |
+|----------|-------------------|--------------|
+| **Basic SEO** | Meta tags optimization, Keyword optimization, Site structure optimization, Mobile-friendly design | Small Business, Online Store |
+| **Free SEO** | All Basic SEO features, Enhanced keyword research, Improved site structure | Corporate, NGO |
+| **Comprehensive SEO** | All Free SEO features, Content optimization, Link building strategies, Technical SEO audits, Performance optimization, Ongoing SEO monitoring | Professional, Custom Design |
 
 ### Local Directory Listing
 We'll help you get listed in local business directories and Google My Business, making it easier for customers to find you.
@@ -382,124 +247,36 @@ Use the tables below to help you select the perfect package for your business ne
 
 ### Package Selection by Business Size
 
-<table>
-<thead>
-<tr>
-<th>Business Size</th>
-<th>Recommended Package</th>
-<th>Price Range</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Small Business</strong></td>
-<td>Small Business Package</td>
-<td>GHC 2,500</td>
-</tr>
-<tr>
-<td><strong>Medium Business</strong></td>
-<td>Corporate or NGO Package</td>
-<td>GHC 3,000 - 3,200</td>
-</tr>
-<tr>
-<td><strong>Large Business</strong></td>
-<td>Professional or Custom Design</td>
-<td>GHC 4,500+</td>
-</tr>
-</tbody>
-</table>
+| Business Size | Recommended Package | Price Range |
+|---------------|---------------------|-------------|
+| **Small Business** | Small Business Package | GHC 2,500 |
+| **Medium Business** | Corporate or NGO Package | GHC 3,000 - 3,200 |
+| **Large Business** | Professional or Custom Design | GHC 4,500+ |
 
 ### Package Selection by Industry
 
-<table>
-<thead>
-<tr>
-<th>Industry Type</th>
-<th>Recommended Package</th>
-<th>Why It's Perfect</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Retail/E-commerce</strong></td>
-<td>Online Store Package</td>
-<td>Optimized for product sales and e-commerce functionality</td>
-</tr>
-<tr>
-<td><strong>Service-based Business</strong></td>
-<td>Corporate or Professional Package</td>
-<td>Room for multiple service pages and detailed information</td>
-</tr>
-<tr>
-<td><strong>Non-profit Organization</strong></td>
-<td>NGO Package</td>
-<td>Tailored for charities, foundations, and community groups</td>
-</tr>
-<tr>
-<td><strong>Unique Requirements</strong></td>
-<td>Custom Design Package</td>
-<td>Built specifically for your unique business needs</td>
-</tr>
-</tbody>
-</table>
+| Industry Type | Recommended Package | Why It's Perfect |
+|---------------|---------------------|------------------|
+| **Retail/E-commerce** | Online Store Package | Optimized for product sales and e-commerce functionality |
+| **Service-based Business** | Corporate or Professional Package | Room for multiple service pages and detailed information |
+| **Non-profit Organization** | NGO Package | Tailored for charities, foundations, and community groups |
+| **Unique Requirements** | Custom Design Package | Built specifically for your unique business needs |
 
 ### Package Selection by Budget
 
-<table>
-<thead>
-<tr>
-<th>Budget Range</th>
-<th>Recommended Package</th>
-<th>What You Get</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Limited (GHC 2,500)</strong></td>
-<td>Small Business Package</td>
-<td>Essential features for getting online quickly</td>
-</tr>
-<tr>
-<td><strong>Moderate (GHC 3,000-3,200)</strong></td>
-<td>Corporate, NGO, or Online Store</td>
-<td>More pages and features for growing businesses</td>
-</tr>
-<tr>
-<td><strong>Higher (GHC 4,500+)</strong></td>
-<td>Professional or Custom Design</td>
-<td>Comprehensive solutions with unlimited potential</td>
-</tr>
-</tbody>
-</table>
+| Budget Range | Recommended Package | What You Get |
+|--------------|---------------------|--------------|
+| **Limited (GHC 2,500)** | Small Business Package | Essential features for getting online quickly |
+| **Moderate (GHC 3,000-3,200)** | Corporate, NGO, or Online Store | More pages and features for growing businesses |
+| **Higher (GHC 4,500+)** | Professional or Custom Design | Comprehensive solutions with unlimited potential |
 
 ### Package Selection by Timeline
 
-<table>
-<thead>
-<tr>
-<th>Timeline</th>
-<th>Recommended Package</th>
-<th>Completion Time</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Urgent</strong></td>
-<td>Small Business Package</td>
-<td>5 Days</td>
-</tr>
-<tr>
-<td><strong>Moderate</strong></td>
-<td>NGO, Corporate, Online Store, or Professional</td>
-<td>7-20 Days</td>
-</tr>
-<tr>
-<td><strong>Flexible</strong></td>
-<td>Custom Design Package</td>
-<td>Based on project scope</td>
-</tr>
-</tbody>
-</table>
+| Timeline | Recommended Package | Completion Time |
+|----------|---------------------|-----------------|
+| **Urgent** | Small Business Package | 5 Days |
+| **Moderate** | NGO, Corporate, Online Store, or Professional | 7-20 Days |
+| **Flexible** | Custom Design Package | Based on project scope |
 
 ## The Web Design Process
 
