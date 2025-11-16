@@ -25,9 +25,9 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
   // Convert markdown to HTML (with support for raw HTML)
   const processedContent = await remark()
-    .use(remarkRehype)
+    .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
-    .use(rehypeStringify)
+    .use(rehypeStringify, { allowDangerousHtml: true })
     .process(post.content);
   const contentHtml = processedContent.toString();
 
