@@ -33,6 +33,9 @@ export default function Navigation() {
             <Link href="/companies" className="text-gray-700 hover:text-black transition-colors font-medium">
               Companies
             </Link>
+            <Link href="/blog" className="text-gray-700 hover:text-black transition-colors font-medium">
+              Blog
+            </Link>
             <Link 
               href="/contact" 
               className="px-6 py-2 bg-black text-white hover:bg-gray-800 transition-all duration-300 font-medium"
@@ -104,6 +107,13 @@ export default function Navigation() {
               onClick={() => setIsOpen(false)}
             >
               Companies
+            </Link>
+            <Link
+              href="/blog"
+              className="block px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-black transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              Blog
             </Link>
             <Link
               href="/contact"
