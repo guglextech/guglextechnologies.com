@@ -184,7 +184,7 @@ export default function About() {
                 </div>
                 <h3 className="text-2xl font-bold text-black mb-4">Today</h3>
                 <p className="text-gray-600">
-                  Leading innovation in technology solutions with a team of 50+ experts and 200+ successful projects.
+                  Leading innovation in technology solutions with a team of 50+ experts and 22 successful projects.
                 </p>
               </div>
             </div>
