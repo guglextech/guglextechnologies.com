@@ -64,9 +64,9 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>Email: info@guglex.tech</li>
-              <li>Phone: +1 (555) 123-4567</li>
-              <li>Address: Your City, Country</li>
+              <li>Email: guglex.technologies@gmail.com</li>
+              <li>Phone: +233 550982043</li>
+              <li>Address: Accra, Ghana</li>
             </ul>
           </div>
         </div>

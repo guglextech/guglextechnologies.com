@@ -134,8 +134,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                      <p className="text-gray-600">info@guglex.tech</p>
-                      <p className="text-gray-600">support@guglex.tech</p>
+                      <p className="text-gray-600">guglex.technologies@gmail.com</p>
                     </div>
                   </div>
 
@@ -147,8 +146,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                      <p className="text-gray-600">+1 (555) 123-4567</p>
-                      <p className="text-gray-600">+1 (555) 123-4568</p>
+                      <p className="text-gray-600">+233 550982043</p>
                     </div>
                   </div>
 
@@ -161,9 +159,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Address</h3>
-                      <p className="text-gray-600">123 Technology Street</p>
-                      <p className="text-gray-600">San Francisco, CA 94105</p>
-                      <p className="text-gray-600">United States</p>
+                      <p className="text-gray-600">Accra, Ghana</p>
                     </div>
                   </div>
 
@@ -172,11 +168,11 @@ export default function Contact() {
                     <div className="space-y-2 text-gray-600">
                       <div className="flex justify-between">
                         <span>Monday - Friday</span>
-                        <span>9:00 AM - 6:00 PM</span>
+                        <span>8:00 AM - 6:00 PM</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Saturday</span>
-                        <span>10:00 AM - 4:00 PM</span>
+                        <span>12:00 PM - 6:00 PM</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Sunday</span>

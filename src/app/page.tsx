@@ -30,7 +30,7 @@ export default function Home() {
               </h1>
               
               <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-                We craft exceptional digital experiences that transform businesses and drive innovation. 
+                 Empowering the next frontier of African businesses with digital infrastructure.
                 <span className="block mt-2 text-lg text-gray-500">From concept to deployment, we're with you every step.</span>
               </p>
               
