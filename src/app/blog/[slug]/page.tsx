@@ -4,7 +4,9 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { getAllPosts, getPostBySlug } from '../../../../lib/blog';
 import { remark } from 'remark';
-import html from 'remark-html';
+import remarkRehype from 'remark-rehype';
+import rehypeRaw from 'rehype-raw';
+import rehypeStringify from 'rehype-stringify';
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -21,8 +23,12 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     notFound();
   }
 
-  // Convert markdown to HTML
-  const processedContent = await remark().use(html).process(post.content);
+  // Convert markdown to HTML (with support for raw HTML)
+  const processedContent = await remark()
+    .use(remarkRehype)
+    .use(rehypeRaw)
+    .use(rehypeStringify)
+    .process(post.content);
   const contentHtml = processedContent.toString();
 
   return (

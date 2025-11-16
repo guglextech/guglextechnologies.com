@@ -21,7 +21,7 @@ export default function Home() {
               <h1 className="text-6xl md:text-8xl font-extrabold mb-6 leading-tight text-black">
                  Leverage,Build 
                 <span className="block mt-2"> Scale</span>
-              </h1>
+          </h1>
               
               <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
                 Empowering the next frontier of African businesses with digital infrastructure.
@@ -77,8 +77,8 @@ export default function Home() {
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Comprehensive technology solutions tailored to your business needs
-              </p>
-            </div>
+          </p>
+        </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
@@ -268,7 +268,7 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-          </div>
+        </div>
         </section>
       </main>
       <Footer />
