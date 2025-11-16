@@ -77,13 +77,13 @@ export default function Companies() {
               {featuredPartners.map((partner, index) => (
                 <div
                   key={index}
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden"
+                  className="group relative bg-white p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden"
                 >
-                  <div className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-br ${partner.gradient} opacity-5 rounded-full -mr-20 -mt-20 group-hover:opacity-10 transition-opacity`}></div>
+                  <div className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-br ${partner.gradient} opacity-5 -mr-20 -mt-20 group-hover:opacity-10 transition-opacity`}></div>
                   
                   <div className="relative z-10">
                     <div className="flex items-center space-x-4 mb-6">
-                      <div className={`w-20 h-20 bg-gradient-to-r ${partner.gradient} rounded-2xl flex items-center justify-center text-4xl`}>
+                      <div className={`w-20 h-20 bg-gradient-to-r ${partner.gradient} flex items-center justify-center text-4xl`}>
                         {partner.logo}
                       </div>
                       <div>
@@ -121,7 +121,7 @@ export default function Companies() {
               {companies.map((company, index) => (
                 <div
                   key={index}
-                  className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center cursor-pointer hover:scale-105 border border-gray-100"
+                  className="group bg-white p-6 shadow-md hover:shadow-xl transition-all duration-300 text-center cursor-pointer hover:scale-105 border border-gray-100"
                 >
                   <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">
                     {company.logo}
@@ -183,7 +183,7 @@ export default function Companies() {
             </p>
             <a
               href="/contact"
-              className="inline-block px-8 py-4 bg-white text-blue-600 rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              className="inline-block px-8 py-4 bg-white text-blue-600 font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
               Become a Partner
             </a>

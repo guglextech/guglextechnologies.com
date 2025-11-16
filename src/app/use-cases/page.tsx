@@ -100,16 +100,16 @@ export default function UseCases() {
               {useCases.map((useCase, index) => (
                 <div
                   key={index}
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden"
+                  className="group relative bg-white p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden"
                 >
-                  <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${useCase.gradient} opacity-10 rounded-full -mr-16 -mt-16 group-hover:opacity-20 transition-opacity`}></div>
+                  <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${useCase.gradient} opacity-10 -mr-16 -mt-16 group-hover:opacity-20 transition-opacity`}></div>
                   
                   <div className="relative z-10">
                     <div className="flex items-start justify-between mb-6">
-                      <div className={`w-16 h-16 bg-gradient-to-r ${useCase.gradient} rounded-xl flex items-center justify-center text-3xl`}>
+                      <div className={`w-16 h-16 bg-gradient-to-r ${useCase.gradient} flex items-center justify-center text-3xl`}>
                         {useCase.icon}
                       </div>
-                      <span className="px-4 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
+                      <span className="px-4 py-1 bg-gray-100 text-gray-700 text-sm font-medium">
                         {useCase.industry}
                       </span>
                     </div>
@@ -122,7 +122,7 @@ export default function UseCases() {
                       <div className="space-y-3">
                         {useCase.results.map((result, idx) => (
                           <div key={idx} className="flex items-center">
-                            <div className={`w-2 h-2 bg-gradient-to-r ${useCase.gradient} rounded-full mr-3`}></div>
+                            <div className={`w-2 h-2 bg-gradient-to-r ${useCase.gradient} mr-3`}></div>
                             <span className="text-gray-700">{result}</span>
                           </div>
                         ))}
@@ -152,7 +152,7 @@ export default function UseCases() {
               ].map((industry, index) => (
                 <div
                   key={index}
-                  className="bg-white p-6 rounded-xl text-center shadow-md hover:shadow-xl transition-shadow hover:scale-105 cursor-pointer"
+                  className="bg-white p-6 text-center shadow-md hover:shadow-xl transition-shadow hover:scale-105 cursor-pointer"
                 >
                   <div className="text-3xl mb-3">🏢</div>
                   <h3 className="font-semibold text-gray-900">{industry}</h3>
@@ -195,9 +195,9 @@ export default function UseCases() {
               ].map((testimonial, index) => (
                 <div
                   key={index}
-                  className="bg-gray-50 p-8 rounded-2xl border border-gray-200 hover:shadow-xl transition-shadow"
+                  className="bg-gray-50 p-8 border border-gray-200 hover:shadow-xl transition-shadow"
                 >
-                  <div className={`w-12 h-12 bg-gradient-to-r ${testimonial.gradient} rounded-full flex items-center justify-center mb-6`}>
+                  <div className={`w-12 h-12 bg-gradient-to-r ${testimonial.gradient} flex items-center justify-center mb-6`}>
                     <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-3.313.91-5.435 3.988-5.435 7.242h4v10h-8.544zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-3.313.91-5.435 3.988-5.435 7.242h3.969v10h-10.525z"/>
                     </svg>
@@ -222,7 +222,7 @@ export default function UseCases() {
             </p>
             <Link
               href="/contact"
-              className="inline-block px-8 py-4 bg-white text-blue-600 rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              className="inline-block px-8 py-4 bg-white text-blue-600 font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
               Start Your Project
             </Link>

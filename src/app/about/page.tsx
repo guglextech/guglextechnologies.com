@@ -40,11 +40,11 @@ export default function About() {
                 </p>
               </div>
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-3xl transform rotate-6"></div>
-                <div className="relative bg-white rounded-3xl p-8 shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 transform rotate-6"></div>
+                <div className="relative bg-white p-8 shadow-2xl">
                   <div className="space-y-6">
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center flex-shrink-0">
                         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
@@ -55,7 +55,7 @@ export default function About() {
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center flex-shrink-0">
                         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
@@ -66,7 +66,7 @@ export default function About() {
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-pink-600 to-red-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 bg-gradient-to-r from-pink-600 to-red-600 flex items-center justify-center flex-shrink-0">
                         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
@@ -94,8 +94,8 @@ export default function About() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
+              <div className="bg-white p-8 shadow-lg hover:shadow-2xl transition-shadow">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center mb-6">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                   </svg>
@@ -106,8 +106,8 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6">
+              <div className="bg-white p-8 shadow-lg hover:shadow-2xl transition-shadow">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center mb-6">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
@@ -118,8 +118,8 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow">
-                <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-6">
+              <div className="bg-white p-8 shadow-lg hover:shadow-2xl transition-shadow">
+                <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-pink-600 flex items-center justify-center mb-6">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
@@ -130,8 +130,8 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow">
-                <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-6">
+              <div className="bg-white p-8 shadow-lg hover:shadow-2xl transition-shadow">
+                <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 flex items-center justify-center mb-6">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                   </svg>
@@ -159,7 +159,7 @@ export default function About() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="w-24 h-24 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                <div className="w-24 h-24 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6 flex items-center justify-center">
                   <span className="text-4xl font-bold text-white">2014</span>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Founded</h3>
@@ -169,7 +169,7 @@ export default function About() {
               </div>
 
               <div className="text-center">
-                <div className="w-24 h-24 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                <div className="w-24 h-24 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto mb-6 flex items-center justify-center">
                   <span className="text-4xl font-bold text-white">2018</span>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Expansion</h3>
@@ -179,7 +179,7 @@ export default function About() {
               </div>
 
               <div className="text-center">
-                <div className="w-24 h-24 bg-gradient-to-r from-pink-600 to-red-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                <div className="w-24 h-24 bg-gradient-to-r from-pink-600 to-red-600 mx-auto mb-6 flex items-center justify-center">
                   <span className="text-4xl font-bold text-white">2024</span>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Today</h3>

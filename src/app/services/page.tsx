@@ -94,9 +94,9 @@ export default function Services() {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-transparent"
+                  className="group relative bg-white p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-transparent"
                 >
-                  <div className={`w-16 h-16 bg-gradient-to-r ${service.gradient} rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-16 h-16 bg-gradient-to-r ${service.gradient} flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     {service.icon}
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
@@ -113,7 +113,7 @@ export default function Services() {
                     ))}
                   </div>
                   
-                  <div className={`absolute inset-0 bg-gradient-to-r ${service.gradient} rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+                  <div className={`absolute inset-0 bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
                 </div>
               ))}
             </div>
@@ -138,7 +138,7 @@ export default function Services() {
                 { step: '04', title: 'Launch & Support', desc: 'Deployment and ongoing maintenance' }
               ].map((item, index) => (
                 <div key={index} className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6 flex items-center justify-center">
                     <span className="text-3xl font-bold text-white">{item.step}</span>
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">{item.title}</h3>
@@ -158,7 +158,7 @@ export default function Services() {
             </p>
             <Link
               href="/contact"
-              className="inline-block px-8 py-4 bg-white text-blue-600 rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              className="inline-block px-8 py-4 bg-white text-blue-600 font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
               Contact Us Today
             </Link>

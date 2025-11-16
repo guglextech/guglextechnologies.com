@@ -35,7 +35,7 @@ export default function Navigation() {
             </Link>
             <Link 
               href="/contact" 
-              className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:shadow-lg transition-all duration-300 font-medium"
+              className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-lg transition-all duration-300 font-medium"
             >
               Contact Us
             </Link>
@@ -44,7 +44,7 @@ export default function Navigation() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"
+            className="md:hidden p-2 text-gray-700 hover:bg-gray-100"
             aria-label="Toggle menu"
           >
             <svg
@@ -72,42 +72,42 @@ export default function Navigation() {
           <div className="px-4 pt-2 pb-4 space-y-2">
             <Link
               href="/"
-              className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
+              className="block px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Home
             </Link>
             <Link
               href="/about"
-              className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
+              className="block px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               About
             </Link>
             <Link
               href="/services"
-              className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
+              className="block px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Services
             </Link>
             <Link
               href="/use-cases"
-              className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
+              className="block px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Use Cases
             </Link>
             <Link
               href="/companies"
-              className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
+              className="block px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Companies
             </Link>
             <Link
               href="/contact"
-              className="block px-3 py-2 rounded-md bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center font-medium"
+              className="block px-3 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center font-medium"
               onClick={() => setIsOpen(false)}
             >
               Contact Us
