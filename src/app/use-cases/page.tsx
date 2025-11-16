@@ -13,7 +13,7 @@ export default function UseCases() {
         '50% reduction in page load time',
         '99.9% uptime achieved'
       ],
-      gradient: 'from-blue-500 to-cyan-500',
+      gradient: 'bg-black',
       icon: '🛒'
     },
     {
@@ -25,7 +25,7 @@ export default function UseCases() {
         'Streamlined appointment booking',
         'Secure data management'
       ],
-      gradient: 'from-purple-500 to-pink-500',
+      gradient: 'bg-black',
       icon: '🏥'
     },
     {
@@ -37,7 +37,7 @@ export default function UseCases() {
         '4.8/5 app store rating',
         'Zero security breaches'
       ],
-      gradient: 'from-green-500 to-emerald-500',
+      gradient: 'bg-black',
       icon: '💳'
     },
     {
@@ -49,7 +49,7 @@ export default function UseCases() {
         '90% reduction in report generation time',
         '500+ enterprise customers'
       ],
-      gradient: 'from-orange-500 to-red-500',
+      gradient: 'bg-black',
       icon: '📊'
     },
     {
@@ -61,7 +61,7 @@ export default function UseCases() {
         '95% course completion rate',
         'Interactive learning experience'
       ],
-      gradient: 'from-indigo-500 to-blue-500',
+      gradient: 'bg-black',
       icon: '🎓'
     },
     {
@@ -73,7 +73,7 @@ export default function UseCases() {
         '30% improvement in delivery times',
         'Real-time visibility'
       ],
-      gradient: 'from-teal-500 to-cyan-500',
+      gradient: 'bg-black',
       icon: '🚚'
     }
   ];
@@ -83,11 +83,11 @@ export default function UseCases() {
       <Navigation />
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-600 text-white overflow-hidden">
+        <section className="relative py-20 bg-black text-white overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">Use Cases</h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">Use Cases</h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
               Real-world solutions that drive business success across industries
             </p>
           </div>
@@ -100,21 +100,21 @@ export default function UseCases() {
               {useCases.map((useCase, index) => (
                 <div
                   key={index}
-                  className="group relative bg-white p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden"
+                  className="group relative bg-white p-8 border border-gray-200 hover:border-black hover:shadow-xl transition-all duration-300 overflow-hidden"
                 >
-                  <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${useCase.gradient} opacity-10 -mr-16 -mt-16 group-hover:opacity-20 transition-opacity`}></div>
+                  <div className={`absolute top-0 right-0 w-32 h-32 ${useCase.gradient} opacity-5 -mr-16 -mt-16 group-hover:opacity-10 transition-opacity`}></div>
                   
                   <div className="relative z-10">
                     <div className="flex items-start justify-between mb-6">
-                      <div className={`w-16 h-16 bg-gradient-to-r ${useCase.gradient} flex items-center justify-center text-3xl`}>
+                      <div className={`w-16 h-16 ${useCase.gradient} flex items-center justify-center text-white text-3xl`}>
                         {useCase.icon}
                       </div>
-                      <span className="px-4 py-1 bg-gray-100 text-gray-700 text-sm font-medium">
+                      <span className="px-4 py-1 bg-gray-100 text-gray-700 text-sm font-medium border border-gray-200">
                         {useCase.industry}
                       </span>
                     </div>
                     
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{useCase.title}</h3>
+                    <h3 className="text-2xl font-bold text-black mb-4">{useCase.title}</h3>
                     <p className="text-gray-600 mb-6">{useCase.description}</p>
                     
                     <div className="border-t border-gray-100 pt-6">
@@ -122,7 +122,7 @@ export default function UseCases() {
                       <div className="space-y-3">
                         {useCase.results.map((result, idx) => (
                           <div key={idx} className="flex items-center">
-                            <div className={`w-2 h-2 bg-gradient-to-r ${useCase.gradient} mr-3`}></div>
+                            <div className={`w-2 h-2 ${useCase.gradient} mr-3`}></div>
                             <span className="text-gray-700">{result}</span>
                           </div>
                         ))}
@@ -139,7 +139,7 @@ export default function UseCases() {
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Industries We Serve</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">Industries We Serve</h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Our solutions span across multiple industries, delivering value wherever technology meets business
               </p>
@@ -155,7 +155,7 @@ export default function UseCases() {
                   className="bg-white p-6 text-center shadow-md hover:shadow-xl transition-shadow hover:scale-105 cursor-pointer"
                 >
                   <div className="text-3xl mb-3">🏢</div>
-                  <h3 className="font-semibold text-gray-900">{industry}</h3>
+                  <h3 className="font-semibold text-black">{industry}</h3>
                 </div>
               ))}
             </div>
@@ -166,7 +166,7 @@ export default function UseCases() {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Client Success Stories</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">Client Success Stories</h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Hear from companies that transformed their business with our solutions
               </p>
@@ -178,33 +178,33 @@ export default function UseCases() {
                   quote: 'Guglex Technologies transformed our entire digital infrastructure. The results exceeded our expectations.',
                   author: 'Sarah Johnson',
                   role: 'CTO, TechCorp',
-                  gradient: 'from-blue-500 to-purple-500'
+                  gradient: 'bg-black'
                 },
                 {
                   quote: 'Their expertise in cloud solutions helped us scale seamlessly. Highly recommend their services.',
                   author: 'Michael Chen',
                   role: 'VP Engineering, CloudStart',
-                  gradient: 'from-purple-500 to-pink-500'
+                  gradient: 'bg-black'
                 },
                 {
                   quote: 'The mobile app they built for us has been a game-changer. Our user engagement increased dramatically.',
                   author: 'Emily Rodriguez',
                   role: 'Product Manager, MobileFirst',
-                  gradient: 'from-pink-500 to-red-500'
+                  gradient: 'bg-black'
                 }
               ].map((testimonial, index) => (
                 <div
                   key={index}
                   className="bg-gray-50 p-8 border border-gray-200 hover:shadow-xl transition-shadow"
                 >
-                  <div className={`w-12 h-12 bg-gradient-to-r ${testimonial.gradient} flex items-center justify-center mb-6`}>
+                  <div className={`w-12 h-12 ${testimonial.gradient} flex items-center justify-center mb-6`}>
                     <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-3.313.91-5.435 3.988-5.435 7.242h4v10h-8.544zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-3.313.91-5.435 3.988-5.435 7.242h3.969v10h-10.525z"/>
                     </svg>
                   </div>
                   <p className="text-gray-700 mb-6 italic">"{testimonial.quote}"</p>
                   <div>
-                    <p className="font-semibold text-gray-900">{testimonial.author}</p>
+                    <p className="font-semibold text-black">{testimonial.author}</p>
                     <p className="text-sm text-gray-600">{testimonial.role}</p>
                   </div>
                 </div>
@@ -214,15 +214,15 @@ export default function UseCases() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <section className="py-20 bg-black text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Have a Project in Mind?</h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-gray-300 mb-8">
               Let's discuss how we can help solve your business challenges
             </p>
             <Link
               href="/contact"
-              className="inline-block px-8 py-4 bg-white text-blue-600 font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              className="inline-block px-8 py-4 bg-white text-black font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
               Start Your Project
             </Link>
