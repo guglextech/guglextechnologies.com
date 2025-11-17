@@ -13,7 +13,7 @@ export default function Services() {
         </svg>
       ),
       gradient: 'bg-black',
-      features: ['React & Next.js', 'Responsive Design', 'SEO Optimized', 'Performance Focused']
+      features: ['Angular & Next.js', 'Responsive Design', 'SEO Optimized', 'Performance Focused']
     },
     {
       title: 'Mobile App Development',

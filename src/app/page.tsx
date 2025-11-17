@@ -9,59 +9,61 @@ export default function Home() {
       <main className="pt-16">
         {/* Hero Section */}
         <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-white">
-          <div className="absolute inset-0 bg-grid-pattern"></div>
+          <div className="absolute inset-0 bg-grid-pattern opacity-30"></div>
           
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div className="text-center animate-fade-in">
-              <div className="inline-block mb-6 px-4 py-2 bg-gray-100 text-sm font-medium text-gray-700 border border-gray-200">
-                <span className="w-2 h-2 inline-block bg-black mr-2"></span>
-                Trusted by 22+ Companies Worldwide
+              <div className="inline-flex items-center gap-2 mb-8 px-5 py-2.5 bg-gray-50 text-sm font-medium text-gray-700 border border-gray-200">
+                <span className="w-2 h-2 bg-black"></span>
+                <span>Trusted by 22+ Companies Worldwide</span>
               </div>
               
-              <h1 className="text-6xl md:text-8xl font-extrabold mb-6 leading-tight text-black">
-                 Leverage,Build 
-                <span className="block mt-2"> Scale</span>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-[1.1] text-black tracking-tight">
+                Leverage, Build
+                <span className="block mt-3">Scale</span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-4 max-w-3xl mx-auto leading-relaxed font-light">
                 Empowering the next frontier of African businesses with digital infrastructure.
-                <span className="block mt-2 text-lg text-gray-500">From concept to deployment, we're with you every step.</span>
+              </p>
+              <p className="text-base sm:text-lg text-gray-500 mb-12 max-w-2xl mx-auto">
+                From concept to deployment, we're with you every step.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20">
                 <Link
                   href="/services"
-                  className="px-10 py-4 bg-black text-white font-semibold text-lg hover:bg-gray-800 hover:shadow-xl transition-all duration-300"
+                  className="w-full sm:w-auto px-10 py-4 bg-black text-white font-semibold text-lg hover:bg-gray-800 hover:shadow-xl transition-all duration-300 text-center"
                 >
                   Get Started
                 </Link>
                 <Link
-                  href="/about"
-                  className="px-10 py-4 bg-white text-black font-semibold text-lg border-2 border-black hover:bg-gray-50 hover:shadow-xl transition-all duration-300"
+                  href="/contact"
+                  className="w-full sm:w-auto px-10 py-4 bg-white text-black font-semibold text-lg border-2 border-black hover:bg-gray-50 hover:shadow-xl transition-all duration-300 text-center"
                 >
-                  Learn More
+                 Contact Us
                 </Link>
               </div>
 
               {/* Trust indicators */}
-              <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-gray-600">
+              <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 text-sm text-gray-600">
                 <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>500+ Projects</span>
+                  <span className="font-medium">22 Projects Completed</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>7+ Years Experience</span>
+                  <span className="font-medium">7 Years Experience</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>24/7 Support</span>
+                  <span className="font-medium">24/7 Support</span>
                 </div>
               </div>
             </div>
@@ -77,8 +79,8 @@ export default function Home() {
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Comprehensive technology solutions tailored to your business needs
-              </p>
-            </div>
+          </p>
+        </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
@@ -268,7 +270,7 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-          </div>
+        </div>
         </section>
       </main>
       <Footer />
