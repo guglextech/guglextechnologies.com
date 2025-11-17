@@ -52,30 +52,30 @@ export default function UseCases() {
       gradient: 'bg-black',
       icon: '📊'
     },
-    {
-      title: 'Education Learning Platform',
-      industry: 'Education',
-      description: 'Developed an interactive learning management system with video courses, quizzes, progress tracking, and AI-powered personalized learning paths.',
-      results: [
-        '200K+ students enrolled',
-        '95% course completion rate',
-        'Interactive learning experience'
-      ],
-      gradient: 'bg-black',
-      icon: '🎓'
-    },
-    {
-      title: 'IoT Fleet Management',
-      industry: 'Logistics',
-      description: 'Created an IoT-based fleet management system with real-time GPS tracking, route optimization, fuel monitoring, and predictive maintenance alerts.',
-      results: [
-        '25% reduction in fuel costs',
-        '30% improvement in delivery times',
-        'Real-time visibility'
-      ],
-      gradient: 'bg-black',
-      icon: '🚚'
-    }
+    // {
+    //   title: 'Education Learning Platform',
+    //   industry: 'Education',
+    //   description: 'Developed an interactive learning management system with video courses, quizzes, progress tracking, and AI-powered personalized learning paths.',
+    //   results: [
+    //     '200K+ students enrolled',
+    //     '95% course completion rate',
+    //     'Interactive learning experience'
+    //   ],
+    //   gradient: 'bg-black',
+    //   icon: '🎓'
+    // },
+    // {
+    //   title: 'IoT Fleet Management',
+    //   industry: 'Logistics',
+    //   description: 'Created an IoT-based fleet management system with real-time GPS tracking, route optimization, fuel monitoring, and predictive maintenance alerts.',
+    //   results: [
+    //     '25% reduction in fuel costs',
+    //     '30% improvement in delivery times',
+    //     'Real-time visibility'
+    //   ],
+    //   gradient: 'bg-black',
+    //   icon: '🚚'
+    // }
   ];
 
   return (

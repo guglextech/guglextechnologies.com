@@ -38,10 +38,10 @@ export default function Home() {
                   Get Started
                 </Link>
                 <Link
-                  href="/about"
+                  href="/contact"
                   className="w-full sm:w-auto px-10 py-4 bg-white text-black font-semibold text-lg border-2 border-black hover:bg-gray-50 hover:shadow-xl transition-all duration-300 text-center"
                 >
-                  Learn More
+                 Contact Us
                 </Link>
               </div>
 
