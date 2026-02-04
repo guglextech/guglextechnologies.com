@@ -51,7 +51,7 @@ export default function Home() {
                   <svg className="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="font-medium">22 Projects Completed</span>
+                  <span className="font-medium">31 Projects Completed</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <svg className="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
@@ -174,8 +174,8 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               {[
                 { number: '22', label: 'Projects Completed', delay: '0s' },
-                { number: '200+', label: 'Happy Clients', delay: '0.2s' },
-                { number: '50+', label: 'Team Members', delay: '0.4s' },
+                { number: '16+', label: 'Happy Clients', delay: '0.2s' },
+                { number: '5+', label: 'Team Members', delay: '0.4s' },
                 { number: '7', label: 'Years Experience', delay: '0.6s' }
               ].map((stat, index) => (
                 <div key={index} className="animate-fade-in" style={{ animationDelay: stat.delay }}>
@@ -231,11 +231,11 @@ export default function Home() {
                     <div className="text-gray-700 font-medium">Support Available</div>
                   </div>
                   <div className="bg-gray-100 p-8 border border-gray-200">
-                    <div className="text-4xl font-bold text-black mb-2">500+</div>
+                    <div className="text-4xl font-bold text-black mb-2">22+</div>
                     <div className="text-gray-700 font-medium">Projects Delivered</div>
                   </div>
                   <div className="bg-gray-100 p-8 border border-gray-200">
-                    <div className="text-4xl font-bold text-black mb-2">10+</div>
+                    <div className="text-4xl font-bold text-black mb-2">7+</div>
                     <div className="text-gray-700 font-medium">Years Experience</div>
                   </div>
                 </div>
