@@ -2,168 +2,232 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import {
+  Search, X, Clock, ArrowUpRight,
+  Briefcase, Code, Lightbulb, Globe, Layers, BookOpen,
+} from 'lucide-react';
 import { type BlogPost } from '../../../lib/blog';
+
+const categoryStyles: Record<string, { gradient: string; Icon: typeof Briefcase }> = {
+  Business:      { gradient: 'from-amber-900 to-stone-900', Icon: Briefcase },
+  Technology:    { gradient: 'from-blue-900 to-slate-900', Icon: Code },
+  Development:   { gradient: 'from-emerald-900 to-slate-900', Icon: Layers },
+  Design:        { gradient: 'from-rose-900 to-stone-900', Icon: Lightbulb },
+  Marketing:     { gradient: 'from-violet-900 to-slate-900', Icon: Globe },
+  General:       { gradient: 'from-gray-800 to-gray-900', Icon: BookOpen },
+};
+
+function getCategoryStyle(category: string) {
+  return categoryStyles[category] || categoryStyles.General;
+}
 
 interface BlogClientProps {
   posts: BlogPost[];
+  featuredPost: BlogPost | undefined;
+  remainingPosts: BlogPost[];
 }
 
-export default function BlogClient({ posts: allPosts }: BlogClientProps) {
+export default function BlogClient({ posts: allPosts, featuredPost, remainingPosts: allRemaining }: BlogClientProps) {
   const [searchQuery, setSearchQuery] = useState('');
 
-  const posts = useMemo(() => {
-    if (!searchQuery.trim()) {
-      return allPosts;
-    }
+  const isSearching = searchQuery.trim().length > 0;
 
+  const filteredPosts = useMemo(() => {
+    if (!isSearching) return allPosts;
     const query = searchQuery.toLowerCase();
-    return allPosts.filter((post: BlogPost) => {
-      return (
-        post.title.toLowerCase().includes(query) ||
-        post.excerpt.toLowerCase().includes(query) ||
-        post.category.toLowerCase().includes(query) ||
-        post.tags.some(tag => tag.toLowerCase().includes(query))
-      );
-    });
-  }, [searchQuery, allPosts]);
+    return allPosts.filter((post: BlogPost) =>
+      post.title.toLowerCase().includes(query) ||
+      post.excerpt.toLowerCase().includes(query) ||
+      post.category.toLowerCase().includes(query) ||
+      post.tags.some(tag => tag.toLowerCase().includes(query))
+    );
+  }, [searchQuery, allPosts, isSearching]);
+
+  const formatDate = (dateStr: string) =>
+    new Date(dateStr).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 
   return (
     <>
-      {/* Search Bar */}
-      <div className="mb-8 max-w-md">
-        <div className="relative">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <svg 
-              className="h-4 w-4 text-gray-400" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" 
-              />
-            </svg>
-          </div>
+      {/* Search Header */}
+      <div className="mb-14 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+        <div>
+          <h2 className="text-3xl font-bold text-black">
+            {isSearching ? `Results for "${searchQuery}"` : 'Latest Articles'}
+          </h2>
+          <p className="text-gray-500 mt-1 text-sm">
+            {isSearching
+              ? `${filteredPosts.length} article${filteredPosts.length !== 1 ? 's' : ''} found`
+              : `${allPosts.length} articles published`}
+          </p>
+        </div>
+        <div className="relative w-full sm:w-80">
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" strokeWidth={1.5} />
           <input
             type="text"
             placeholder="Search articles..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-10 py-2 bg-white border-2 border-gray-200 text-black placeholder-gray-400 focus:outline-none focus:border-black transition-all duration-200 text-sm"
+            className="w-full pl-11 pr-10 py-3 bg-gray-50 border border-gray-200 text-black placeholder-gray-400 focus:outline-none focus:border-black focus:bg-white transition-all duration-300 text-sm"
           />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery('')}
-              className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-black transition-colors"
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-black transition-colors"
               aria-label="Clear search"
             >
-              <svg 
-                className="h-4 w-4" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M6 18L18 6M6 6l12 12" 
-                />
-              </svg>
+              <X className="w-4 h-4" strokeWidth={1.5} />
             </button>
           )}
         </div>
       </div>
 
-      {posts.length === 0 ? (
-        <div className="text-center py-20">
-          <p className="text-xl text-gray-600">
-            {searchQuery ? 'No articles found matching your search.' : 'No blog posts yet. Check back soon!'}
+      {/* Empty State */}
+      {filteredPosts.length === 0 ? (
+        <div className="text-center py-24 border border-dashed border-gray-200">
+          <Search className="w-10 h-10 text-gray-300 mx-auto mb-4" strokeWidth={1.5} />
+          <p className="text-lg text-gray-500 mb-2">
+            {isSearching ? 'No articles match your search.' : 'No blog posts yet.'}
           </p>
-          {searchQuery && (
+          {isSearching && (
             <button
               onClick={() => setSearchQuery('')}
-              className="mt-4 text-black font-semibold hover:text-gray-600 transition-colors underline"
+              className="text-black font-medium text-sm hover:text-gray-600 transition-colors underline underline-offset-4"
             >
               Clear search
             </button>
           )}
         </div>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {posts.map((post: BlogPost) => (
-            <Link
-              key={post.slug}
-              href={`/blog/${post.slug}`}
-              className="group bg-white border-2 border-gray-200 hover:border-black transition-all duration-300 hover:shadow-2xl flex flex-col"
-            >
-              {/* Featured Badge */}
-              {post.featured && (
-                <div className="relative">
-                  <div className="absolute top-4 left-4 z-10 px-3 py-1 bg-black text-white text-xs font-bold">
-                    Featured
-                  </div>
-                </div>
-              )}
-
-              {/* Card Content */}
-              <div className="p-6 flex flex-col flex-grow">
-                {/* Category and Date */}
-                <div className="mb-4 flex items-center gap-2 text-xs text-gray-500 font-medium">
-                  <span className="uppercase tracking-wide">{post.category}</span>
-                  <span className="text-gray-300">•</span>
-                  <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
-                </div>
-
-                {/* Title */}
-                <h2 className="text-xl font-bold text-black mb-3 group-hover:text-gray-700 transition-colors leading-tight">
-                  {post.title}
-                </h2>
-
-                {/* Excerpt */}
-                <p className="text-gray-600 mb-5 text-sm leading-relaxed flex-grow line-clamp-3">
-                  {post.excerpt}
-                </p>
-
-                {/* Tags */}
-                {post.tags.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mb-5">
-                    {post.tags.slice(0, 3).map((tag: string, index: number) => (
-                      <span
-                        key={index}
-                        className="px-2.5 py-1 bg-gray-100 text-gray-700 text-xs font-medium border border-gray-200"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
-
-                {/* Read More Link */}
-                <div className="mt-auto pt-4 border-t border-gray-200">
-                  <div className="flex items-center justify-between">
-                    <span className="text-black font-semibold text-sm group-hover:text-gray-600 transition-colors">
-                      Read Article
-                    </span>
-                    <svg 
-                      className="w-5 h-5 text-black group-hover:translate-x-1 transition-transform duration-300" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </Link>
+      ) : isSearching ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredPosts.map((post) => (
+            <ArticleCard key={post.slug} post={post} formatDate={formatDate} />
           ))}
         </div>
+      ) : (
+        <>
+          {/* Featured Post */}
+          {featuredPost && <FeaturedCard post={featuredPost} formatDate={formatDate} />}
+
+          {/* Posts Grid */}
+          {allRemaining.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {allRemaining.map((post) => (
+                <ArticleCard key={post.slug} post={post} formatDate={formatDate} />
+              ))}
+            </div>
+          )}
+        </>
       )}
     </>
   );
 }
 
+/* ─── Featured Card ─── */
+function FeaturedCard({ post, formatDate }: { post: BlogPost; formatDate: (d: string) => string }) {
+  const { gradient, Icon } = getCategoryStyle(post.category);
+
+  return (
+    <Link href={`/blog/${post.slug}`} className="group block mb-14">
+      <div className="grid grid-cols-1 lg:grid-cols-2 overflow-hidden bg-black">
+        {/* Image / Gradient Side */}
+        <div className={`relative h-64 lg:h-auto min-h-[320px] bg-gradient-to-br ${gradient} overflow-hidden`}>
+          {post.image ? (
+            <Image src={post.image} alt={post.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Icon className="w-20 h-20 text-white/10" strokeWidth={1} />
+            </div>
+          )}
+          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
+          {post.featured && (
+            <span className="absolute top-6 left-6 px-3 py-1 bg-white text-black text-xs font-bold uppercase tracking-wider">
+              Featured
+            </span>
+          )}
+        </div>
+
+        {/* Content Side */}
+        <div className="p-8 md:p-12 flex flex-col justify-between">
+          <div>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="text-xs text-gray-400 uppercase tracking-widest font-medium">{post.category}</span>
+              <span className="w-1 h-1 bg-gray-600 rounded-full" />
+              <span className="flex items-center gap-1.5 text-xs text-gray-500">
+                <Clock className="w-3 h-3" strokeWidth={1.5} />
+                {formatDate(post.date)}
+              </span>
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight group-hover:text-gray-200 transition-colors">
+              {post.title}
+            </h2>
+            <p className="text-gray-400 leading-relaxed line-clamp-3">{post.excerpt}</p>
+          </div>
+
+          <div className="mt-8 flex items-center justify-between">
+            <span className="text-sm text-gray-500">By {post.author}</span>
+            <div className="w-10 h-10 border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:border-white transition-all duration-500">
+              <ArrowUpRight className="w-4 h-4 text-white group-hover:text-black transition-colors duration-500" strokeWidth={1.5} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+/* ─── Article Card ─── */
+function ArticleCard({ post, formatDate }: { post: BlogPost; formatDate: (d: string) => string }) {
+  const { gradient, Icon } = getCategoryStyle(post.category);
+
+  return (
+    <Link
+      href={`/blog/${post.slug}`}
+      className="group flex flex-col overflow-hidden bg-white border border-gray-100 hover:border-gray-300 hover:shadow-lg transition-all duration-500"
+    >
+      {/* Image Area */}
+      <div className={`relative h-48 bg-gradient-to-br ${gradient} overflow-hidden`}>
+        {post.image ? (
+          <Image src={post.image} alt={post.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <Icon className="w-14 h-14 text-white/10" strokeWidth={1} />
+          </div>
+        )}
+        <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
+        <span className="absolute bottom-4 left-4 px-2.5 py-1 bg-white/90 backdrop-blur-sm text-black text-[11px] font-semibold uppercase tracking-wider">
+          {post.category}
+        </span>
+      </div>
+
+      {/* Content */}
+      <div className="p-6 flex flex-col flex-grow">
+        <h3 className="text-lg font-bold text-black mb-2 leading-snug group-hover:text-gray-700 transition-colors duration-300 line-clamp-2">
+          {post.title}
+        </h3>
+
+        <p className="text-gray-500 text-sm leading-relaxed mb-5 flex-grow line-clamp-2">
+          {post.excerpt}
+        </p>
+
+        {post.tags.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 mb-5">
+            {post.tags.slice(0, 2).map((tag, i) => (
+              <span key={i} className="px-2 py-0.5 bg-gray-50 text-[11px] text-gray-500 font-medium">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
+          <span className="flex items-center gap-1.5 text-xs text-gray-400">
+            <Clock className="w-3 h-3" strokeWidth={1.5} />
+            {formatDate(post.date)}
+          </span>
+          <ArrowUpRight className="w-4 h-4 text-gray-300 group-hover:text-black transition-colors duration-300" strokeWidth={1.5} />
+        </div>
+      </div>
+    </Link>
+  );
+}

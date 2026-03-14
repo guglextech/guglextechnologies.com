@@ -13,6 +13,7 @@ export interface BlogPost {
   category: string;
   tags: string[];
   featured: boolean;
+  image?: string;
   content: string;
 }
 
@@ -44,6 +45,7 @@ export function getAllPosts(): BlogPost[] {
           category: data.category || 'General',
           tags: data.tags || [],
           featured: data.featured || false,
+          image: data.image || undefined,
           content,
         } as BlogPost;
       });
@@ -88,6 +90,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
       category: data.category || 'General',
       tags: data.tags || [],
       featured: data.featured || false,
+      image: data.image || undefined,
       content,
     } as BlogPost;
   } catch (error) {
