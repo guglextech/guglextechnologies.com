@@ -159,44 +159,6 @@ export default function Companies() {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">Partnership Impact</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                The results of our collaborative efforts
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="text-5xl md:text-6xl font-bold text-black mb-2">
-                  20+
-                </div>
-                <div className="text-gray-600 font-medium">Companies Served</div>
-              </div>
-              <div className="text-center">
-                <div className="text-5xl md:text-6xl font-bold text-black mb-2">
-                  22
-                </div>
-                <div className="text-gray-600 font-medium">Projects Delivered</div>
-              </div>
-              <div className="text-center">
-                <div className="text-5xl md:text-6xl font-bold text-black mb-2">
-                  98%
-                </div>
-                <div className="text-gray-600 font-medium">Client Satisfaction</div>
-              </div>
-              <div className="text-center">
-                <div className="text-5xl md:text-6xl font-bold text-black mb-2">
-                  15+
-                </div>
-                <div className="text-gray-600 font-medium">Industries</div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* CTA Section */}
         <section className="py-20 bg-black text-white">
