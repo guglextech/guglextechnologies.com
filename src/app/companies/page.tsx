@@ -1,10 +1,11 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { Monitor, Cloud, Smartphone, BarChart3, ArrowUpRight } from 'lucide-react';
 
 export default function Companies() {
   const companies = [
     { 
-      name: 'TechCorp', 
+      name: 'PSWU (Public Service Worker Union)', 
       industry: 'Technology', 
       logo: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -14,7 +15,7 @@ export default function Companies() {
       description: 'Leading software solutions provider' 
     },
     { 
-      name: 'CloudStart', 
+      name: 'Directorate of DV Publication and LGM', 
       industry: 'Cloud Services', 
       logo: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -24,97 +25,7 @@ export default function Companies() {
       description: 'Enterprise cloud infrastructure' 
     },
     { 
-      name: 'MobileFirst', 
-      industry: 'Mobile Apps', 
-      logo: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-        </svg>
-      ), 
-      description: 'Innovative mobile solutions' 
-    },
-    { 
-      name: 'DataFlow', 
-      industry: 'Analytics', 
-      logo: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-        </svg>
-      ), 
-      description: 'Big data and analytics platform' 
-    },
-    { 
-      name: 'SecureNet', 
-      industry: 'Cybersecurity', 
-      logo: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-        </svg>
-      ), 
-      description: 'Enterprise security solutions' 
-    },
-    { 
-      name: 'HealthTech', 
-      industry: 'Healthcare', 
-      logo: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-        </svg>
-      ), 
-      description: 'Digital health innovations' 
-    },
-    { 
-      name: 'EduPlatform', 
-      industry: 'Education', 
-      logo: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-        </svg>
-      ), 
-      description: 'Online learning solutions' 
-    },
-    { 
-      name: 'RetailPro', 
-      industry: 'Retail', 
-      logo: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-        </svg>
-      ), 
-      description: 'E-commerce platform provider' 
-    },
-    { 
-      name: 'FinanceHub', 
-      industry: 'FinTech', 
-      logo: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ), 
-      description: 'Financial technology services' 
-    },
-    { 
-      name: 'LogiTech', 
-      industry: 'Logistics', 
-      logo: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-        </svg>
-      ), 
-      description: 'Supply chain optimization' 
-    },
-    { 
-      name: 'MediaStream', 
-      industry: 'Media', 
-      logo: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-        </svg>
-      ), 
-      description: 'Content delivery platform' 
-    },
-    { 
-      name: 'GreenEnergy', 
+      name: 'Victory Entertainment Empire', 
       industry: 'Energy', 
       logo: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -122,53 +33,43 @@ export default function Companies() {
         </svg>
       ), 
       description: 'Sustainable energy solutions' 
+    },
+    {
+      name: 'Hubtel',
+      industry: 'Technology',
+      logo: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      ),
+      description: 'Integration for payment gateway and ussd development.'
     }
   ];
 
   const featuredPartners = [
     {
       name: 'Hubtel',
-      logo: (
-        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-      ),
-      description: 'Integration for payment gateway and ussd development. Integration for payment gateway and ussd development.',
+      Icon: Monitor,
+      description: 'Integration for payment gateway and ussd development.',
       project: 'Digital Transformation',
-      gradient: 'bg-black'
     },
     {
       name: 'LGM',
-      logo: (
-        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-        </svg>
-      ),
+      Icon: Cloud,
       description: 'Built a scalable cloud infrastructure that supports millions of users on subscription model of payment.',
       project: 'Cloud Migration',
-      gradient: 'bg-black'
     },
     {
       name: 'Wotiriye',
-      logo: (
-        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-        </svg>
-      ),
+      Icon: Smartphone,
       description: 'Play interactive games with your friends and family. Subscription model of payment',
       project: 'Mobile App Development',
-      gradient: 'bg-black'
     },
     {
       name: 'E-Wale',
-      logo: (
-        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-        </svg>
-      ),
+      Icon: BarChart3,
       description: 'Purchase WASSCE,ECG Prepaid , Airtime and Data  Bundle with ease. For all networks',
       project: 'Big Data Analytics',
-      gradient: 'bg-black'
     }
   ];
 
@@ -188,43 +89,42 @@ export default function Companies() {
         </section>
 
         {/* Featured Partners */}
-        <section className="py-20 bg-white">
+        <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">Featured Partners</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Some of our most successful collaborations
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
+              <div>
+                <p className="text-sm font-medium tracking-[0.2em] uppercase text-gray-400 mb-3">Collaborations</p>
+                <h2 className="text-4xl md:text-5xl font-bold text-black">Featured Partners</h2>
+              </div>
+              <p className="text-gray-500 max-w-sm md:text-right">
+                Some of our most successful collaborations that drove real impact.
               </p>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {featuredPartners.map((partner, index) => (
                 <div
                   key={index}
-                  className="group relative bg-white p-8 border border-gray-200 hover:border-black hover:shadow-xl transition-all duration-300 overflow-hidden"
+                  className="group relative bg-gray-50 hover:bg-black p-8 md:p-10 transition-all duration-500 cursor-pointer overflow-hidden"
                 >
-                  <div className={`absolute top-0 right-0 w-40 h-40 ${partner.gradient} opacity-5 -mr-20 -mt-20 group-hover:opacity-10 transition-opacity`}></div>
-                  
-                  <div className="relative z-10">
-                    <div className="flex items-center space-x-4 mb-6">
-                      <div className={`w-20 h-20 ${partner.gradient} flex items-center justify-center text-white`}>
-                        {partner.logo}
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-black">{partner.name}</h3>
-                        <span className="text-sm text-gray-500">{partner.project}</span>
-                      </div>
+                  <div className="flex items-start justify-between mb-8">
+                    <div className="w-14 h-14 bg-white group-hover:bg-white/10 flex items-center justify-center transition-colors duration-500">
+                      <partner.Icon className="w-6 h-6 text-black group-hover:text-white transition-colors duration-500" strokeWidth={1.5} />
                     </div>
-                    
-                    <p className="text-gray-600 mb-6">{partner.description}</p>
-                    
-                    <div className="flex items-center text-sm text-gray-500">
-                      <svg className="w-5 h-5 text-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <span>Successful Project</span>
-                    </div>
+                    <ArrowUpRight className="w-5 h-5 text-gray-300 group-hover:text-white opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500" />
                   </div>
+
+                  <span className="inline-block text-xs font-medium tracking-widest uppercase text-gray-400 group-hover:text-gray-400 mb-3 transition-colors duration-500">
+                    {partner.project}
+                  </span>
+                  <h3 className="text-2xl font-bold text-black group-hover:text-white mb-3 transition-colors duration-500">
+                    {partner.name}
+                  </h3>
+                  <p className="text-gray-500 group-hover:text-gray-400 leading-relaxed transition-colors duration-500">
+                    {partner.description}
+                  </p>
+
+                  <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-white transition-all duration-700 group-hover:w-full" />
                 </div>
               ))}
             </div>
@@ -272,7 +172,7 @@ export default function Companies() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center">
                 <div className="text-5xl md:text-6xl font-bold text-black mb-2">
-                  200+
+                  20+
                 </div>
                 <div className="text-gray-600 font-medium">Companies Served</div>
               </div>

@@ -1,6 +1,12 @@
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import {
+  ShoppingBag, HeartPulse, TrendingUp, GraduationCap,
+  Truck, Factory, Building2, Clapperboard,
+  UtensilsCrossed, Plane, Zap, Landmark,
+  ShoppingCart, Smartphone, CreditCard, type LucideIcon,
+} from 'lucide-react';
 
 export default function UseCases() {
   const useCases = [
@@ -14,68 +20,44 @@ export default function UseCases() {
         '99.9% uptime achieved'
       ],
       gradient: 'bg-black',
-      icon: '🛒'
+      Icon: ShoppingCart,
     },
     {
-      title: 'Healthcare Management System',
-      industry: 'Healthcare',
-      description: 'Developed a comprehensive healthcare management system with patient records, appointment scheduling, and telemedicine capabilities. HIPAA compliant and secure.',
-      results: [
-        '40% improvement in patient satisfaction',
-        'Streamlined appointment booking',
-        'Secure data management'
-      ],
-      gradient: 'bg-black',
-      icon: '🏥'
-    },
-    {
-      title: 'FinTech Mobile App',
-      industry: 'Finance',
-      description: 'Created a mobile banking application with real-time transactions, biometric security, and investment tracking. Available on iOS and Android.',
-      results: [
-        '500K+ active users',
-        '4.8/5 app store rating',
-        'Zero security breaches'
-      ],
-      gradient: 'bg-black',
-      icon: '💳'
-    },
-    {
-      title: 'SaaS Analytics Platform',
+      title: 'USSD Development and Integration',
       industry: 'Technology',
-      description: 'Built a powerful analytics platform that processes billions of data points. Real-time dashboards, custom reports, and predictive analytics.',
+      description: 'Built a USSD application that allows users to interact with the application via USSD. The application allows users to perform transactions, check balance, and view account information.',
       results: [
-        '10x faster data processing',
-        '90% reduction in report generation time',
-        '22 enterprise customers'
+        '100% uptime',
+        '99.9% availability',
+        '24/7 support'
       ],
       gradient: 'bg-black',
-      icon: '📊'
+      Icon: Smartphone,
     },
-    // {
-    //   title: 'Education Learning Platform',
-    //   industry: 'Education',
-    //   description: 'Developed an interactive learning management system with video courses, quizzes, progress tracking, and AI-powered personalized learning paths.',
-    //   results: [
-    //     '200K+ students enrolled',
-    //     '95% course completion rate',
-    //     'Interactive learning experience'
-    //   ],
-    //   gradient: 'bg-black',
-    //   icon: '🎓'
-    // },
-    // {
-    //   title: 'IoT Fleet Management',
-    //   industry: 'Logistics',
-    //   description: 'Created an IoT-based fleet management system with real-time GPS tracking, route optimization, fuel monitoring, and predictive maintenance alerts.',
-    //   results: [
-    //     '25% reduction in fuel costs',
-    //     '30% improvement in delivery times',
-    //     'Real-time visibility'
-    //   ],
-    //   gradient: 'bg-black',
-    //   icon: '🚚'
-    // }
+    {
+      title: 'Payment Gateway Integration',
+      industry: 'Finance',
+      description: 'Integrated payment gateways into the e-commerce platform. The payment gateways allow users to perform transactions using their credit cards, debit cards, and mobile money.',
+      results: [
+        '100% uptime',
+        '99.9% availability',
+        '24/7 support'
+      ],
+      gradient: 'bg-black',
+      Icon: CreditCard,
+    },
+    {
+      title: 'Payment Gateway Integration',
+      industry: 'Finance',
+      description: 'Integrated payment gateways into the e-commerce platform. The payment gateways allow users to perform transactions using their credit cards, debit cards, and mobile money.',
+      results: [
+        '100% uptime',
+        '99.9% availability',
+        '24/7 support'
+      ],
+      gradient: 'bg-black',
+      Icon: CreditCard,
+    }
   ];
 
   return (
@@ -106,8 +88,8 @@ export default function UseCases() {
                   
                   <div className="relative z-10">
                     <div className="flex items-start justify-between mb-6">
-                      <div className={`w-16 h-16 ${useCase.gradient} flex items-center justify-center text-white text-3xl`}>
-                        {useCase.icon}
+                      <div className={`w-16 h-16 ${useCase.gradient} flex items-center justify-center text-white`}>
+                        <useCase.Icon className="w-7 h-7" strokeWidth={1.5} />
                       </div>
                       <span className="px-4 py-1 bg-gray-100 text-gray-700 text-sm font-medium border border-gray-200">
                         {useCase.industry}
@@ -136,26 +118,40 @@ export default function UseCases() {
         </section>
 
         {/* Industries Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-24 bg-black text-white overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">Industries We Serve</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Our solutions span across multiple industries, delivering value wherever technology meets business
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
+              <div>
+                <p className="text-sm font-medium tracking-[0.2em] uppercase text-gray-400 mb-3">Expertise</p>
+                <h2 className="text-4xl md:text-5xl font-bold text-white">Industries We Serve</h2>
+              </div>
+              <p className="text-gray-400 max-w-md md:text-right">
+                Delivering tailored technology solutions across sectors that drive measurable impact.
               </p>
             </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-px bg-gray-800/50">
               {[
-                'Retail', 'Healthcare', 'Finance', 'Education', 'Logistics', 'Manufacturing',
-                'Real Estate', 'Entertainment', 'Food & Beverage', 'Travel', 'Energy', 'Government'
+                { name: 'Retail', Icon: ShoppingBag },
+                { name: 'Healthcare', Icon: HeartPulse },
+                { name: 'Finance', Icon: TrendingUp },
+                { name: 'Education', Icon: GraduationCap },
+                { name: 'Logistics', Icon: Truck },
+                { name: 'Manufacturing', Icon: Factory },
+                { name: 'Real Estate', Icon: Building2 },
+                { name: 'Entertainment', Icon: Clapperboard },
+                { name: 'Food & Beverage', Icon: UtensilsCrossed },
+                { name: 'Travel', Icon: Plane },
+                { name: 'Energy', Icon: Zap },
+                { name: 'Government', Icon: Landmark },
               ].map((industry, index) => (
                 <div
                   key={index}
-                  className="bg-white p-6 text-center shadow-md hover:shadow-xl transition-shadow hover:scale-105 cursor-pointer"
+                  className="group relative bg-black p-8 flex flex-col items-start gap-4 cursor-pointer transition-colors duration-300 hover:bg-gray-900"
                 >
-                  <div className="text-3xl mb-3">🏢</div>
-                  <h3 className="font-semibold text-black">{industry}</h3>
+                  <industry.Icon className="w-7 h-7 text-gray-400 transition-all duration-300 group-hover:text-white group-hover:scale-110" strokeWidth={1.5} />
+                  <h3 className="text-base font-semibold text-white tracking-wide">{industry.name}</h3>
+                  <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-white transition-all duration-500 group-hover:w-full" />
                 </div>
               ))}
             </div>
@@ -175,21 +171,21 @@ export default function UseCases() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  quote: 'Guglex Technologies transformed our entire digital infrastructure. The results exceeded our expectations.',
-                  author: 'Sarah Johnson',
-                  role: 'CTO, TechCorp',
+                  quote: 'The Union needed a way to collect membership dues from our members. We needed a way to collect payments and rewards for our players.',
+                  author: 'Samuel Osei',
+                  role: 'PSWU (Public Service Worker Union)',
                   gradient: 'bg-black'
                 },
                 {
-                  quote: 'Their expertise in cloud solutions helped us scale seamlessly. Highly recommend their services.',
-                  author: 'Michael Chen',
-                  role: 'VP Engineering, CloudStart',
+                  quote: 'We run live games on shortcodes and players buy tickets to participate. We are able to collect payments and rewards for our players.',
+                  author: 'Kwame Kankam',
+                  role: 'Director, Directorate of DV Publication and LGM',
                   gradient: 'bg-black'
                 },
                 {
-                  quote: 'The mobile app they built for us has been a game-changer. Our user engagement increased dramatically.',
-                  author: 'Emily Rodriguez',
-                  role: 'Product Manager, MobileFirst',
+                  quote: 'Guglex built and develop USSD and payment gateway integration for us. We run a reality show and we needed a way to collect votes from our viewers.',
+                  author: 'Kwame Adu',
+                  role: 'Founder, Victory Entertainment Empire',
                   gradient: 'bg-black'
                 }
               ].map((testimonial, index) => (
@@ -202,7 +198,7 @@ export default function UseCases() {
                       <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-3.313.91-5.435 3.988-5.435 7.242h4v10h-8.544zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-3.313.91-5.435 3.988-5.435 7.242h3.969v10h-10.525z"/>
                     </svg>
                   </div>
-                  <p className="text-gray-700 mb-6 italic">"{testimonial.quote}"</p>
+                  <p className="text-gray-700 mb-6">"{testimonial.quote}"</p>
                   <div>
                     <p className="font-semibold text-black">{testimonial.author}</p>
                     <p className="text-sm text-gray-600">{testimonial.role}</p>
