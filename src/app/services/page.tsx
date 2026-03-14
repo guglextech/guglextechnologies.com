@@ -121,30 +121,41 @@ export default function Services() {
         </section>
 
         {/* Process Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">Our Process</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <div className="text-center mb-20">
+              <span className="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-4 block">
+                How We Work
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold text-black mb-4 leading-tight">
+                Our Process
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 A proven methodology that ensures successful project delivery
               </p>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {[
-                { step: '01', title: 'Discovery', desc: 'Understanding your needs and goals' },
-                { step: '02', title: 'Planning', desc: 'Creating a detailed roadmap and strategy' },
-                { step: '03', title: 'Development', desc: 'Building with agile methodologies' },
-                { step: '04', title: 'Launch & Support', desc: 'Deployment and ongoing maintenance' }
-              ].map((item, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-20 h-20 bg-black mx-auto mb-6 flex items-center justify-center">
-                    <span className="text-3xl font-bold text-white">{item.step}</span>
+
+            <div className="relative">
+              <div className="hidden md:block absolute top-6 left-[calc(12.5%+24px)] right-[calc(12.5%+24px)] h-px bg-gray-300" />
+
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-6">
+                {[
+                  { step: '01', title: 'Discovery', desc: 'Understanding your needs and goals' },
+                  { step: '02', title: 'Planning', desc: 'Creating a detailed roadmap and strategy' },
+                  { step: '03', title: 'Development', desc: 'Building with agile methodologies' },
+                  { step: '04', title: 'Launch & Support', desc: 'Deployment and ongoing maintenance' },
+                ].map((item, i) => (
+                  <div key={i} className="relative text-center group">
+                    <div className="w-12 h-12 bg-black text-white mx-auto mb-6 flex items-center justify-center text-sm font-bold relative z-10 group-hover:scale-110 transition-transform duration-300">
+                      {item.step}
+                    </div>
+                    <h3 className="text-xl font-bold text-black mb-2">{item.title}</h3>
+                    <p className="text-gray-600 text-[15px] leading-relaxed max-w-[220px] mx-auto">
+                      {item.desc}
+                    </p>
                   </div>
-                  <h3 className="text-2xl font-bold text-black mb-2">{item.title}</h3>
-                  <p className="text-gray-600">{item.desc}</p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>

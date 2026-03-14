@@ -15,7 +15,7 @@ export default function Home() {
             <div className="text-center animate-fade-in">
               <div className="inline-flex items-center gap-2 mb-8 px-5 py-2.5 bg-gray-50 text-sm font-medium text-gray-700 border border-gray-200">
                 <span className="w-2 h-2 bg-black"></span>
-                <span>Trusted by 22+ Companies Worldwide</span>
+                <span>Trusted , Proven and Reliable</span>
               </div>
               
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-[1.1] text-black tracking-tight">
