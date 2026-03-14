@@ -76,39 +76,54 @@ export default function UseCases() {
         </section>
 
         {/* Use Cases Grid */}
-        <section className="py-20 bg-white">
+        <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {useCases.map((useCase, index) => (
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
+              <div>
+                <span className="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-4 block">
+                  Our Work
+                </span>
+                <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight">
+                  Featured Projects
+                </h2>
+              </div>
+              <p className="text-gray-500 max-w-sm md:text-right">
+                Real solutions we&apos;ve built that drove measurable business impact.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {useCases.map((useCase, i) => (
                 <div
-                  key={index}
-                  className="group relative bg-white p-8 border border-gray-200 hover:border-black hover:shadow-xl transition-all duration-300 overflow-hidden"
+                  key={i}
+                  className="group bg-gray-50 hover:bg-black border border-gray-200 hover:border-black transition-all duration-500"
                 >
-                  <div className={`absolute top-0 right-0 w-32 h-32 ${useCase.gradient} opacity-5 -mr-16 -mt-16 group-hover:opacity-10 transition-opacity`}></div>
-                  
-                  <div className="relative z-10">
-                    <div className="flex items-start justify-between mb-6">
-                      <div className={`w-16 h-16 ${useCase.gradient} flex items-center justify-center text-white`}>
-                        <useCase.Icon className="w-7 h-7" strokeWidth={1.5} />
+                  <div className="p-8 md:p-10">
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="w-12 h-12 bg-white group-hover:bg-white/10 flex items-center justify-center transition-colors duration-500">
+                        <useCase.Icon className="w-6 h-6 text-black group-hover:text-white transition-colors duration-500" strokeWidth={1.5} />
                       </div>
-                      <span className="px-4 py-1 bg-gray-100 text-gray-700 text-sm font-medium border border-gray-200">
+                      <span className="text-xs font-semibold uppercase tracking-widest text-gray-400 group-hover:text-gray-500 transition-colors duration-500">
                         {useCase.industry}
                       </span>
                     </div>
-                    
-                    <h3 className="text-2xl font-bold text-black mb-4">{useCase.title}</h3>
-                    <p className="text-gray-600 mb-6">{useCase.description}</p>
-                    
-                    <div className="border-t border-gray-100 pt-6">
-                      <h4 className="text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wide">Key Results</h4>
-                      <div className="space-y-3">
-                        {useCase.results.map((result, idx) => (
-                          <div key={idx} className="flex items-center">
-                            <div className={`w-2 h-2 ${useCase.gradient} mr-3`}></div>
-                            <span className="text-gray-700">{result}</span>
-                          </div>
-                        ))}
-                      </div>
+
+                    <h3 className="text-xl font-bold text-black group-hover:text-white mb-3 transition-colors duration-500">
+                      {useCase.title}
+                    </h3>
+                    <p className="text-gray-600 group-hover:text-gray-400 leading-relaxed text-[15px] mb-8 transition-colors duration-500">
+                      {useCase.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-3">
+                      {useCase.results.map((result, idx) => (
+                        <span
+                          key={idx}
+                          className="px-3 py-1.5 bg-white group-hover:bg-white/10 border border-gray-200 group-hover:border-white/10 text-xs font-medium text-gray-700 group-hover:text-gray-300 transition-all duration-500"
+                        >
+                          {result}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>

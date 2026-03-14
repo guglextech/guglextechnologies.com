@@ -84,20 +84,22 @@ export default function About() {
         {/* Hero */}
         <section className="relative py-28 md:py-36 bg-black text-white overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-white/10 text-sm font-medium tracking-wide uppercase">
-              <span className="w-1.5 h-1.5 bg-white rounded-full" />
-              About Guglex
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-white/10 text-sm font-medium tracking-wide uppercase">
+                <span className="w-1.5 h-1.5 bg-white rounded-full" />
+                About Guglex
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-8">
+                We build technology
+                <span className="block text-gray-400">that builds businesses.</span>
+              </h1>
+              <p className="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
+                Guglex Technologies is a product-focused software company helping
+                businesses across Africa and beyond design, build, and scale
+                digital products that drive real results.
+              </p>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-8">
-              We build technology
-              <span className="block text-gray-400">that builds businesses.</span>
-            </h1>
-            <p className="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
-              Guglex Technologies is a product-focused software company helping
-              businesses across Africa and beyond design, build, and scale
-              digital products that drive real results.
-            </p>
           </div>
         </section>
 
