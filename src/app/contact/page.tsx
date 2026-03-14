@@ -9,22 +9,43 @@ export default function Contact() {
     name: '',
     email: '',
     company: '',
-    message: ''
+    websiteType: '',
+    message: '',
   });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', company: '', message: '' });
+    setStatus('loading');
+    setErrorMsg('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || 'Something went wrong.');
+      }
+
+      setStatus('success');
+      setFormData({ name: '', email: '', company: '', websiteType: '', message: '' });
+    } catch (err) {
+      setStatus('error');
+      setErrorMsg(err instanceof Error ? err.message : 'Failed to send message.');
+    }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
+    if (status === 'error') setStatus('idle');
   };
 
   return (
@@ -98,6 +119,32 @@ export default function Contact() {
                   </div>
                   
                   <div>
+                    <label htmlFor="websiteType" className="block text-sm font-medium text-gray-700 mb-2">
+                      Website Type Needed *
+                    </label>
+                    <select
+                      id="websiteType"
+                      name="websiteType"
+                      required
+                      value={formData.websiteType}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-black focus:border-black transition-all bg-white appearance-none"
+                    >
+                      <option value="" disabled>Select a website type</option>
+                      <option value="Business Website">Business Website</option>
+                      <option value="Small Business Website">Small Business Website</option>
+                      <option value="Company Website">Company Website</option>
+                      <option value="E-commerce Website">E-commerce Website</option>
+                      <option value="Portfolio Website">Portfolio Website</option>
+                      <option value="Service Website">Service Website</option>
+                      <option value="Website Redesign">Website Redesign</option>
+                      <option value="Custom Website">Payment Integration</option>
+                      <option value="Custom Website"> USSD Development</option>
+                      <option value="Not Sure (Need Advice)">Not Sure (Need Advice)</option>
+                    </select>
+                  </div>
+
+                  <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                       Message *
                     </label>
@@ -113,11 +160,32 @@ export default function Contact() {
                     />
                   </div>
                   
+                  {status === 'success' && (
+                    <div className="flex items-center gap-3 px-5 py-4 bg-gray-50 border border-gray-200 text-black">
+                      <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="font-medium">
+                        Message sent! We&apos;ll get back to you shortly.
+                      </span>
+                    </div>
+                  )}
+
+                  {status === 'error' && (
+                    <div className="flex items-center gap-3 px-5 py-4 bg-red-50 border border-red-200 text-red-800">
+                      <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01M12 3a9 9 0 100 18 9 9 0 000-18z" />
+                      </svg>
+                      <span className="font-medium">{errorMsg}</span>
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full px-8 py-4 bg-black text-white font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                    disabled={status === 'loading'}
+                    className="w-full px-8 py-4 bg-black text-white font-semibold hover:bg-gray-800 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Send Message
+                    {status === 'loading' ? 'Sending...' : 'Send Message'}
                   </button>
                 </form>
               </div>
