@@ -7,41 +7,25 @@ export default function Companies() {
     { 
       name: 'PSWU (Public Service Worker Union)', 
       industry: 'Technology', 
-      logo: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-      ), 
+      initials: 'PS',
       description: 'Leading software solutions provider' 
     },
     { 
       name: 'Directorate of DV Publication and LGM', 
       industry: 'Cloud Services', 
-      logo: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-        </svg>
-      ), 
+      initials: 'LG',
       description: 'Enterprise cloud infrastructure' 
     },
     { 
       name: 'Victory Entertainment Empire', 
-      industry: 'Energy', 
-      logo: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-      ), 
-      description: 'Sustainable energy solutions' 
+      industry: 'Entertainment', 
+      initials: 'VE',
+      description: 'Sustainable entertainment solutions' 
     },
     {
       name: 'Hubtel',
       industry: 'Technology',
-      logo: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-      ),
+      initials: 'Hu',
       description: 'Integration for payment gateway and ussd development.'
     }
   ];
@@ -147,8 +131,10 @@ export default function Companies() {
                   key={index}
                   className="group bg-white p-6 border border-gray-200 hover:border-black hover:shadow-xl transition-all duration-300 text-center cursor-pointer hover:scale-105"
                 >
-                  <div className="w-16 h-16 bg-gray-50 flex items-center justify-center mb-4 text-black group-hover:scale-110 transition-transform mx-auto">
-                    {company.logo}
+                  <div className="w-16 h-16 bg-gray-100 group-hover:bg-black flex items-center justify-center mb-4 transition-all duration-300 mx-auto">
+                    <span className="text-xl font-bold text-black group-hover:text-white transition-colors duration-300">
+                      {company.initials}
+                    </span>
                   </div>
                   <h3 className="font-bold text-black mb-2">{company.name}</h3>
                   <p className="text-sm text-gray-500 mb-2">{company.industry}</p>
