@@ -2,7 +2,6 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { getAllPosts } from '../../../lib/blog';
 import BlogClient from './BlogClient';
-import { PenLine } from 'lucide-react';
 
 export default function Blog() {
   const posts = getAllPosts();
@@ -12,32 +11,27 @@ export default function Blog() {
   return (
     <>
       <Navigation />
-      <main className="pt-16">
-        {/* Hero Section */}
-        <section className="relative py-24 bg-black text-white overflow-hidden">
-          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-white/10 flex items-center justify-center">
-                    <PenLine className="w-5 h-5 text-white" strokeWidth={1.5} />
-                  </div>
-                  <p className="text-sm font-medium tracking-[0.2em] uppercase text-gray-400">Blog</p>
-                </div>
-                <h1 className="text-5xl md:text-7xl font-bold text-white">Insights &<br />Ideas</h1>
-              </div>
-              <p className="text-gray-400 max-w-md md:text-right text-lg">
-                Tutorials, case studies, and perspectives from our engineering team.
-              </p>
-            </div>
+      <main className="pt-16 min-h-screen bg-gray-50/80">
+        <section className="border-b border-gray-200 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+            <p className="text-sm font-medium text-gray-500 mb-3">Blog</p>
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight mb-4">
+              Insights & ideas
+            </h1>
+            <p className="text-lg text-gray-600 max-w-2xl leading-relaxed">
+              Tutorials, case studies, and perspectives from our team on building
+              digital products in Africa and beyond.
+            </p>
           </div>
         </section>
 
-        {/* Blog Content */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <BlogClient posts={posts} featuredPost={featuredPost} remainingPosts={remainingPosts} />
+        <section className="py-12 md:py-16">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <BlogClient
+              posts={posts}
+              featuredPost={featuredPost}
+              remainingPosts={remainingPosts}
+            />
           </div>
         </section>
       </main>

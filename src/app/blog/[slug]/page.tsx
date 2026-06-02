@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { getAllPosts, getPostBySlug } from '../../../../lib/blog';
@@ -8,7 +9,7 @@ import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
 import rehypeRaw from 'rehype-raw';
 import rehypeStringify from 'rehype-stringify';
-import { ArrowLeft, Clock, User, Tag } from 'lucide-react';
+import { ArrowLeft, Clock, Tag } from 'lucide-react';
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -17,7 +18,11 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+export default async function BlogPost({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
 
@@ -34,81 +39,96 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const contentHtml = processedContent.toString();
 
   const formatDate = (dateStr: string) =>
-    new Date(dateStr).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    new Date(dateStr).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
 
   return (
     <>
       <Navigation />
-      <main className="pt-16">
-        {/* Hero */}
-        <section className="relative py-20 md:py-28 bg-black text-white overflow-hidden">
-          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-10 transition-colors group text-sm"
-            >
-              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" strokeWidth={1.5} />
-              Back to Blog
-            </Link>
+      <main className="pt-16 min-h-screen bg-gray-50/80">
+        <article>
+          <header className="border-b border-gray-200 bg-white">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+              <Link
+                href="/blog"
+                className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-gray-500 transition-colors hover:text-gray-900"
+              >
+                <ArrowLeft className="h-4 w-4" strokeWidth={2} />
+                Back to blog
+              </Link>
 
-            <div className="flex items-center gap-3 mb-6">
-              <span className="px-3 py-1 bg-white/10 text-white text-xs font-medium uppercase tracking-wider">
-                {post.category}
-              </span>
-              <span className="flex items-center gap-1.5 text-sm text-gray-400">
-                <Clock className="w-3.5 h-3.5" strokeWidth={1.5} />
-                {formatDate(post.date)}
-              </span>
+              <div className="mb-6 flex flex-wrap items-center gap-3 text-sm text-gray-500">
+                <span className="bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-700 border border-gray-200">
+                  {post.category}
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Clock className="h-3.5 w-3.5" strokeWidth={2} />
+                  {formatDate(post.date)}
+                </span>
+                <span>·</span>
+                <span>{post.author}</span>
+              </div>
+
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 tracking-tight leading-tight mb-6">
+                {post.title}
+              </h1>
+              <p className="text-lg text-gray-600 leading-relaxed">{post.excerpt}</p>
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">{post.title}</h1>
-            <p className="text-xl text-gray-400 leading-relaxed mb-8 max-w-4xl">{post.excerpt}</p>
-
-            <div className="flex items-center gap-2 text-sm text-gray-500">
-              <User className="w-4 h-4" strokeWidth={1.5} />
-              <span>{post.author}</span>
-            </div>
-          </div>
-        </section>
-
-        {/* Content */}
-        <article className="py-16 md:py-20 bg-white">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div
-              dangerouslySetInnerHTML={{ __html: contentHtml }}
-              className="blog-content"
-            />
-
-            {/* Tags */}
-            {post.tags.length > 0 && (
-              <div className="mt-16 pt-8 border-t border-gray-200">
-                <div className="flex items-center gap-2 mb-4">
-                  <Tag className="w-4 h-4 text-gray-400" strokeWidth={1.5} />
-                  <h3 className="text-sm font-semibold text-gray-700 uppercase tracking-wider">Tags</h3>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {post.tags.map((tag: string, index: number) => (
-                    <span
-                      key={index}
-                      className="px-4 py-1.5 bg-gray-50 text-gray-600 text-sm font-medium border border-gray-100 hover:border-black hover:text-black transition-all duration-300 cursor-default"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+            {post.image && (
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 md:pb-14">
+                <div className="relative aspect-[2/1] overflow-hidden border border-gray-200 bg-gray-100">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1152px) 100vw, 1152px"
+                    priority
+                  />
                 </div>
               </div>
             )}
+          </header>
 
-            {/* Back */}
-            <div className="mt-16 pt-8 border-t border-gray-200">
-              <Link
-                href="/blog"
-                className="group inline-flex items-center gap-2 text-black font-semibold text-sm hover:text-gray-600 transition-colors"
-              >
-                <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" strokeWidth={1.5} />
-                Back to All Posts
-              </Link>
+          <div className="py-12 md:py-16">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div
+                dangerouslySetInnerHTML={{ __html: contentHtml }}
+                className="blog-content border border-gray-200 bg-white p-8 md:p-10"
+              />
+
+              {post.tags.length > 0 && (
+                <div className="mt-10 border border-gray-200 bg-white p-6">
+                  <div className="mb-3 flex items-center gap-2 text-sm font-medium text-gray-700">
+                    <Tag className="h-4 w-4 text-gray-400" strokeWidth={2} />
+                    Tags
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {post.tags.map((tag: string, index: number) => (
+                      <span
+                        key={index}
+                        className="bg-gray-50 px-3 py-1 text-sm text-gray-600 border border-gray-200"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <div className="mt-10 pt-6">
+                <Link
+                  href="/blog"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-gray-900 hover:text-gray-600"
+                >
+                  <ArrowLeft className="h-4 w-4" strokeWidth={2} />
+                  All articles
+                </Link>
+              </div>
             </div>
           </div>
         </article>
