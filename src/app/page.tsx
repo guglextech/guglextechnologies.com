@@ -36,7 +36,7 @@ const products = [
   {
     name: 'Gyepayments',
     description: 'Business payment collection with mobile money, bank transfer, and cards.',
-    href: 'https://merchant.guglextechnologies.com',
+    href: 'https://merchant.guglextechnologies.com/landing-page?utm_source=guglex&utm_medium=website&utm_campaign=landing-page',
   },
 ];
 
