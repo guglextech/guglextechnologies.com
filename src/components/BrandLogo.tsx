@@ -1,17 +1,16 @@
 import Link from 'next/link';
 
-type LogoProps = {
+type BrandLogoProps = {
   href?: string;
   className?: string;
-  /** Show full wordmark (default) or mark only */
   variant?: 'full' | 'mark';
 };
 
-export default function Logo({
+export default function BrandLogo({
   href = '/',
   className = '',
   variant = 'full',
-}: LogoProps) {
+}: BrandLogoProps) {
   const isMark = variant === 'mark';
 
   // eslint-disable-next-line @next/next/no-img-element
@@ -20,7 +19,6 @@ export default function Logo({
       src={isMark ? '/logo-mark.svg' : '/logo.svg'}
       alt="Guglex"
       className={isMark ? 'h-6 w-6' : 'h-6 w-auto'}
-      decoding="async"
     />
   );
 

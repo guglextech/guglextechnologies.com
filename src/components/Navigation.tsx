@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 import { ChevronDown, ArrowUpRight } from 'lucide-react';
-import Logo from '@/components/Logo';
+import BrandLogo from '@/components/BrandLogo';
 
 const products = [
   {
@@ -54,7 +54,7 @@ export default function Navigation() {
       <div className="brand-bar" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <Logo />
+          <BrandLogo />
 
           {/* Desktop */}
           <div className="hidden items-center gap-8 md:flex">

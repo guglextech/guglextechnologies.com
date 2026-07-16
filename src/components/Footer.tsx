@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Logo from '@/components/Logo';
+import BrandLogo from '@/components/BrandLogo';
 
 const companyLinks = [
   { label: 'About', href: '/about' },
@@ -28,7 +28,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28">
         <div className="grid grid-cols-2 gap-x-10 gap-y-14 md:grid-cols-12 md:gap-x-12">
           <div className="col-span-2 md:col-span-4 lg:col-span-5">
-            <Logo />
+              <BrandLogo />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/50">
               Product-focused software for payments, utilities, and digital
               services across Africa.
