@@ -1,42 +1,28 @@
+import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import {
-  Target,
-  Eye,
-  Lightbulb,
-  ShieldCheck,
-  Zap,
-  Heart,
-} from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const values = [
   {
-    icon: ShieldCheck,
     title: 'Integrity',
-    color: 'bg-brand-blue',
     description:
-      'We operate with transparency and honesty, building trust through ethical practices in every engagement.',
+      'We operate with transparency and honesty, building trust through clear communication and ethical delivery in every engagement.',
   },
   {
-    icon: Lightbulb,
     title: 'Innovation',
-    color: 'bg-brand-green',
     description:
-      'We embrace emerging technologies and creative thinking to solve complex challenges others shy away from.',
+      'We apply emerging technology thoughtfully — solving real constraints with practical systems, not novelty for its own sake.',
   },
   {
-    icon: Zap,
     title: 'Excellence',
-    color: 'bg-brand-yellow',
     description:
-      'We hold ourselves to the highest standards — in code quality, design precision, and client communication.',
+      'We hold a high bar for code quality, design clarity, and client communication from discovery through launch and support.',
   },
   {
-    icon: Heart,
     title: 'Passion',
-    color: 'bg-brand-orange',
     description:
-      'We genuinely love building technology that matters. That energy shows in everything we ship.',
+      'We care about shipping technology that people rely on. That focus shows in the products and platforms we build.',
   },
 ];
 
@@ -46,123 +32,187 @@ export default function About() {
       <Navigation />
       <main className="pt-16">
         {/* Hero */}
-        <section className="relative py-28 md:py-36 bg-black text-white overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 brand-bar" />
-          <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-white/10 text-sm font-medium tracking-wide uppercase">
-                <span className="brand-dot" />
-                About Guglex
-              </div>
-              <h1 className="text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-8">
-                We build technology
-                <span className="block text-gray-400">that builds businesses.</span>
-              </h1>
-              <p className="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
-                Guglex Technologies is a product-focused software company helping
-                businesses across Africa and beyond design, build, and scale
-                digital products that drive real results.
+        <section className="relative overflow-hidden bg-black text-white">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(1,148,255,0.16),_transparent_55%)]" />
+          <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 sm:px-6 md:py-32 lg:px-8">
+            <p className="mb-6 text-sm font-semibold uppercase tracking-[0.25em] text-brand-blue">
+              About us
+            </p>
+            <h1 className="mb-6 max-w-3xl text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl">
+              We build technology that builds businesses.
+            </h1>
+            <p className="max-w-xl text-lg leading-relaxed text-white/65 md:text-xl">
+              Guglex Technologies is a product-focused software company helping
+              businesses across Africa and beyond design, build, and scale
+              digital products that drive real results.
+            </p>
+          </div>
+        </section>
+
+        {/* Who we are */}
+        <section className="border-b border-gray-200 bg-white py-20 md:py-28">
+          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-8">
+            <div className="lg:col-span-4">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-brand-blue">
+                Who we are
+              </p>
+              <h2 className="text-3xl font-bold tracking-tight text-black md:text-4xl">
+                A focused product and payments company.
+              </h2>
+            </div>
+            <div className="space-y-6 text-lg leading-relaxed text-gray-600 lg:col-span-7 lg:col-start-6">
+              <p>
+                We design and ship digital products, payment systems, and
+                platforms for companies that need reliable technology — not
+                slide decks. From consumer payments to business integrations,
+                our work is built for production use.
+              </p>
+              <p>
+                Alongside client delivery, we operate our own products, including{' '}
+                <a
+                  href="https://ewalepay.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-brand-blue hover:underline"
+                >
+                  Ewale
+                </a>
+                , so we stay close to the same challenges our partners face:
+                clarity, speed, trust, and systems that hold up after launch.
               </p>
             </div>
           </div>
         </section>
 
         {/* Mission & Vision */}
-        <section className="py-24 bg-gray-50 border-y border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mb-12">
-              <p className="text-sm font-semibold uppercase tracking-widest text-brand-blue mb-4">
+        <section className="bg-white py-20 md:py-28">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-14 max-w-2xl md:mb-16">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-brand-blue">
                 Foundation
               </p>
-              <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-                Mission and Vision
+              <h2 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-4xl">
+                Mission and vision
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-lg leading-relaxed text-gray-600">
                 Clear principles that shape how we build, partner, and grow with
                 every client.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <article className="bg-white border border-gray-200 p-8 md:p-10">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-11 h-11 bg-brand-blue flex items-center justify-center">
-                    <Target className="w-5 h-5 text-white" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="text-sm font-semibold uppercase tracking-widest text-gray-500">
-                    Our Mission
-                  </h3>
+            <div className="border-t border-gray-200">
+              <article className="grid grid-cols-1 gap-4 border-b border-gray-200 py-10 md:grid-cols-12 md:gap-10 md:py-14">
+                <div className="md:col-span-3">
+                  <p className="text-sm font-semibold uppercase tracking-[0.15em] text-gray-400">
+                    Mission
+                  </p>
                 </div>
-                <p className="text-2xl md:text-3xl font-bold text-black mb-5 leading-tight">
-                  Empowering businesses through purposeful technology.
-                </p>
-                <p className="text-gray-600 text-lg leading-relaxed">
-                  We exist to bridge the gap between complex technological
-                  challenges and practical, scalable solutions that create
-                  measurable business value.
-                </p>
+                <div className="md:col-span-9">
+                  <h3 className="mb-4 text-xl font-bold tracking-tight text-black md:text-2xl">
+                    Empower businesses through purposeful technology.
+                  </h3>
+                  <p className="max-w-3xl text-base leading-relaxed text-gray-600 md:text-lg">
+                    We bridge complex technical challenges and practical,
+                    scalable solutions that create measurable business value —
+                    from first prototype to production systems.
+                  </p>
+                </div>
               </article>
 
-              <article className="bg-white border border-gray-200 p-8 md:p-10">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-11 h-11 bg-brand-green flex items-center justify-center">
-                    <Eye className="w-5 h-5 text-white" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="text-sm font-semibold uppercase tracking-widest text-gray-500">
-                    Our Vision
-                  </h3>
+              <article className="grid grid-cols-1 gap-4 border-b border-gray-200 py-10 md:grid-cols-12 md:gap-10 md:py-14">
+                <div className="md:col-span-3">
+                  <p className="text-sm font-semibold uppercase tracking-[0.15em] text-gray-400">
+                    Vision
+                  </p>
                 </div>
-                <p className="text-2xl md:text-3xl font-bold text-black mb-5 leading-tight">
-                  To be Africa&apos;s most trusted technology partner.
-                </p>
-                <p className="text-gray-600 text-lg leading-relaxed">
-                  We envision a future where African businesses lead on the
-                  global stage — powered by world-class digital infrastructure
-                  and products built right here.
-                </p>
+                <div className="md:col-span-9">
+                  <h3 className="mb-4 text-xl font-bold tracking-tight text-black md:text-2xl">
+                    Become Africa&apos;s most trusted technology partner.
+                  </h3>
+                  <p className="max-w-3xl text-base leading-relaxed text-gray-600 md:text-lg">
+                    We want African businesses to compete globally on the
+                    strength of world-class digital infrastructure and products
+                    built with local context and global standards.
+                  </p>
+                </div>
               </article>
             </div>
           </div>
         </section>
 
-        {/* Core Values */}
-        <section className="py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-                Core Values
+        {/* Values */}
+        <section className="border-y border-gray-200 bg-gray-50 py-20 md:py-28">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-14 max-w-2xl md:mb-16">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-brand-blue">
+                Values
+              </p>
+              <h2 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-4xl">
+                How we work.
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                The principles that shape our culture, guide our decisions, and
-                define how we show up for every client.
+              <p className="text-lg leading-relaxed text-gray-600">
+                The standards that guide our decisions and how we show up for
+                every engagement.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {values.map((value) => (
-                <div
+            <div className="border-t border-gray-200">
+              {values.map((value, index) => (
+                <article
                   key={value.title}
-                  className="group bg-gray-50 p-8 border border-gray-200 hover:border-brand-blue hover:bg-white transition-all duration-300"
+                  className="grid grid-cols-1 gap-3 border-b border-gray-200 py-8 md:grid-cols-12 md:gap-8 md:py-10"
                 >
-                  <div className={`w-12 h-12 ${value.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <value.icon
-                      className={`w-6 h-6 ${value.color === 'bg-brand-yellow' ? 'text-black' : 'text-white'}`}
-                      strokeWidth={1.5}
-                    />
+                  <div className="md:col-span-1">
+                    <span className="text-sm font-semibold tabular-nums text-brand-blue">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
                   </div>
-                  <h3 className="text-xl font-bold text-black mb-3">
-                    {value.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {value.description}
-                  </p>
-                </div>
+                  <div className="md:col-span-3">
+                    <h3 className="text-lg font-semibold tracking-tight text-black">
+                      {value.title}
+                    </h3>
+                  </div>
+                  <div className="md:col-span-8">
+                    <p className="max-w-2xl text-base leading-relaxed text-gray-600">
+                      {value.description}
+                    </p>
+                  </div>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
+        {/* CTA */}
+        <section className="relative overflow-hidden bg-black text-white">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(1,148,255,0.15),_transparent_50%)]" />
+          <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-24 lg:px-8">
+            <div className="max-w-2xl">
+              <h2 className="mb-5 text-3xl font-bold tracking-tight md:text-4xl">
+                Let&apos;s build what&apos;s next.
+              </h2>
+              <p className="mb-8 text-lg leading-relaxed text-white/65">
+                Tell us about your product, payment flow, or platform challenge.
+                We&apos;ll respond with a clear next step.
+              </p>
+              <div className="flex flex-col gap-4 sm:flex-row">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 bg-brand-blue px-8 py-4 font-semibold text-white transition-colors hover:bg-[#0176cc]"
+                >
+                  Start a conversation
+                  <ArrowRight className="h-4 w-4" strokeWidth={2} />
+                </Link>
+                <Link
+                  href="/use-cases"
+                  className="inline-flex items-center justify-center border border-white/25 px-8 py-4 font-semibold text-white transition-colors hover:border-white hover:bg-white/5"
+                >
+                  See our work
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </>
