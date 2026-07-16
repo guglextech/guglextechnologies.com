@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 import { ChevronDown, ArrowUpRight } from 'lucide-react';
+import Logo from '@/components/Logo';
 
 const products = [
   {
@@ -53,9 +54,7 @@ export default function Navigation() {
       <div className="brand-bar" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="text-xl font-semibold tracking-tight text-white transition-colors hover:text-brand-blue">
-            Guglex
-          </Link>
+          <Logo />
 
           {/* Desktop */}
           <div className="hidden items-center gap-8 md:flex">
