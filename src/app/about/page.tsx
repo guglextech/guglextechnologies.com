@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import {
@@ -8,7 +7,6 @@ import {
   ShieldCheck,
   Zap,
   Heart,
-  ArrowRight,
 } from 'lucide-react';
 
 const values = [
@@ -39,24 +37,6 @@ const values = [
     color: 'bg-brand-orange',
     description:
       'We genuinely love building technology that matters. That energy shows in everything we ship.',
-  },
-];
-
-const leadership = [
-  {
-    name: 'Samuel Acquah',
-    role: 'Co-Founder & CEO',
-    bio: 'Leads product strategy and growth partnerships, ensuring every solution aligns with measurable business outcomes.',
-  },
-  {
-    name: 'Ama Mensah',
-    role: 'Head of Engineering',
-    bio: 'Oversees platform architecture and delivery quality, with a focus on scalability, performance, and reliability.',
-  },
-  {
-    name: 'Daniel Owusu',
-    role: 'Head of Design',
-    bio: 'Drives user-centered design systems that balance clarity, usability, and strong visual communication.',
   },
 ];
 
@@ -183,99 +163,6 @@ export default function About() {
           </div>
         </section>
 
-        {/* Note From Co-Founder */}
-        <section className="py-24 bg-gray-50 border-y border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="aspect-[4/3] w-full border border-dashed border-gray-400 bg-white flex items-center justify-center text-sm font-medium uppercase tracking-wide text-gray-500">
-                Co-Founder Image Placeholder
-              </div>
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-widest text-brand-orange mb-4">
-                  Note From Our Co-Founder
-                </p>
-                <h2 className="text-3xl md:text-4xl font-bold text-black mb-6 leading-tight">
-                  We build with intention, not just speed.
-                </h2>
-                <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                  From day one, Guglex has focused on one principle: technology
-                  should solve real problems and unlock real growth.
-                </p>
-                <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                  We are committed to building products that are reliable,
-                  scalable, and genuinely useful for the people and teams who
-                  rely on them every day.
-                </p>
-                <p className="text-black font-semibold">Samuel Acquah</p>
-                <p className="text-gray-600">Co-Founder, Guglex Technologies</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Leadership */}
-        <section className="py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl mb-14">
-              <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-                Meet the Leadership
-              </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                A focused team of builders and operators guiding strategy,
-                execution, and long-term client success.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {leadership.map((leader) => (
-                <article
-                  key={leader.name}
-                  className="border border-gray-200 bg-gray-50 p-6"
-                >
-                  <div className="h-44 border border-dashed border-gray-400 bg-white flex items-center justify-center text-xs font-medium uppercase tracking-wide text-gray-500 mb-5">
-                    Leadership Image Placeholder
-                  </div>
-                  <h3 className="text-xl font-bold text-black mb-1">
-                    {leader.name}
-                  </h3>
-                  <p className="text-sm font-semibold uppercase tracking-wide text-gray-500 mb-3">
-                    {leader.role}
-                  </p>
-                  <p className="text-gray-600 leading-relaxed">{leader.bio}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Careers */}
-        <section className="py-24 bg-black text-white">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="border border-white/20 p-10 md:p-14">
-              <div className="brand-bar mb-8 max-w-[8rem]" />
-              <p className="text-sm font-semibold uppercase tracking-widest text-brand-yellow mb-4">
-                Careers
-              </p>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                Join us in building meaningful digital products.
-              </h2>
-              <p className="text-lg text-gray-300 max-w-3xl leading-relaxed mb-8">
-                We are always looking for thoughtful engineers, designers, and
-                problem-solvers who care deeply about quality and impact.
-              </p>
-              <div className="h-40 border border-dashed border-white/40 bg-white/5 flex items-center justify-center text-xs font-medium uppercase tracking-wide text-gray-300 mb-8">
-                Team Culture Image Placeholder
-              </div>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-brand-blue text-white font-semibold hover:bg-[#0176cc] transition-colors duration-300"
-              >
-                Send Your Resume
-                <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
-              </Link>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </>

@@ -18,6 +18,66 @@ const caseStudies = [
     href: 'https://ewalepay.com',
   },
   {
+    name: 'Jolee Bakery',
+    category: 'Ecommerce & payments',
+    summary:
+      'An ecommerce storefront for bakery orders with integrated checkout — Hubtel for local mobile money and Stripe for card payments, so customers can pay the way that works for them.',
+    outcomes: [
+      'Ecommerce storefront',
+      'Hubtel payment integration',
+      'Stripe card payments',
+      'Order & checkout flow',
+    ],
+  },
+  {
+    name: 'Victory Entertainment Empire',
+    category: 'Entertainment platform',
+    summary:
+      'A digital platform for Victory Entertainment Empire supporting events, promotions, and audience engagement with a clean experience built for fans and organizers.',
+    outcomes: [
+      'Brand & event presence',
+      'Audience-facing experience',
+      'Content & promotions',
+      'Mobile-ready delivery',
+    ],
+  },
+  {
+    name: 'Public Sector Workers Union',
+    category: 'Membership platform',
+    summary:
+      'A digital presence and member-facing experience for the Public Sector Workers Union — built to communicate programs, updates, and services clearly to members.',
+    outcomes: [
+      'Union information hub',
+      'Member-focused content',
+      'Clear service navigation',
+      'Reliable public access',
+    ],
+  },
+  {
+    name: 'Wotiriye Lottery',
+    category: 'Lottery & digital services',
+    summary:
+      'A lottery platform experience designed for secure participation, clear draws, and trustworthy digital workflows for players and operators.',
+    outcomes: [
+      'Lottery participation flow',
+      'Secure transaction handling',
+      'Clear draw experience',
+      'Operator-ready workflows',
+    ],
+  },
+  {
+    name: 'DV Publication',
+    category: 'Publishing platform',
+    summary:
+      'A publishing-focused digital platform for DV Publication — helping content reach readers with a structured, professional presentation online.',
+    outcomes: [
+      'Publication presence',
+      'Content presentation',
+      'Reader-friendly layout',
+      'Scalable content structure',
+    ],
+  },
+  {
     name: 'Hubtel Integration',
     category: 'Payment integration',
     summary:
@@ -76,8 +136,8 @@ export default function UseCases() {
                 Projects that moved money and served users.
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Focused delivery around consumer payments and gateway
-                integrations — built to work in production, not just in demos.
+                Selected client work across ecommerce, payments, publishing, and
+                membership platforms — built to work in production.
               </p>
             </div>
 
@@ -89,7 +149,7 @@ export default function UseCases() {
                 >
                   <div className="lg:col-span-1">
                     <span className="text-sm font-semibold text-brand-blue tabular-nums">
-                      0{index + 1}
+                      {String(index + 1).padStart(2, '0')}
                     </span>
                   </div>
 
@@ -97,7 +157,7 @@ export default function UseCases() {
                     <p className="text-sm font-medium text-gray-500 mb-2">
                       {study.category}
                     </p>
-                    <h3 className="text-2xl md:text-3xl font-bold text-black tracking-tight group-hover:text-brand-blue transition-colors">
+                    <h3 className="text-lg md:text-xl font-bold text-black tracking-tight group-hover:text-brand-blue transition-colors">
                       {study.name}
                     </h3>
                     {study.href && (
