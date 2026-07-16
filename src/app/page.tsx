@@ -29,14 +29,14 @@ const capabilities = [
 
 const products = [
   {
-    name: 'Ewale',
+    name: 'Ewale - Consumer Payments(*714*22#)',
     description: 'Consumer payments for airtime, data, ECG prepaid, and WASSCE results.',
     href: 'https://ewalepay.com',
   },
   {
     name: 'Gyepayments',
     description: 'Business payment collection with mobile money, bank transfer, and cards.',
-    href: 'https://gyepayments.guglextechnologies.com',
+    href: 'https://merchant.guglextechnologies.com',
   },
 ];
 
@@ -175,7 +175,7 @@ export default function Home() {
                   Our products
                 </p>
                 <h2 className="text-4xl md:text-5xl font-bold text-black tracking-tight mb-5">
-                  Platforms we build and operate.
+                  Platforms we build and operate. 
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
                   Beyond client work, we run products that move money and connect
