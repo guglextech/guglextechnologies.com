@@ -12,7 +12,7 @@ const productLinks = [
   { label: 'Ewale', href: 'https://ewalepay.com' },
   {
     label: 'Gyepayments',
-    href: 'https://gyepayment.guglextechnologies.com',
+    href: 'https://merchant.guglextechnologies.com/login',
   },
 ];
 
