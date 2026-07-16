@@ -1,53 +1,127 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { ChevronDown, ArrowUpRight } from 'lucide-react';
+
+const products = [
+  {
+    name: 'Ewale',
+    description:
+      'Buy WASSCE results, ECG prepaid, airtime, and data bundles in one place. Fast, simple, and available on all networks.',
+    href: 'https://ewalepay.com',
+  },
+  {
+    name: 'Gyepayments',
+    description:
+      'Collect and manage payments for your business with mobile money, bank transfer, and card support built for African markets.',
+    href: 'https://gyepayments.guglextechnologies.com',
+  },
+];
+
+const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'About us', href: '/about' },
+  { label: 'Research', href: '/use-cases' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Contact', href: '/contact' },
+];
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const productsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (productsRef.current && !productsRef.current.contains(event.target as Node)) {
+        setProductsOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const closeMobile = () => {
+    setIsOpen(false);
+    setMobileProductsOpen(false);
+  };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-black">
-              Guglex
-            </span>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black shadow-none">
+      <div className="brand-bar" />
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          <Link href="/" className="text-xl font-semibold tracking-tight text-white transition-colors hover:text-brand-blue">
+            Guglex
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-black transition-colors font-medium">
+          {/* Desktop */}
+          <div className="hidden items-center gap-8 md:flex">
+            <Link
+              href="/"
+              className="text-sm font-medium text-white/80 transition-colors hover:text-brand-blue"
+            >
               Home
             </Link>
-            <Link href="/about" className="text-gray-700 hover:text-black transition-colors font-medium">
-              About
-            </Link>
-            <Link href="/services" className="text-gray-700 hover:text-black transition-colors font-medium">
-              Services
-            </Link>
-            <Link href="/use-cases" className="text-gray-700 hover:text-black transition-colors font-medium">
-              Use Cases
-            </Link>
-            <Link href="/companies" className="text-gray-700 hover:text-black transition-colors font-medium">
-              Companies
-            </Link>
-            <Link href="/blog" className="text-gray-700 hover:text-black transition-colors font-medium">
-              Blog
-            </Link>
-            <Link 
-              href="/contact" 
-              className="px-6 py-2 bg-black text-white hover:bg-gray-800 transition-all duration-300 font-medium"
-            >
-              Contact Us
-            </Link>
+
+            <div ref={productsRef} className="relative">
+              <button
+                type="button"
+                onClick={() => setProductsOpen((open) => !open)}
+                className="inline-flex items-center gap-1 text-sm font-medium text-white/80 transition-colors hover:text-brand-blue"
+                aria-expanded={productsOpen}
+                aria-haspopup="true"
+              >
+                Products
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${productsOpen ? 'rotate-180' : ''}`}
+                  strokeWidth={2}
+                />
+              </button>
+
+              {productsOpen && (
+                <div className="absolute left-0 top-full z-50 mt-3 w-[22rem] border border-white/10 bg-[#111111]">
+                  <div className="divide-y divide-white/10">
+                    {products.map((product) => (
+                      <div key={product.name} className="p-5">
+                        <p className="text-sm font-semibold text-white">{product.name}</p>
+                        <p className="mt-2 text-sm leading-relaxed text-white/70">
+                          {product.description}
+                        </p>
+                        <a
+                          href={product.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-brand-blue hover:text-brand-green"
+                        >
+                          Learn more
+                          <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2} />
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {navLinks.slice(1).map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-white/80 transition-colors hover:text-brand-blue"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile toggle */}
           <button
+            type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-gray-700 hover:bg-gray-100"
+            className="p-2 text-white hover:bg-white/10 md:hidden"
             aria-label="Toggle menu"
           >
             <svg
@@ -69,59 +143,64 @@ export default function Navigation() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden border-t border-gray-200 bg-white">
-          <div className="px-4 pt-2 pb-4 space-y-2">
+        <div className="border-t border-white/10 bg-black md:hidden">
+          <div className="space-y-1 px-4 py-3">
             <Link
               href="/"
-              className="block px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-black transition-colors"
-              onClick={() => setIsOpen(false)}
+              className="block px-3 py-2.5 text-sm font-medium text-white/85 hover:bg-white/10 hover:text-white"
+              onClick={closeMobile}
             >
               Home
             </Link>
-            <Link
-              href="/about"
-              className="block px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-black transition-colors"
-              onClick={() => setIsOpen(false)}
+
+            <button
+              type="button"
+              onClick={() => setMobileProductsOpen((open) => !open)}
+              className="flex w-full items-center justify-between px-3 py-2.5 text-sm font-medium text-white/85 hover:bg-white/10 hover:text-white"
+              aria-expanded={mobileProductsOpen}
             >
-              About
-            </Link>
-            <Link
-              href="/services"
-              className="block px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-black transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Services
-            </Link>
-            <Link
-              href="/use-cases"
-              className="block px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-black transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Use Cases
-            </Link>
-            <Link
-              href="/companies"
-              className="block px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-black transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Companies
-            </Link>
-            <Link
-              href="/blog"
-              className="block px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-black transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Blog
-            </Link>
-            <Link
-              href="/contact"
-              className="block px-3 py-2 bg-black text-white text-center font-medium"
-              onClick={() => setIsOpen(false)}
-            >
-              Contact Us
-            </Link>
+              Products
+              <ChevronDown
+                className={`h-4 w-4 transition-transform ${mobileProductsOpen ? 'rotate-180' : ''}`}
+                strokeWidth={2}
+              />
+            </button>
+
+            {mobileProductsOpen && (
+              <div className="ml-3 border-l border-white/20 pl-3">
+                {products.map((product) => (
+                  <div key={product.name} className="border-b border-white/10 px-3 py-4 last:border-b-0">
+                    <p className="text-sm font-semibold text-white">{product.name}</p>
+                    <p className="mt-1.5 text-sm leading-relaxed text-white/70">
+                      {product.description}
+                    </p>
+                    <a
+                      href={product.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-white"
+                      onClick={closeMobile}
+                    >
+                      Learn more
+                      <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2} />
+                    </a>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {navLinks.slice(1).map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="block px-3 py-2.5 text-sm font-medium text-white/85 hover:bg-white/10 hover:text-white"
+                onClick={closeMobile}
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       )}

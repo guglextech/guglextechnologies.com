@@ -63,6 +63,7 @@ export default function Companies() {
       <main className="pt-16">
         {/* Hero Section */}
         <section className="relative py-20 bg-black text-white overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 brand-bar" />
           <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">Companies We've Worked With</h1>
@@ -77,7 +78,7 @@ export default function Companies() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
               <div>
-                <p className="text-sm font-medium tracking-[0.2em] uppercase text-gray-400 mb-3">Collaborations</p>
+                <p className="text-sm font-medium tracking-[0.2em] uppercase text-brand-blue mb-3">Collaborations</p>
                 <h2 className="text-4xl md:text-5xl font-bold text-black">Featured Partners</h2>
               </div>
               <p className="text-gray-500 max-w-sm md:text-right">
@@ -108,7 +109,7 @@ export default function Companies() {
                     {partner.description}
                   </p>
 
-                  <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-white transition-all duration-700 group-hover:w-full" />
+                  <div className="absolute bottom-0 left-0 h-[2px] w-0 brand-gradient transition-all duration-700 group-hover:w-full" />
                 </div>
               ))}
             </div>
@@ -129,9 +130,9 @@ export default function Companies() {
               {companies.map((company, index) => (
                 <div
                   key={index}
-                  className="group bg-white p-6 border border-gray-200 hover:border-black hover:shadow-xl transition-all duration-300 text-center cursor-pointer hover:scale-105"
+                  className="group bg-white p-6 border border-gray-200 hover:border-brand-blue transition-all duration-300 text-center cursor-pointer hover:scale-105"
                 >
-                  <div className="w-16 h-16 bg-gray-100 group-hover:bg-black flex items-center justify-center mb-4 transition-all duration-300 mx-auto">
+                  <div className="w-16 h-16 bg-gray-100 group-hover:bg-brand-blue flex items-center justify-center mb-4 transition-all duration-300 mx-auto">
                     <span className="text-xl font-bold text-black group-hover:text-white transition-colors duration-300">
                       {company.initials}
                     </span>
@@ -147,15 +148,16 @@ export default function Companies() {
 
 
         {/* CTA Section */}
-        <section className="py-20 bg-black text-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="bg-black text-white">
+          <div className="brand-bar" />
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Join Our Growing Network</h2>
             <p className="text-xl text-gray-300 mb-8">
               Partner with us and experience the difference that innovative technology can make
             </p>
             <a
               href="/contact"
-              className="inline-block px-8 py-4 bg-white text-black font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              className="inline-block px-8 py-4 bg-brand-blue text-white font-semibold hover:bg-[#0176cc] transition-all duration-300"
             >
               Become a Partner
             </a>

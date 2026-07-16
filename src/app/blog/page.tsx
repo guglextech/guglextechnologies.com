@@ -14,7 +14,7 @@ export default function Blog() {
       <main className="pt-16 min-h-screen bg-gray-50/80">
         <section className="border-b border-gray-200 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
-            <p className="text-sm font-medium text-gray-500 mb-3">Blog</p>
+            <p className="text-sm font-medium text-brand-blue mb-3">Blog</p>
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight mb-4">
               Insights & ideas
             </h1>

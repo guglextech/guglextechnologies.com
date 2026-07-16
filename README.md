@@ -34,3 +34,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+## Brand Colors
+
+| Token | Hex | Usage |
+|-------|-----|--------|
+| Blue | `#0194FF` | Primary CTAs, links, focus rings |
+| Green | `#01B378` | Success, checkmarks, secondary accents |
+| Yellow | `#F8BB06` | Highlights, badges, eyebrows |
+| Orange | `#FE6801` | Featured accents, warm emphasis |
+
+Tailwind classes: `brand-blue`, `brand-green`, `brand-yellow`, `brand-orange`.

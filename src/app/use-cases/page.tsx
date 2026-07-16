@@ -19,7 +19,7 @@ export default function UseCases() {
         '50% reduction in page load time',
         '99.9% uptime achieved'
       ],
-      gradient: 'bg-black',
+      gradient: 'bg-brand-blue',
       Icon: ShoppingCart,
     },
     {
@@ -31,7 +31,7 @@ export default function UseCases() {
         '99.9% availability',
         '24/7 support'
       ],
-      gradient: 'bg-black',
+      gradient: 'bg-brand-green',
       Icon: Smartphone,
     },
     {
@@ -43,7 +43,7 @@ export default function UseCases() {
         '99.9% availability',
         '24/7 support'
       ],
-      gradient: 'bg-black',
+      gradient: 'bg-brand-yellow',
       Icon: CreditCard,
     },
     {
@@ -55,7 +55,7 @@ export default function UseCases() {
         '99.9% availability',
         '24/7 support'
       ],
-      gradient: 'bg-black',
+      gradient: 'bg-brand-orange',
       Icon: CreditCard,
     }
   ];
@@ -66,6 +66,7 @@ export default function UseCases() {
       <main className="pt-16">
         {/* Hero Section */}
         <section className="relative py-20 bg-black text-white overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 brand-bar" />
           <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">Use Cases</h1>
@@ -80,7 +81,7 @@ export default function UseCases() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
               <div>
-                <span className="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-4 block">
+                <span className="text-sm font-semibold uppercase tracking-widest text-brand-blue mb-4 block">
                   Our Work
                 </span>
                 <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight">
@@ -100,8 +101,8 @@ export default function UseCases() {
                 >
                   <div className="p-8 md:p-10">
                     <div className="flex items-center justify-between mb-6">
-                      <div className="w-12 h-12 bg-white group-hover:bg-white/10 flex items-center justify-center transition-colors duration-500">
-                        <useCase.Icon className="w-6 h-6 text-black group-hover:text-white transition-colors duration-500" strokeWidth={1.5} />
+                      <div className={`w-12 h-12 ${useCase.gradient} flex items-center justify-center transition-colors duration-500`}>
+                        <useCase.Icon className={`w-6 h-6 ${useCase.gradient === 'bg-brand-yellow' ? 'text-black' : 'text-white'}`} strokeWidth={1.5} />
                       </div>
                       <span className="text-xs font-semibold uppercase tracking-widest text-gray-400 group-hover:text-gray-500 transition-colors duration-500">
                         {useCase.industry}
@@ -133,11 +134,12 @@ export default function UseCases() {
         </section>
 
         {/* Industries Section */}
-        <section className="py-24 bg-black text-white overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="bg-black text-white overflow-hidden">
+          <div className="brand-bar" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
               <div>
-                <p className="text-sm font-medium tracking-[0.2em] uppercase text-gray-400 mb-3">Expertise</p>
+                <p className="text-sm font-medium tracking-[0.2em] uppercase text-brand-yellow mb-3">Expertise</p>
                 <h2 className="text-4xl md:text-5xl font-bold text-white">Industries We Serve</h2>
               </div>
               <p className="text-gray-400 max-w-md md:text-right">
@@ -164,9 +166,9 @@ export default function UseCases() {
                   key={index}
                   className="group relative bg-black p-8 flex flex-col items-start gap-4 cursor-pointer transition-colors duration-300 hover:bg-gray-900"
                 >
-                  <industry.Icon className="w-7 h-7 text-gray-400 transition-all duration-300 group-hover:text-white group-hover:scale-110" strokeWidth={1.5} />
+                  <industry.Icon className="w-7 h-7 text-gray-400 transition-all duration-300 group-hover:text-brand-blue group-hover:scale-110" strokeWidth={1.5} />
                   <h3 className="text-base font-semibold text-white tracking-wide">{industry.name}</h3>
-                  <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-white transition-all duration-500 group-hover:w-full" />
+                  <div className="absolute bottom-0 left-0 h-[2px] w-0 brand-gradient transition-all duration-500 group-hover:w-full" />
                 </div>
               ))}
             </div>
@@ -189,19 +191,19 @@ export default function UseCases() {
                   quote: 'The Union needed a way to collect membership dues from our members. We needed a way to collect payments and rewards for our players.',
                   author: 'Samuel Osei',
                   role: 'PSWU (Public Service Worker Union)',
-                  gradient: 'bg-black'
+                  gradient: 'bg-brand-blue'
                 },
                 {
                   quote: 'We run live games on shortcodes and players buy tickets to participate. We are able to collect payments and rewards for our players.',
                   author: 'Kwame Kankam',
                   role: 'Director, Directorate of DV Publication and LGM',
-                  gradient: 'bg-black'
+                  gradient: 'bg-brand-green'
                 },
                 {
                   quote: 'Guglex built and develop USSD and payment gateway integration for us. We run a reality show and we needed a way to collect votes from our viewers.',
                   author: 'Kwame Adu',
                   role: 'Founder, Victory Entertainment Empire',
-                  gradient: 'bg-black'
+                  gradient: 'bg-brand-orange'
                 }
               ].map((testimonial, index) => (
                 <div
@@ -225,15 +227,16 @@ export default function UseCases() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-black text-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="bg-black text-white">
+          <div className="brand-bar" />
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Have a Project in Mind?</h2>
             <p className="text-xl text-gray-300 mb-8">
               Let's discuss how we can help solve your business challenges
             </p>
             <Link
               href="/contact"
-              className="inline-block px-8 py-4 bg-white text-black font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              className="inline-block px-8 py-4 bg-brand-blue text-white font-semibold hover:bg-[#0176cc] transition-all duration-300"
             >
               Start Your Project
             </Link>

@@ -5,75 +5,59 @@ import {
   Target,
   Eye,
   Lightbulb,
-  Users,
   ShieldCheck,
   Zap,
   Heart,
   ArrowRight,
-  CheckCircle2,
 } from 'lucide-react';
 
 const values = [
   {
     icon: ShieldCheck,
     title: 'Integrity',
+    color: 'bg-brand-blue',
     description:
       'We operate with transparency and honesty, building trust through ethical practices in every engagement.',
   },
   {
     icon: Lightbulb,
     title: 'Innovation',
+    color: 'bg-brand-green',
     description:
       'We embrace emerging technologies and creative thinking to solve complex challenges others shy away from.',
   },
   {
     icon: Zap,
     title: 'Excellence',
+    color: 'bg-brand-yellow',
     description:
       'We hold ourselves to the highest standards — in code quality, design precision, and client communication.',
   },
   {
     icon: Heart,
     title: 'Passion',
+    color: 'bg-brand-orange',
     description:
       'We genuinely love building technology that matters. That energy shows in everything we ship.',
   },
 ];
 
-const milestones = [
+const leadership = [
   {
-    year: '2018',
-    title: 'Founded',
-    description:
-      'Started with a clear mission: help African businesses compete globally through technology.',
+    name: 'Samuel Acquah',
+    role: 'Co-Founder & CEO',
+    bio: 'Leads product strategy and growth partnerships, ensuring every solution aligns with measurable business outcomes.',
   },
   {
-    year: '2020',
-    title: 'First Major Clients',
-    description:
-      'Delivered enterprise-grade solutions across fintech, e-commerce, and logistics sectors.',
+    name: 'Ama Mensah',
+    role: 'Head of Engineering',
+    bio: 'Oversees platform architecture and delivery quality, with a focus on scalability, performance, and reliability.',
   },
   {
-    year: '2022',
-    title: 'Team Expansion',
-    description:
-      'Grew to a cross-functional team of engineers, designers, and strategists serving clients across industries.',
+    name: 'Daniel Owusu',
+    role: 'Head of Design',
+    bio: 'Drives user-centered design systems that balance clarity, usability, and strong visual communication.',
   },
-  {
-    year: '2024',
-    title: 'Today & Beyond',
-    description:
-      '31+ projects completed, 22+ companies served, and a growing reputation for reliable, high-quality delivery.',
-  },
-];
-
-const strengths = [
-  'Deep expertise in modern web and mobile technologies',
-  'End-to-end delivery — from strategy to deployment',
-  'Proven track record across fintech, e-commerce, and SaaS',
-  'Scalable architectures that grow with your business',
-  'Dedicated support and transparent communication',
-  'Competitive pricing without compromising quality',
 ];
 
 export default function About() {
@@ -83,11 +67,12 @@ export default function About() {
       <main className="pt-16">
         {/* Hero */}
         <section className="relative py-28 md:py-36 bg-black text-white overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 brand-bar" />
           <div className="absolute inset-0 bg-grid-pattern opacity-10" />
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-white/10 text-sm font-medium tracking-wide uppercase">
-                <span className="w-1.5 h-1.5 bg-white rounded-full" />
+                <span className="brand-dot" />
                 About Guglex
               </div>
               <h1 className="text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-8">
@@ -104,79 +89,59 @@ export default function About() {
         </section>
 
         {/* Mission & Vision */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-gray-50 border-y border-gray-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-              <div className="relative">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-black flex items-center justify-center">
+            <div className="max-w-3xl mb-12">
+              <p className="text-sm font-semibold uppercase tracking-widest text-brand-blue mb-4">
+                Foundation
+              </p>
+              <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
+                Mission and Vision
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Clear principles that shape how we build, partner, and grow with
+                every client.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <article className="bg-white border border-gray-200 p-8 md:p-10">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-11 h-11 bg-brand-blue flex items-center justify-center">
                     <Target className="w-5 h-5 text-white" strokeWidth={1.5} />
                   </div>
-                  <h2 className="text-sm font-semibold uppercase tracking-widest text-gray-500">
+                  <h3 className="text-sm font-semibold uppercase tracking-widest text-gray-500">
                     Our Mission
-                  </h2>
+                  </h3>
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-black mb-6 leading-tight">
+                <p className="text-2xl md:text-3xl font-bold text-black mb-5 leading-tight">
                   Empowering businesses through purposeful technology.
-                </h3>
-                <p className="text-gray-600 text-lg leading-relaxed mb-4">
+                </p>
+                <p className="text-gray-600 text-lg leading-relaxed">
                   We exist to bridge the gap between complex technological
                   challenges and practical, scalable solutions that create
                   measurable business value.
                 </p>
-                <p className="text-gray-600 text-lg leading-relaxed">
-                  Every line of code we write, every interface we design, and
-                  every system we architect is in service of one thing — helping
-                  our clients succeed.
-                </p>
-              </div>
+              </article>
 
-              <div className="relative">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-black flex items-center justify-center">
+              <article className="bg-white border border-gray-200 p-8 md:p-10">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-11 h-11 bg-brand-green flex items-center justify-center">
                     <Eye className="w-5 h-5 text-white" strokeWidth={1.5} />
                   </div>
-                  <h2 className="text-sm font-semibold uppercase tracking-widest text-gray-500">
+                  <h3 className="text-sm font-semibold uppercase tracking-widest text-gray-500">
                     Our Vision
-                  </h2>
+                  </h3>
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-black mb-6 leading-tight">
+                <p className="text-2xl md:text-3xl font-bold text-black mb-5 leading-tight">
                   To be Africa&apos;s most trusted technology partner.
-                </h3>
-                <p className="text-gray-600 text-lg leading-relaxed mb-4">
+                </p>
+                <p className="text-gray-600 text-lg leading-relaxed">
                   We envision a future where African businesses lead on the
                   global stage — powered by world-class digital infrastructure
                   and products built right here.
                 </p>
-                <p className="text-gray-600 text-lg leading-relaxed">
-                  We&apos;re building that future one project at a time, with a
-                  relentless focus on quality, reliability, and long-term
-                  partnerships.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Stats Band */}
-        <section className="py-16 bg-gray-50 border-y border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              {[
-                { value: '7+', label: 'Years in Business' },
-                { value: '31+', label: 'Projects Delivered' },
-                { value: '22+', label: 'Companies Served' },
-                { value: '99%', label: 'Client Satisfaction' },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <div className="text-4xl md:text-5xl font-bold text-black mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="text-gray-500 font-medium text-sm uppercase tracking-wide">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
+              </article>
             </div>
           </div>
         </section>
@@ -198,11 +163,11 @@ export default function About() {
               {values.map((value) => (
                 <div
                   key={value.title}
-                  className="group bg-gray-50 p-8 border border-gray-200 hover:border-black hover:bg-white transition-all duration-300"
+                  className="group bg-gray-50 p-8 border border-gray-200 hover:border-brand-blue hover:bg-white transition-all duration-300"
                 >
-                  <div className="w-12 h-12 bg-black flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className={`w-12 h-12 ${value.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     <value.icon
-                      className="w-6 h-6 text-white"
+                      className={`w-6 h-6 ${value.color === 'bg-brand-yellow' ? 'text-black' : 'text-white'}`}
                       strokeWidth={1.5}
                     />
                   </div>
@@ -218,148 +183,96 @@ export default function About() {
           </div>
         </section>
 
-        {/* Our Journey */}
-        <section className="py-24 bg-black text-white overflow-hidden">
+        {/* Note From Co-Founder */}
+        <section className="py-24 bg-gray-50 border-y border-gray-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                Our Journey
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="aspect-[4/3] w-full border border-dashed border-gray-400 bg-white flex items-center justify-center text-sm font-medium uppercase tracking-wide text-gray-500">
+                Co-Founder Image Placeholder
+              </div>
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-widest text-brand-orange mb-4">
+                  Note From Our Co-Founder
+                </p>
+                <h2 className="text-3xl md:text-4xl font-bold text-black mb-6 leading-tight">
+                  We build with intention, not just speed.
+                </h2>
+                <p className="text-lg text-gray-700 leading-relaxed mb-4">
+                  From day one, Guglex has focused on one principle: technology
+                  should solve real problems and unlock real growth.
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed mb-8">
+                  We are committed to building products that are reliable,
+                  scalable, and genuinely useful for the people and teams who
+                  rely on them every day.
+                </p>
+                <p className="text-black font-semibold">Samuel Acquah</p>
+                <p className="text-gray-600">Co-Founder, Guglex Technologies</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Leadership */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl mb-14">
+              <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
+                Meet the Leadership
               </h2>
-              <p className="text-lg text-gray-400 leading-relaxed">
-                From a bold idea to a growing team delivering real impact —
-                here&apos;s how we got here.
+              <p className="text-lg text-gray-600 leading-relaxed">
+                A focused team of builders and operators guiding strategy,
+                execution, and long-term client success.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {milestones.map((milestone, index) => (
-                <div key={milestone.year} className="relative">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-3xl font-bold text-white">
-                      {milestone.year}
-                    </span>
-                    {index < milestones.length - 1 && (
-                      <div className="hidden lg:block flex-1 h-px bg-white/20" />
-                    )}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {leadership.map((leader) => (
+                <article
+                  key={leader.name}
+                  className="border border-gray-200 bg-gray-50 p-6"
+                >
+                  <div className="h-44 border border-dashed border-gray-400 bg-white flex items-center justify-center text-xs font-medium uppercase tracking-wide text-gray-500 mb-5">
+                    Leadership Image Placeholder
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">
-                    {milestone.title}
+                  <h3 className="text-xl font-bold text-black mb-1">
+                    {leader.name}
                   </h3>
-                  <p className="text-gray-400 leading-relaxed">
-                    {milestone.description}
+                  <p className="text-sm font-semibold uppercase tracking-wide text-gray-500 mb-3">
+                    {leader.role}
                   </p>
-                </div>
+                  <p className="text-gray-600 leading-relaxed">{leader.bio}</p>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Why Guglex */}
-        <section className="py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
-                  Why work with us?
-                </h2>
-                <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-                  We don&apos;t just write code — we partner with you to
-                  understand your business, identify opportunities, and deliver
-                  solutions that create lasting value.
-                </p>
-                <div className="space-y-4">
-                  {strengths.map((item) => (
-                    <div key={item} className="flex items-start gap-3">
-                      <CheckCircle2
-                        className="w-5 h-5 text-black mt-0.5 flex-shrink-0"
-                        strokeWidth={1.5}
-                      />
-                      <span className="text-gray-700">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-gray-50 p-8 border border-gray-200">
-                  <Users
-                    className="w-8 h-8 text-black mb-4"
-                    strokeWidth={1.5}
-                  />
-                  <div className="text-2xl font-bold text-black mb-1">
-                    Client-First
-                  </div>
-                  <p className="text-gray-600 text-sm">
-                    Your goals drive every decision we make.
-                  </p>
-                </div>
-                <div className="bg-gray-50 p-8 border border-gray-200">
-                  <Lightbulb
-                    className="w-8 h-8 text-black mb-4"
-                    strokeWidth={1.5}
-                  />
-                  <div className="text-2xl font-bold text-black mb-1">
-                    Forward-Thinking
-                  </div>
-                  <p className="text-gray-600 text-sm">
-                    We build for today and architect for tomorrow.
-                  </p>
-                </div>
-                <div className="bg-gray-50 p-8 border border-gray-200">
-                  <ShieldCheck
-                    className="w-8 h-8 text-black mb-4"
-                    strokeWidth={1.5}
-                  />
-                  <div className="text-2xl font-bold text-black mb-1">
-                    Battle-Tested
-                  </div>
-                  <p className="text-gray-600 text-sm">
-                    Proven delivery across industries and scale.
-                  </p>
-                </div>
-                <div className="bg-gray-50 p-8 border border-gray-200">
-                  <Zap
-                    className="w-8 h-8 text-black mb-4"
-                    strokeWidth={1.5}
-                  />
-                  <div className="text-2xl font-bold text-black mb-1">
-                    Fast & Reliable
-                  </div>
-                  <p className="text-gray-600 text-sm">
-                    We ship on time without cutting corners.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-24 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="bg-white p-12 md:p-16 border border-gray-200">
-              <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
-                Let&apos;s build something great together.
-              </h2>
-              <p className="text-lg text-gray-600 mb-10 max-w-xl mx-auto leading-relaxed">
-                Whether you&apos;re launching a new product or scaling an
-                existing one, we&apos;d love to hear about your project.
+        {/* Careers */}
+        <section className="py-24 bg-black text-white">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="border border-white/20 p-10 md:p-14">
+              <div className="brand-bar mb-8 max-w-[8rem]" />
+              <p className="text-sm font-semibold uppercase tracking-widest text-brand-yellow mb-4">
+                Careers
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-black text-white font-semibold text-lg hover:bg-gray-800 transition-all duration-300"
-                >
-                  Start a Conversation
-                  <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
-                </Link>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center justify-center px-10 py-4 bg-white text-black font-semibold text-lg border-2 border-black hover:bg-gray-50 transition-all duration-300"
-                >
-                  Explore Services
-                </Link>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                Join us in building meaningful digital products.
+              </h2>
+              <p className="text-lg text-gray-300 max-w-3xl leading-relaxed mb-8">
+                We are always looking for thoughtful engineers, designers, and
+                problem-solvers who care deeply about quality and impact.
+              </p>
+              <div className="h-40 border border-dashed border-white/40 bg-white/5 flex items-center justify-center text-xs font-medium uppercase tracking-wide text-gray-300 mb-8">
+                Team Culture Image Placeholder
               </div>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-brand-blue text-white font-semibold hover:bg-[#0176cc] transition-colors duration-300"
+              >
+                Send Your Resume
+                <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
+              </Link>
             </div>
           </div>
         </section>

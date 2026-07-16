@@ -12,7 +12,7 @@ export default function Services() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
         </svg>
       ),
-      gradient: 'bg-black',
+      gradient: 'bg-brand-blue',
       features: ['Angular & Next.js', 'Responsive Design', 'SEO Optimized', 'Performance Focused']
     },
     {
@@ -23,7 +23,7 @@ export default function Services() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
         </svg>
       ),
-      gradient: 'bg-black',
+      gradient: 'bg-brand-green',
       features: ['iOS & Android', 'Cross-Platform', 'Native Performance', 'App Store Ready']
     },
     {
@@ -34,7 +34,7 @@ export default function Services() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
         </svg>
       ),
-      gradient: 'bg-black',
+      gradient: 'bg-brand-yellow',
       features: ['AWS & Azure', 'Scalable Architecture', 'DevOps Integration', 'Cost Optimization']
     },
     {
@@ -45,7 +45,7 @@ export default function Services() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
         </svg>
       ),
-      gradient: 'bg-black',
+      gradient: 'bg-brand-orange',
       features: ['Custom AI Models', 'Data Analytics', 'Process Automation', 'Predictive Insights']
     },
     {
@@ -56,7 +56,7 @@ export default function Services() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
         </svg>
       ),
-      gradient: 'bg-black',
+      gradient: 'bg-brand-blue',
       features: ['User Research', 'Prototyping', 'Design Systems', 'Accessibility']
     },
     {
@@ -67,7 +67,7 @@ export default function Services() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
         </svg>
       ),
-      gradient: 'bg-black',
+      gradient: 'bg-brand-green',
       features: ['Technology Audit', 'Digital Transformation', 'Architecture Planning', 'Best Practices']
     }
   ];
@@ -78,6 +78,7 @@ export default function Services() {
       <main className="pt-16">
         {/* Hero Section */}
         <section className="relative py-20 bg-black text-white overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 brand-bar" />
           <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">Our Services</h1>
@@ -94,9 +95,9 @@ export default function Services() {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="group relative bg-white p-8 border border-gray-200 hover:border-black hover:shadow-xl transition-all duration-300"
+                  className="group relative bg-white p-8 border border-gray-200 hover:border-brand-blue transition-all duration-300"
                 >
-                  <div className={`w-16 h-16 ${service.gradient} flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-16 h-16 ${service.gradient} flex items-center justify-center ${service.gradient === 'bg-brand-yellow' ? 'text-black' : 'text-white'} mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     {service.icon}
                   </div>
                   <h3 className="text-2xl font-bold text-black mb-4">{service.title}</h3>
@@ -105,7 +106,7 @@ export default function Services() {
                   <div className="space-y-2 mb-6">
                     {service.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center text-gray-700">
-                        <svg className="w-5 h-5 text-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-brand-green mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                         <span>{feature}</span>
@@ -124,7 +125,7 @@ export default function Services() {
         <section className="py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-20">
-              <span className="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-4 block">
+              <span className="text-sm font-semibold uppercase tracking-widest text-brand-blue mb-4 block">
                 How We Work
               </span>
               <h2 className="text-4xl md:text-5xl font-bold text-black mb-4 leading-tight">
@@ -140,13 +141,13 @@ export default function Services() {
 
               <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-6">
                 {[
-                  { step: '01', title: 'Discovery', desc: 'Understanding your needs and goals' },
-                  { step: '02', title: 'Planning', desc: 'Creating a detailed roadmap and strategy' },
-                  { step: '03', title: 'Development', desc: 'Building with agile methodologies' },
-                  { step: '04', title: 'Launch & Support', desc: 'Deployment and ongoing maintenance' },
+                  { step: '01', title: 'Discovery', desc: 'Understanding your needs and goals', color: 'bg-brand-blue text-white' },
+                  { step: '02', title: 'Planning', desc: 'Creating a detailed roadmap and strategy', color: 'bg-brand-green text-white' },
+                  { step: '03', title: 'Development', desc: 'Building with agile methodologies', color: 'bg-brand-yellow text-black' },
+                  { step: '04', title: 'Launch & Support', desc: 'Deployment and ongoing maintenance', color: 'bg-brand-orange text-white' },
                 ].map((item, i) => (
                   <div key={i} className="relative text-center group">
-                    <div className="w-12 h-12 bg-black text-white mx-auto mb-6 flex items-center justify-center text-sm font-bold relative z-10 group-hover:scale-110 transition-transform duration-300">
+                    <div className={`w-12 h-12 ${item.color} mx-auto mb-6 flex items-center justify-center text-sm font-bold relative z-10 group-hover:scale-110 transition-transform duration-300`}>
                       {item.step}
                     </div>
                     <h3 className="text-xl font-bold text-black mb-2">{item.title}</h3>
@@ -161,15 +162,16 @@ export default function Services() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-black text-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="bg-black text-white">
+          <div className="brand-bar" />
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Get Started?</h2>
             <p className="text-xl text-gray-300 mb-8">
               Let's discuss how our services can help transform your business
             </p>
             <Link
               href="/contact"
-              className="inline-block px-8 py-4 bg-white text-black font-semibold hover:bg-gray-100 hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              className="inline-block px-8 py-4 bg-brand-blue text-white font-semibold hover:bg-[#0176cc] transition-all duration-300"
             >
               Contact Us Today
             </Link>

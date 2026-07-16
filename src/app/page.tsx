@@ -1,6 +1,44 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
+
+const capabilities = [
+  {
+    title: 'Web & Product Engineering',
+    description:
+      'Custom platforms, dashboards, and customer-facing products built for reliability and scale.',
+  },
+  {
+    title: 'Payments & Digital Infrastructure',
+    description:
+      'Mobile money, USSD, and payment systems designed for African markets and real-world usage.',
+  },
+  {
+    title: 'Mobile Experiences',
+    description:
+      'Native and cross-platform apps that feel fast, clear, and easy to use from day one.',
+  },
+  {
+    title: 'Strategy & Delivery',
+    description:
+      'From discovery to launch — architecture, design, and engineering aligned to business outcomes.',
+  },
+];
+
+const products = [
+  {
+    name: 'Ewale',
+    description: 'Consumer payments for airtime, data, ECG prepaid, and WASSCE results.',
+    href: 'https://ewalepay.com',
+  },
+  {
+    name: 'Gyepayments',
+    description: 'Business payment collection with mobile money, bank transfer, and cards.',
+    href: 'https://gyepayments.guglextechnologies.com',
+  },
+];
 
 export default function Home() {
   return (
@@ -8,295 +46,249 @@ export default function Home() {
       <Navigation />
       <main className="pt-16">
         {/* Hero */}
-        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-white">
-          <div className="absolute inset-0 bg-grid-pattern opacity-30" />
+        <section className="relative min-h-[88vh] flex items-end overflow-hidden bg-black text-white">
+          <Image
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2400&q=80"
+            alt=""
+            fill
+            priority
+            className="object-cover opacity-35"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/40" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(1,148,255,0.18),_transparent_55%)]" />
 
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-            <div className="inline-flex items-center gap-2 mb-8 px-5 py-2.5 bg-gray-50 text-sm font-medium text-gray-700 border border-gray-200">
-              <span className="w-2 h-2 bg-black" />
-              <span>Trusted, Proven and Reliable</span>
-            </div>
-
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-[1.05] text-black tracking-tight">
-              Leverage, Build
-              <span className="block mt-2">Scale</span>
+          <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 pt-32 md:pb-28 md:pt-40">
+            <p className="home-fade-up text-sm font-semibold uppercase tracking-[0.25em] text-brand-blue mb-6">
+              Guglex Technologies
+            </p>
+            <h1 className="home-fade-up home-fade-up-delay-1 max-w-4xl text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-6">
+              Technology that builds businesses.
             </h1>
-
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-4 max-w-3xl mx-auto leading-relaxed font-light">
-              Empowering the next frontier of African businesses with digital
-              infrastructure.
+            <p className="home-fade-up home-fade-up-delay-2 max-w-xl text-lg md:text-xl text-white/70 leading-relaxed mb-10">
+              We design and ship digital products, payments, and infrastructure
+              for companies across Africa and beyond.
             </p>
-            <p className="text-base sm:text-lg text-gray-500 mb-12 max-w-2xl mx-auto">
-              From concept to deployment, we&apos;re with you every step.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link
-                href="/services"
-                className="w-full sm:w-auto px-10 py-4 bg-black text-white font-semibold text-lg hover:bg-gray-800 hover:shadow-xl transition-all duration-300 text-center"
-              >
-                Get Started
-              </Link>
+            <div className="home-fade-up home-fade-up-delay-3 flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="w-full sm:w-auto px-10 py-4 bg-white text-black font-semibold text-lg border-2 border-black hover:bg-gray-50 hover:shadow-xl transition-all duration-300 text-center"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-blue text-white font-semibold hover:bg-[#0176cc] transition-colors"
               >
-                Contact Us
+                Start a project
+                <ArrowRight className="w-4 h-4" strokeWidth={2} />
+              </Link>
+              <Link
+                href="/services"
+                className="inline-flex items-center justify-center px-8 py-4 border border-white/25 text-white font-semibold hover:border-white hover:bg-white/5 transition-colors"
+              >
+                Explore services
               </Link>
             </div>
           </div>
         </section>
 
-        {/* Stats Bar */}
-        <section className="bg-black">
+        {/* Proof */}
+        <section className="border-b border-gray-200 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4">
               {[
-                { value: '22+', label: 'Projects Completed' },
-                { value: '16+', label: 'Happy Clients' },
-                { value: '7+', label: 'Years Experience' },
-                { value: '24/7', label: 'Support Available' },
+                { value: '7+', label: 'Years building' },
+                { value: '31+', label: 'Projects delivered' },
+                { value: '22+', label: 'Companies served' },
+                { value: '99%', label: 'Client satisfaction' },
               ].map((stat, i) => (
                 <div
-                  key={i}
-                  className={`py-10 md:py-14 text-center ${
-                    i > 0 ? 'border-l border-white/10' : ''
-                  } ${i >= 2 ? 'border-t md:border-t-0 border-white/10' : ''}`}
+                  key={stat.label}
+                  className={`py-10 md:py-12 ${
+                    i > 0 ? 'md:border-l md:border-gray-200 md:pl-8' : ''
+                  } ${i % 2 === 1 ? 'pl-6 md:pl-8' : ''} ${
+                    i >= 2 ? 'border-t border-gray-200 md:border-t-0' : ''
+                  }`}
                 >
-                  <div className="text-3xl md:text-5xl font-extrabold text-white mb-2">
+                  <div className="text-3xl md:text-4xl font-bold text-black tracking-tight">
                     {stat.value}
                   </div>
-                  <div className="text-xs md:text-sm text-gray-400 font-medium uppercase tracking-widest">
-                    {stat.label}
-                  </div>
+                  <div className="mt-2 text-sm text-gray-500">{stat.label}</div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Services Preview */}
-        <section className="py-24 bg-white">
+        {/* Capabilities */}
+        <section className="py-24 md:py-28 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
-              <div>
-                <span className="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-4 block">
-                  What We Do
-                </span>
-                <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight">
-                  Our Services
-                </h2>
-              </div>
+            <div className="max-w-2xl mb-16 md:mb-20">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-blue mb-4">
+                What we do
+              </p>
+              <h2 className="text-4xl md:text-5xl font-bold text-black tracking-tight mb-5">
+                Capabilities built for real business outcomes.
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                End-to-end product delivery — from strategy and design through
+                engineering, launch, and ongoing support.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0 border-t border-gray-200">
+              {capabilities.map((item, index) => (
+                <div
+                  key={item.title}
+                  className="group border-b border-gray-200 py-8 md:py-10"
+                >
+                  <div className="flex items-start gap-5">
+                    <span className="text-sm font-semibold text-brand-blue tabular-nums pt-1">
+                      0{index + 1}
+                    </span>
+                    <div>
+                      <h3 className="text-xl font-bold text-black mb-2 group-hover:text-brand-blue transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed max-w-md">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12">
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 text-black font-semibold hover:text-gray-600 transition-colors"
+                className="inline-flex items-center gap-2 text-brand-blue font-semibold hover:gap-3 transition-all"
               >
-                View All
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+                View all services
+                <ArrowRight className="w-4 h-4" strokeWidth={2} />
               </Link>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                {
-                  title: 'Web Development',
-                  description:
-                    'Modern, responsive websites and web applications built with cutting-edge technologies.',
-                  icon: (
-                    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                    </svg>
-                  ),
-                },
-                {
-                  title: 'Mobile Apps',
-                  description:
-                    'Native and cross-platform mobile applications for iOS and Android platforms.',
-                  icon: (
-                    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                    </svg>
-                  ),
-                },
-                {
-                  title: 'Cloud Solutions',
-                  description:
-                    'Scalable cloud infrastructure and migration services for modern businesses.',
-                  icon: (
-                    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                    </svg>
-                  ),
-                },
-                {
-                  title: 'AI & Machine Learning',
-                  description:
-                    'Intelligent solutions powered by AI to automate and optimize your processes.',
-                  icon: (
-                    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                    </svg>
-                  ),
-                },
-                {
-                  title: 'UI/UX Design',
-                  description:
-                    'Beautiful, intuitive interfaces that engage users and drive conversions.',
-                  icon: (
-                    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                    </svg>
-                  ),
-                },
-                {
-                  title: 'Consulting',
-                  description:
-                    'Expert technology consulting to align your strategy with business goals.',
-                  icon: (
-                    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
-                  ),
-                },
-              ].map((service, i) => (
-                <div
-                  key={i}
-                  className="group bg-gray-50 hover:bg-black p-8 border border-gray-200 hover:border-black transition-all duration-500"
-                >
-                  <div className="w-12 h-12 bg-white group-hover:bg-white/10 flex items-center justify-center text-black group-hover:text-white mb-6 transition-all duration-500">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-black group-hover:text-white mb-3 transition-colors duration-500">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 group-hover:text-gray-400 leading-relaxed text-[15px] transition-colors duration-500">
-                    {service.description}
-                  </p>
-                </div>
-              ))}
             </div>
           </div>
         </section>
 
-        {/* Why Choose Us */}
-        <section className="py-24 bg-gray-50">
+        {/* Products */}
+        <section className="py-24 md:py-28 bg-gray-50 border-y border-gray-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-              <div>
-                <span className="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-4 block">
-                  Why Guglex
-                </span>
-                <h2 className="text-4xl md:text-5xl font-bold text-black mb-6 leading-tight">
-                  Built different, delivered better
-                </h2>
-                <p className="text-lg text-gray-600 leading-relaxed mb-10">
-                  We combine technical expertise with creative innovation to
-                  deliver solutions that not only meet but exceed your
-                  expectations.
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+              <div className="lg:col-span-5">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-green mb-4">
+                  Our products
                 </p>
+                <h2 className="text-4xl md:text-5xl font-bold text-black tracking-tight mb-5">
+                  Platforms we build and operate.
+                </h2>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Beyond client work, we run products that move money and connect
+                  people to essential services every day.
+                </p>
+              </div>
 
-                <div className="space-y-8">
-                  {[
-                    {
-                      title: 'Expert Team',
-                      desc: 'Skilled professionals with deep expertise across modern tech stacks.',
-                    },
-                    {
-                      title: 'Proven Track Record',
-                      desc: '22+ successful projects delivered across multiple industries.',
-                    },
-                    {
-                      title: 'Cutting-Edge Technology',
-                      desc: 'Latest tools and frameworks for optimal, future-proof results.',
-                    },
-                    {
-                      title: '24/7 Support',
-                      desc: 'Round-the-clock assistance whenever you need it.',
-                    },
-                  ].map((item, i) => (
-                    <div key={i} className="flex gap-5 group">
-                      <div className="flex-shrink-0 w-10 h-10 bg-black group-hover:scale-110 flex items-center justify-center transition-transform duration-300">
-                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-black mb-1">
-                          {item.title}
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed">
-                          {item.desc}
-                        </p>
-                      </div>
+              <div className="lg:col-span-7 space-y-4">
+                {products.map((product) => (
+                  <a
+                    key={product.name}
+                    href={product.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-start justify-between gap-6 bg-white border border-gray-200 px-6 py-7 md:px-8 hover:border-brand-blue transition-colors"
+                  >
+                    <div>
+                      <h3 className="text-xl font-bold text-black mb-2 group-hover:text-brand-blue transition-colors">
+                        {product.name}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed max-w-lg">
+                        {product.description}
+                      </p>
                     </div>
-                  ))}
-                </div>
+                    <ArrowUpRight
+                      className="w-5 h-5 text-gray-300 flex-shrink-0 mt-1 transition-all group-hover:text-brand-blue group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      strokeWidth={2}
+                    />
+                  </a>
+                ))}
               </div>
+            </div>
+          </div>
+        </section>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-black text-white p-8 flex flex-col justify-between min-h-[180px]">
-                  <div className="text-4xl md:text-5xl font-extrabold mb-auto">
-                    99%
+        {/* Approach */}
+        <section className="py-24 md:py-28 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl mb-16">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-orange mb-4">
+                How we work
+              </p>
+              <h2 className="text-4xl md:text-5xl font-bold text-black tracking-tight mb-5">
+                Clear process. Reliable delivery.
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                A focused engagement model that keeps scope clear, quality high,
+                and timelines honest.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+              {[
+                {
+                  step: '01',
+                  title: 'Discover',
+                  description:
+                    'We clarify goals, constraints, and success metrics before a single line of code.',
+                },
+                {
+                  step: '02',
+                  title: 'Build',
+                  description:
+                    'Design and engineering move together in short cycles with transparent progress.',
+                },
+                {
+                  step: '03',
+                  title: 'Launch & support',
+                  description:
+                    'We ship to production, monitor, and stay available as your product grows.',
+                },
+              ].map((item) => (
+                <div key={item.step}>
+                  <div className="text-sm font-semibold text-brand-blue mb-4">
+                    {item.step}
                   </div>
-                  <div className="text-sm text-gray-400 font-medium uppercase tracking-wider mt-4">
-                    Client Satisfaction
-                  </div>
+                  <div className="h-px w-12 bg-brand-blue mb-6" />
+                  <h3 className="text-xl font-bold text-black mb-3">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
                 </div>
-                <div className="bg-white border border-gray-200 p-8 flex flex-col justify-between min-h-[180px]">
-                  <div className="text-4xl md:text-5xl font-extrabold text-black mb-auto">
-                    24/7
-                  </div>
-                  <div className="text-sm text-gray-500 font-medium uppercase tracking-wider mt-4">
-                    Support Available
-                  </div>
-                </div>
-                <div className="bg-white border border-gray-200 p-8 flex flex-col justify-between min-h-[180px]">
-                  <div className="text-4xl md:text-5xl font-extrabold text-black mb-auto">
-                    22+
-                  </div>
-                  <div className="text-sm text-gray-500 font-medium uppercase tracking-wider mt-4">
-                    Projects Delivered
-                  </div>
-                </div>
-                <div className="bg-black text-white p-8 flex flex-col justify-between min-h-[180px]">
-                  <div className="text-4xl md:text-5xl font-extrabold mb-auto">
-                    7+
-                  </div>
-                  <div className="text-sm text-gray-400 font-medium uppercase tracking-wider mt-4">
-                    Years Experience
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="relative py-24 bg-black text-white overflow-hidden">
-          <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Let&apos;s discuss how we can help you achieve your goals with
-              innovative technology solutions.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="px-10 py-4 bg-white text-black font-semibold text-lg hover:bg-gray-100 transition-all duration-300"
-              >
-                Get Started Today
-              </Link>
-              <Link
-                href="/use-cases"
-                className="px-10 py-4 bg-transparent text-white font-semibold text-lg border-2 border-white/30 hover:border-white transition-all duration-300"
-              >
-                View Case Studies
-              </Link>
+        <section className="relative bg-black text-white overflow-hidden">
+          <div className="brand-bar" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(1,148,255,0.15),_transparent_50%)]" />
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-28">
+            <div className="max-w-3xl">
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
+                Let&apos;s build what&apos;s next.
+              </h2>
+              <p className="text-lg text-white/65 leading-relaxed mb-10 max-w-xl">
+                Tell us about your product, payment flow, or platform challenge.
+                We&apos;ll respond with a clear next step.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-blue text-white font-semibold hover:bg-[#0176cc] transition-colors"
+                >
+                  Talk to us
+                  <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                </Link>
+                <Link
+                  href="/use-cases"
+                  className="inline-flex items-center justify-center px-8 py-4 border border-white/25 text-white font-semibold hover:border-white hover:bg-white/5 transition-colors"
+                >
+                  See our work
+                </Link>
+              </div>
             </div>
           </div>
         </section>
