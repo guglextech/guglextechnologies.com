@@ -1,245 +1,216 @@
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import {
-  ShoppingBag, HeartPulse, TrendingUp, GraduationCap,
-  Truck, Factory, Building2, Clapperboard,
-  UtensilsCrossed, Plane, Zap, Landmark,
-  ShoppingCart, Smartphone, CreditCard, type LucideIcon,
-} from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
+
+const caseStudies = [
+  {
+    name: 'Ewale',
+    category: 'Consumer payments',
+    summary:
+      'A consumer platform for purchasing airtime, data bundles, ECG prepaid, and WASSCE results across major networks — built for speed, clarity, and everyday reliability.',
+    outcomes: [
+      'Multi-network airtime & data',
+      'ECG prepaid top-ups',
+      'WASSCE results purchases',
+      'Simple, mobile-first checkout',
+    ],
+    href: 'https://ewalepay.com',
+  },
+  {
+    name: 'Hubtel Integration',
+    category: 'Payment integration',
+    summary:
+      'End-to-end Hubtel payment integration for businesses that need mobile money and card collection with reliable callbacks, reconciliation, and production-ready error handling.',
+    outcomes: [
+      'Mobile money collection',
+      'Secure checkout flows',
+      'Webhook & status sync',
+      'Settlement-ready reporting',
+    ],
+  },
+  {
+    name: 'Paystack Integration',
+    category: 'Payment integration',
+    summary:
+      'Paystack integration for products that need card and local payment methods — implemented with clean APIs, verified webhooks, and a checkout experience that converts.',
+    outcomes: [
+      'Card & local payments',
+      'Verified webhook handling',
+      'Retry-safe transactions',
+      'Developer-friendly setup',
+    ],
+  },
+];
 
 export default function UseCases() {
-  const useCases = [
-    {
-      title: 'E-Commerce Platform',
-      industry: 'Retail',
-      description: 'Built a scalable e-commerce platform that handles millions of transactions daily. Integrated payment gateways, inventory management, and AI-powered recommendations.',
-      results: [
-        '300% increase in online sales',
-        '50% reduction in page load time',
-        '99.9% uptime achieved'
-      ],
-      gradient: 'bg-brand-blue',
-      Icon: ShoppingCart,
-    },
-    {
-      title: 'USSD Development and Integration',
-      industry: 'Technology',
-      description: 'Built a USSD application that allows users to interact with the application via USSD. The application allows users to perform transactions, check balance, and view account information.',
-      results: [
-        '100% uptime',
-        '99.9% availability',
-        '24/7 support'
-      ],
-      gradient: 'bg-brand-green',
-      Icon: Smartphone,
-    },
-    {
-      title: 'Payment Gateway Integration',
-      industry: 'Finance',
-      description: 'Integrated payment gateways into the e-commerce platform. The payment gateways allow users to perform transactions using their credit cards, debit cards, and mobile money.',
-      results: [
-        '100% uptime',
-        '99.9% availability',
-        '24/7 support'
-      ],
-      gradient: 'bg-brand-yellow',
-      Icon: CreditCard,
-    },
-    {
-      title: 'Payment Gateway Integration',
-      industry: 'Finance',
-      description: 'Integrated payment gateways into the e-commerce platform. The payment gateways allow users to perform transactions using their credit cards, debit cards, and mobile money.',
-      results: [
-        '100% uptime',
-        '99.9% availability',
-        '24/7 support'
-      ],
-      gradient: 'bg-brand-orange',
-      Icon: CreditCard,
-    }
-  ];
-
   return (
     <>
       <Navigation />
       <main className="pt-16">
-        {/* Hero Section */}
-        <section className="relative py-20 bg-black text-white overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 brand-bar" />
-          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">Use Cases</h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-              Real-world solutions that drive business success across industries
+        {/* Hero */}
+        <section className="relative bg-black text-white overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(1,148,255,0.16),_transparent_55%)]" />
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-brand-blue mb-6">
+              Research
+            </p>
+            <h1 className="max-w-3xl text-5xl md:text-6xl font-bold tracking-tight leading-[1.05] mb-6">
+              Selected work in products and payments.
+            </h1>
+            <p className="max-w-xl text-lg md:text-xl text-white/65 leading-relaxed">
+              Real platforms and integrations we&apos;ve designed, built, and
+              shipped for African markets.
             </p>
           </div>
         </section>
 
-        {/* Use Cases Grid */}
-        <section className="py-24 bg-white">
+        {/* Case studies */}
+        <section className="py-24 md:py-28 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
-              <div>
-                <span className="text-sm font-semibold uppercase tracking-widest text-brand-blue mb-4 block">
-                  Our Work
-                </span>
-                <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight">
-                  Featured Projects
-                </h2>
-              </div>
-              <p className="text-gray-500 max-w-sm md:text-right">
-                Real solutions we&apos;ve built that drove measurable business impact.
+            <div className="max-w-2xl mb-16 md:mb-20">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-blue mb-4">
+                Case studies
+              </p>
+              <h2 className="text-4xl md:text-5xl font-bold text-black tracking-tight mb-5">
+                Projects that moved money and served users.
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Focused delivery around consumer payments and gateway
+                integrations — built to work in production, not just in demos.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {useCases.map((useCase, i) => (
-                <div
-                  key={i}
-                  className="group bg-gray-50 hover:bg-black border border-gray-200 hover:border-black transition-all duration-500"
+            <div className="border-t border-gray-200">
+              {caseStudies.map((study, index) => (
+                <article
+                  key={study.name}
+                  className="group grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 border-b border-gray-200 py-10 md:py-14"
                 >
-                  <div className="p-8 md:p-10">
-                    <div className="flex items-center justify-between mb-6">
-                      <div className={`w-12 h-12 ${useCase.gradient} flex items-center justify-center transition-colors duration-500`}>
-                        <useCase.Icon className={`w-6 h-6 ${useCase.gradient === 'bg-brand-yellow' ? 'text-black' : 'text-white'}`} strokeWidth={1.5} />
-                      </div>
-                      <span className="text-xs font-semibold uppercase tracking-widest text-gray-400 group-hover:text-gray-500 transition-colors duration-500">
-                        {useCase.industry}
-                      </span>
-                    </div>
+                  <div className="lg:col-span-1">
+                    <span className="text-sm font-semibold text-brand-blue tabular-nums">
+                      0{index + 1}
+                    </span>
+                  </div>
 
-                    <h3 className="text-xl font-bold text-black group-hover:text-white mb-3 transition-colors duration-500">
-                      {useCase.title}
-                    </h3>
-                    <p className="text-gray-600 group-hover:text-gray-400 leading-relaxed text-[15px] mb-8 transition-colors duration-500">
-                      {useCase.description}
+                  <div className="lg:col-span-4">
+                    <p className="text-sm font-medium text-gray-500 mb-2">
+                      {study.category}
                     </p>
+                    <h3 className="text-2xl md:text-3xl font-bold text-black tracking-tight group-hover:text-brand-blue transition-colors">
+                      {study.name}
+                    </h3>
+                    {study.href && (
+                      <a
+                        href={study.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:gap-2.5 transition-all"
+                      >
+                        Visit product
+                        <ArrowUpRight className="w-4 h-4" strokeWidth={2} />
+                      </a>
+                    )}
+                  </div>
 
-                    <div className="flex flex-wrap gap-3">
-                      {useCase.results.map((result, idx) => (
-                        <span
-                          key={idx}
-                          className="px-3 py-1.5 bg-white group-hover:bg-white/10 border border-gray-200 group-hover:border-white/10 text-xs font-medium text-gray-700 group-hover:text-gray-300 transition-all duration-500"
+                  <div className="lg:col-span-4">
+                    <p className="text-gray-600 leading-relaxed">
+                      {study.summary}
+                    </p>
+                  </div>
+
+                  <div className="lg:col-span-3">
+                    <ul className="space-y-2.5">
+                      {study.outcomes.map((outcome) => (
+                        <li
+                          key={outcome}
+                          className="text-sm text-gray-500 flex items-start gap-2"
                         >
-                          {result}
-                        </span>
+                          <span className="mt-2 h-1 w-1 rounded-full bg-brand-blue flex-shrink-0" />
+                          {outcome}
+                        </li>
                       ))}
-                    </div>
+                    </ul>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Industries Section */}
-        <section className="bg-black text-white overflow-hidden">
-          <div className="brand-bar" />
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
-              <div>
-                <p className="text-sm font-medium tracking-[0.2em] uppercase text-brand-yellow mb-3">Expertise</p>
-                <h2 className="text-4xl md:text-5xl font-bold text-white">Industries We Serve</h2>
-              </div>
-              <p className="text-gray-400 max-w-md md:text-right">
-                Delivering tailored technology solutions across sectors that drive measurable impact.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-px bg-gray-800/50">
-              {[
-                { name: 'Retail', Icon: ShoppingBag },
-                { name: 'Healthcare', Icon: HeartPulse },
-                { name: 'Finance', Icon: TrendingUp },
-                { name: 'Education', Icon: GraduationCap },
-                { name: 'Logistics', Icon: Truck },
-                { name: 'Manufacturing', Icon: Factory },
-                { name: 'Real Estate', Icon: Building2 },
-                { name: 'Entertainment', Icon: Clapperboard },
-                { name: 'Food & Beverage', Icon: UtensilsCrossed },
-                { name: 'Travel', Icon: Plane },
-                { name: 'Energy', Icon: Zap },
-                { name: 'Government', Icon: Landmark },
-              ].map((industry, index) => (
-                <div
-                  key={index}
-                  className="group relative bg-black p-8 flex flex-col items-start gap-4 cursor-pointer transition-colors duration-300 hover:bg-gray-900"
-                >
-                  <industry.Icon className="w-7 h-7 text-gray-400 transition-all duration-300 group-hover:text-brand-blue group-hover:scale-110" strokeWidth={1.5} />
-                  <h3 className="text-base font-semibold text-white tracking-wide">{industry.name}</h3>
-                  <div className="absolute bottom-0 left-0 h-[2px] w-0 brand-gradient transition-all duration-500 group-hover:w-full" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Testimonials Section */}
-        <section className="py-20 bg-white">
+        {/* Focus areas */}
+        <section className="py-24 md:py-28 bg-gray-50 border-y border-gray-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">Client Success Stories</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Hear from companies that transformed their business with our solutions
+            <div className="max-w-2xl mb-14">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-green mb-4">
+                Focus
               </p>
+              <h2 className="text-4xl md:text-5xl font-bold text-black tracking-tight mb-5">
+                Where we deliver the most value.
+              </h2>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
               {[
                 {
-                  quote: 'The Union needed a way to collect membership dues from our members. We needed a way to collect payments and rewards for our players.',
-                  author: 'Samuel Osei',
-                  role: 'PSWU (Public Service Worker Union)',
-                  gradient: 'bg-brand-blue'
+                  title: 'Consumer payment products',
+                  description:
+                    'Everyday services like airtime, utilities, and digital purchases — designed for speed and trust.',
                 },
                 {
-                  quote: 'We run live games on shortcodes and players buy tickets to participate. We are able to collect payments and rewards for our players.',
-                  author: 'Kwame Kankam',
-                  role: 'Director, Directorate of DV Publication and LGM',
-                  gradient: 'bg-brand-green'
+                  title: 'Gateway integrations',
+                  description:
+                    'Hubtel, Paystack, and similar providers wired cleanly into your product with reliable callbacks.',
                 },
                 {
-                  quote: 'Guglex built and develop USSD and payment gateway integration for us. We run a reality show and we needed a way to collect votes from our viewers.',
-                  author: 'Kwame Adu',
-                  role: 'Founder, Victory Entertainment Empire',
-                  gradient: 'bg-brand-orange'
-                }
-              ].map((testimonial, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-50 p-8 border border-gray-200 hover:shadow-xl transition-shadow"
-                >
-                  <div className={`w-12 h-12 ${testimonial.gradient} flex items-center justify-center mb-6`}>
-                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-3.313.91-5.435 3.988-5.435 7.242h4v10h-8.544zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-3.313.91-5.435 3.988-5.435 7.242h3.969v10h-10.525z"/>
-                    </svg>
-                  </div>
-                  <p className="text-gray-700 mb-6">"{testimonial.quote}"</p>
-                  <div>
-                    <p className="font-semibold text-black">{testimonial.author}</p>
-                    <p className="text-sm text-gray-600">{testimonial.role}</p>
-                  </div>
+                  title: 'Production readiness',
+                  description:
+                    'Error handling, reconciliation, and monitoring so payments stay dependable after launch.',
+                },
+              ].map((item) => (
+                <div key={item.title}>
+                  <div className="h-px w-12 bg-brand-blue mb-6" />
+                  <h3 className="text-xl font-bold text-black mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="bg-black text-white">
+        {/* CTA */}
+        <section className="relative bg-black text-white overflow-hidden">
           <div className="brand-bar" />
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Have a Project in Mind?</h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Let's discuss how we can help solve your business challenges
-            </p>
-            <Link
-              href="/contact"
-              className="inline-block px-8 py-4 bg-brand-blue text-white font-semibold hover:bg-[#0176cc] transition-all duration-300"
-            >
-              Start Your Project
-            </Link>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(1,148,255,0.15),_transparent_50%)]" />
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-28">
+            <div className="max-w-3xl">
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
+                Need a payment product or integration?
+              </h2>
+              <p className="text-lg text-white/65 leading-relaxed mb-10 max-w-xl">
+                Tell us what you&apos;re building. We&apos;ll help you scope the
+                right approach for Hubtel, Paystack, or a custom payments flow.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-blue text-white font-semibold hover:bg-[#0176cc] transition-colors"
+                >
+                  Start a conversation
+                  <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                </Link>
+                <Link
+                  href="/services"
+                  className="inline-flex items-center justify-center px-8 py-4 border border-white/25 text-white font-semibold hover:border-white hover:bg-white/5 transition-colors"
+                >
+                  View services
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
       </main>
@@ -247,4 +218,3 @@ export default function UseCases() {
     </>
   );
 }
-
