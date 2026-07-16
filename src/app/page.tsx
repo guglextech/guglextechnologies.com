@@ -40,6 +40,8 @@ const products = [
   },
 ];
 
+
+
 export default function Home() {
   return (
     <>
