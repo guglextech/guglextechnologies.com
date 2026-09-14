@@ -39,6 +39,6 @@ If you cannot re-show a token, you will be the call centre.
 
 ## What we expose for integrators
 
-The same rules are in our [developer documentation](/developers): meter lookup, prepaid vs postpaid endpoints, and the webhook payload that carries the token and units.
+The same rules apply in production: meter lookup, prepaid vs postpaid endpoints, and the webhook payload that carries the token and units. [Contact us](mailto:guglex.technologies@gmail.com) if you need this wired into your product.
 
 If you are adding utilities to an existing product, start with validation and delivery — not with a prettier checkout.

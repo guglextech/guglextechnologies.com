@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import SiteShell from '@/components/SiteShell';
 import SiteContainer from '@/components/SiteContainer';
-import SiteCta from '@/components/SiteCta';
 import { estimateReadingMinutes, getAllPosts, getCategories } from '../../../lib/blog';
 import BlogClient, { type BlogListPost } from './BlogClient';
 
@@ -37,13 +36,6 @@ export default function Blog() {
           </div>
         </SiteContainer>
       </section>
-
-      <SiteCta
-        title="Building a payments product?"
-        description="We design, ship, and operate collection systems — web, USSD, and the provider work in between."
-        primary={{ href: '/contact', label: 'Talk to us' }}
-        secondary={{ href: '/developers', label: 'Read the docs' }}
-      />
     </SiteShell>
   );
 }

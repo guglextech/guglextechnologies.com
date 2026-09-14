@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import SiteShell from '@/components/SiteShell';
 import SiteContainer from '@/components/SiteContainer';
-import SiteCta from '@/components/SiteCta';
 import {
   estimateReadingMinutes,
   getAllPosts,
@@ -140,13 +139,6 @@ export default async function BlogPost({
           </div>
         </SiteContainer>
       </article>
-
-      <SiteCta
-        title="Need this built for your product?"
-        description="We implement collection, USSD, and provider integrations — and stay for the operations after launch."
-        primary={{ href: '/contact', label: 'Start a conversation' }}
-        secondary={{ href: '/developers', label: 'Developer docs' }}
-      />
     </SiteShell>
   );
 }
