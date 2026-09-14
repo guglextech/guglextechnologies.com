@@ -13,11 +13,11 @@ const instrumentSans = Instrument_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Guglex Technologies | Payments & Product Engineering',
+    default: 'Guglex Technologies | Blog',
     template: '%s | Guglex Technologies',
   },
   description:
-    'Guglex Technologies designs and ships payment products, digital platforms, and software infrastructure for businesses across Africa and beyond.',
+    'Guides for everyday payments — result checkers, airtime, data, and bills in Ghana, plus how to pay on *714*22#.',
   keywords:
     'Guglex Technologies, payments, fintech, Ewale, Gyepayments, software development, Ghana, Africa',
   icons: {

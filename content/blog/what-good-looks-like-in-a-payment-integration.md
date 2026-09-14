@@ -54,4 +54,4 @@ Watch:
 
 If you cannot see those, you cannot operate the integration.
 
-We publish the same model in [technical documentation](/developers). If you need a partner to implement it, [contact us](/contact).
+We publish the same model in production on Ewale and Gyepayments. If you need a partner to implement it, [contact us](mailto:guglex.technologies@gmail.com).

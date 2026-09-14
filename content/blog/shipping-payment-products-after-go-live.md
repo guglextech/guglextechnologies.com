@@ -33,6 +33,6 @@ Those can follow. Incorrect settlement cannot.
 2. **Build** — design and engineering in short cycles, with sandbox tests that include declines.
 3. **Launch and support** — production keys, monitoring, and a named person who still answers after week two.
 
-That is the same model on [our services page](/services) because it is how payment work actually happens.
+That is how payment work actually happens: discover, build, then stay for launch and support.
 
-If you are about to take a product live, or you already did and the operations layer is missing, [start a conversation](/contact).
+If you are about to take a product live, or you already did and the operations layer is missing, [start a conversation](mailto:guglex.technologies@gmail.com).

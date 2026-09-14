@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import SiteShell from '@/components/SiteShell';
 import SiteContainer from '@/components/SiteContainer';
-import SiteCta from '@/components/SiteCta';
 import {
   estimateReadingMinutes,
   getAllPosts,
@@ -80,16 +79,16 @@ export default async function BlogPost({
   return (
     <SiteShell>
       <article className="bg-background">
-        <SiteContainer className="site-section" narrow>
+        <SiteContainer className="py-12 md:py-16" narrow>
           <Link
             href="/blog"
-            className="mb-10 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+            className="mb-8 inline-flex items-center gap-1.5 text-[13px] text-muted-foreground transition-colors hover:text-foreground"
           >
-            <ArrowLeft className="size-4" />
+            <ArrowLeft className="size-3.5" />
             Blog
           </Link>
 
-          <p className="text-muted-foreground mb-5 text-sm">
+          <p className="text-muted-foreground mb-3 text-[12px] tracking-wide">
             {post.category}
             <span className="mx-1.5">·</span>
             {formatDate(post.date)}
@@ -97,41 +96,41 @@ export default async function BlogPost({
             {readingMinutes} min read
           </p>
 
-          <h1 className="mb-4 text-3xl font-semibold tracking-tight text-foreground md:text-[2.75rem] md:leading-tight">
+          <h1 className="mb-3 text-[1.65rem] font-medium tracking-tight text-foreground md:text-3xl md:leading-snug">
             {post.title}
           </h1>
-          <p className="text-muted-foreground text-lg leading-relaxed">{post.excerpt}</p>
+          <p className="text-muted-foreground text-[15px] leading-relaxed">{post.excerpt}</p>
 
-          <div className="mt-12">
+          <div className="mt-8">
             <div
               dangerouslySetInnerHTML={{ __html: contentHtml }}
               className="blog-content"
             />
 
             {post.tags.length > 0 ? (
-              <p className="text-muted-foreground mt-12 border-t pt-8 text-sm">
+              <p className="text-muted-foreground mt-10 border-t pt-6 text-[12px] tracking-wide">
                 {post.tags.join('  ·  ')}
               </p>
             ) : null}
 
             {related.length > 0 ? (
-              <aside className="mt-16">
-                <p className="mb-4 text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase">
+              <aside className="mt-12">
+                <p className="mb-3 text-[11px] font-medium tracking-[0.2em] text-muted-foreground uppercase">
                   Related
                 </p>
-                <div className="overflow-hidden rounded-xl border bg-card">
+                <div className="divide-y border-t">
                   {related.map((item) => (
                     <Link
                       key={item.slug}
                       href={`/blog/${item.slug}`}
-                      className="block border-b px-5 py-6 last:border-b-0 transition-colors hover:bg-muted/40 md:px-6"
+                      className="block py-4 transition-colors hover:bg-muted/30"
                     >
-                      <p className="text-muted-foreground text-sm">
+                      <p className="text-muted-foreground text-[12px]">
                         {item.category}
                         <span className="mx-1.5">·</span>
                         {formatDate(item.date)}
                       </p>
-                      <h2 className="mt-2 text-lg font-semibold tracking-tight">{item.title}</h2>
+                      <h2 className="mt-1 text-[15px] font-medium tracking-tight">{item.title}</h2>
                     </Link>
                   ))}
                 </div>
@@ -140,13 +139,6 @@ export default async function BlogPost({
           </div>
         </SiteContainer>
       </article>
-
-      <SiteCta
-        title="Need this built for your product?"
-        description="We implement collection, USSD, and provider integrations — and stay for the operations after launch."
-        primary={{ href: '/contact', label: 'Start a conversation' }}
-        secondary={{ href: '/developers', label: 'Developer docs' }}
-      />
     </SiteShell>
   );
 }

@@ -42,4 +42,4 @@ You do not need an app.
 
 Ewale is not a demo. It is a product we operate. The same constraints we meet in client work — Hubtel, Paystack, ECG, WAEC, mobile money, retries, reconciliation — are now constraints we live with every day.
 
-If you are building a payments product or need an integration partner, [talk to us](/contact).
+If you are building a payments product or need an integration partner, [talk to us](mailto:guglex.technologies@gmail.com).

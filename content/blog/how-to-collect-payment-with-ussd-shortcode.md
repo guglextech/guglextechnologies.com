@@ -50,4 +50,4 @@ Use a unique `reference` per attempt so retries and duplicate callbacks cannot c
 
 If those paths are untested, you do not have a payments product yet. You have a happy-path demo.
 
-We design and operate USSD collection for Ewale (`*714*22#`) and for client platforms. If you are scoping a shortcode, [read the developer docs](/developers) or [contact engineering](/contact).
+We design and operate USSD collection for Ewale (`*714*22#`) and for client platforms. If you are scoping a shortcode, [contact engineering](mailto:guglex.technologies@gmail.com).

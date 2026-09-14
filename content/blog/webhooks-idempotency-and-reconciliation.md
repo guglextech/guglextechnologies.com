@@ -45,4 +45,4 @@ The customer-facing status should follow the reconciled state, not the last HTTP
 
 Pending is an honest status. Fake success is how you lose money and trust.
 
-Our [developer documentation](/developers) covers signature verification, retry behaviour, and the payment object Ewale and Gyepayments are built on.
+Our production integrations cover signature verification, retry behaviour, and the payment object Ewale and Gyepayments are built on. [Contact us](mailto:guglex.technologies@gmail.com) if you need the same model on your stack.
