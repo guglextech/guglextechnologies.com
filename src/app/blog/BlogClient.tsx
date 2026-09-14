@@ -74,7 +74,7 @@ export default function BlogClient({ posts, categories }: BlogClientProps) {
       </div>
 
       {categories.length > 0 ? (
-        <div className="mt-5 flex flex-wrap items-center gap-1">
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-1">
           <button
             type="button"
             onClick={() => setActiveCategory(null)}
@@ -105,7 +105,7 @@ export default function BlogClient({ posts, categories }: BlogClientProps) {
         </div>
       ) : null}
 
-      <p className="text-muted-foreground mt-8 mb-3 text-sm">{rangeLabel}</p>
+      <p className="text-muted-foreground mt-8 mb-3 text-center text-sm">{rangeLabel}</p>
 
       {filteredPosts.length === 0 ? (
         <div className="rounded-xl border px-5 py-14 md:px-6">
