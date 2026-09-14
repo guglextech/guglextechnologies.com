@@ -1,33 +1,28 @@
+import Link from 'next/link';
 import BrandLogo from '@/components/BrandLogo';
-import SiteContainer from '@/components/SiteContainer';
-import { Separator } from '@/components/ui/separator';
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="border-t bg-card">
-      <SiteContainer className="py-12 md:py-16">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <BrandLogo href="/blog" />
-            <p className="text-muted-foreground mt-4 max-w-xs text-sm leading-relaxed">
-              Guides for everyday payments in Ghana.
-            </p>
-          </div>
+    <footer className="border-t bg-background">
+      <div className="site-container flex flex-col items-center gap-3 py-6 text-center sm:flex-row sm:justify-between sm:text-left">
+        <BrandLogo href="/blog" />
+        <p className="text-muted-foreground text-xs">
+          <span>&copy; {year} Guglex Technologies</span>
+          <span className="mx-2">·</span>
+          <Link href="/blog" className="hover:text-foreground">
+            Blog
+          </Link>
+          <span className="mx-2">·</span>
           <a
             href="mailto:guglex.technologies@gmail.com"
-            className="text-muted-foreground text-sm transition-colors hover:text-foreground"
+            className="hover:text-foreground"
           >
-            guglex.technologies@gmail.com
+            Contact
           </a>
-        </div>
-
-        <Separator className="mt-10" />
-
-        <div className="text-muted-foreground flex flex-col gap-2 pt-6 text-sm sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; {new Date().getFullYear()} Guglex Technologies</p>
-          <p>All rights reserved</p>
-        </div>
-      </SiteContainer>
+        </p>
+      </div>
     </footer>
   );
 }
