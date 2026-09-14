@@ -20,18 +20,18 @@ export default function Blog() {
   return (
     <SiteShell>
       <section className="bg-background">
-        <SiteContainer className="site-section" narrow>
-          <p className="mb-3 text-center text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase">
+        <SiteContainer className="py-12 md:py-16" narrow>
+          <p className="mb-2 text-center text-[11px] font-medium tracking-[0.2em] text-muted-foreground uppercase">
             Blog
           </p>
-          <h1 className="text-center text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
+          <h1 className="text-center text-2xl font-medium tracking-tight text-foreground md:text-[1.75rem]">
             Guides for everyday payments
           </h1>
-          <p className="text-muted-foreground mx-auto mt-4 max-w-md text-center leading-relaxed">
+          <p className="text-muted-foreground mx-auto mt-2 max-w-sm text-center text-sm leading-relaxed">
             Result checkers, airtime, data, and bills in Ghana — plus how to pay on *714*22#.
           </p>
 
-          <div className="mt-10 md:mt-12">
+          <div className="mt-8">
             <BlogClient posts={posts} categories={categories} />
           </div>
         </SiteContainer>
