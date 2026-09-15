@@ -37,7 +37,7 @@ export default function OpenGraphImage() {
             {SITE_TAGLINE}
           </div>
           <div style={{ fontSize: 28, color: '#94A3B8' }}>
-            ECG · Ghana Water · airtime · *714*22#
+            Blog · payments · Ghana · *714*22#
           </div>
         </div>
       </div>

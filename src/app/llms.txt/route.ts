@@ -11,7 +11,8 @@ export async function GET() {
 
 > ${SITE_DESCRIPTION}
 
-Site: ${SITE_URL}
+This site is a blog, not a place to make payments. The consumer product is Ewale.
+
 Blog: ${SITE_URL}/blog
 Product: https://ewalepay.com
 USSD: *714*22#

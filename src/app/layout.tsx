@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
   publisher: SITE_NAME,
-  category: 'Finance',
+  category: 'Blog',
   referrer: 'origin-when-cross-origin',
   formatDetection: {
     email: false,
@@ -64,12 +64,12 @@ export const metadata: Metadata = {
     locale: SITE_LOCALE,
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: SITE_NAME,
+    title: `${SITE_NAME} Blog`,
     description: SITE_DESCRIPTION,
   },
   twitter: {
     card: 'summary_large_image',
-    title: SITE_NAME,
+    title: `${SITE_NAME} Blog`,
     description: SITE_DESCRIPTION,
   },
   icons: {

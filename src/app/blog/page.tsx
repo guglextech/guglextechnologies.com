@@ -13,7 +13,7 @@ import {
 import BlogClient, { type BlogListPost } from './BlogClient';
 
 export const metadata: Metadata = {
-  title: 'Blog — ECG, Ghana Water, airtime and *714*22# guides',
+  title: 'Blog',
   description: SITE_DESCRIPTION,
   alternates: {
     canonical: '/blog',

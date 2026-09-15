@@ -1,15 +1,18 @@
 export const SITE_URL = 'https://www.guglextechnologies.com';
 export const SITE_NAME = 'Guglex Technologies';
-export const SITE_TAGLINE = 'Guides for everyday payments in Ghana';
-export const SITE_DESCRIPTION = 'Pay ECG, Ghana Water, airtime, data, and result checkers in Ghana. Guides for Ewale, *714*22#, tokens, bills, and mobile money.';
+export const SITE_TAGLINE = 'The Guglex Technologies blog';
+export const SITE_DESCRIPTION =
+  'The Guglex Technologies blog: guides for everyday payments in Ghana — ECG tokens, Ghana Water, airtime, data, result checkers, Ewale, and *714*22#.';
 export const SITE_KEYWORDS = [
+  'Guglex Technologies blog',
   'Guglex Technologies',
+  'payment guides Ghana',
+  'Ewale guide',
   'Ewale',
-  'Ewale pay',
   '*714*22#',
-  'ECG prepaid token Ghana',
-  'pay Ghana Water bill',
-  'pay ECG token',
+  'how to buy ECG prepaid token',
+  'how to pay Ghana Water bill',
+  'ECG token Ghana',
   'ecg power app',
   'ecg power app Ghana',
   'airtime Ghana',
@@ -49,7 +52,7 @@ export function organizationJsonLd() {
         '@type': 'WebSite',
         '@id': `${SITE_URL}/#website`,
         url: SITE_URL,
-        name: SITE_NAME,
+        name: `${SITE_NAME} Blog`,
         description: SITE_DESCRIPTION,
         inLanguage: 'en-GH',
         publisher: { '@id': `${SITE_URL}/#organization` },
