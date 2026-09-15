@@ -3,12 +3,14 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import SiteShell from '@/components/SiteShell';
 import SiteContainer from '@/components/SiteContainer';
+import JsonLd from '@/components/JsonLd';
 import {
   estimateReadingMinutes,
   getAllPosts,
   getPostBySlug,
   getRelatedPosts,
 } from '../../../../lib/blog';
+import { articleJsonLd, breadcrumbJsonLd, SITE_NAME, absoluteUrl } from '@/lib/seo';
 import { remark } from 'remark';
 import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
@@ -32,16 +34,42 @@ export async function generateMetadata({
     return { title: 'Article' };
   }
 
+  const url = absoluteUrl(`/blog/${post.slug}`);
+
   return {
     title: post.title,
     description: post.excerpt,
+    keywords: [post.category, ...post.tags, SITE_NAME, 'Ewale', '*714*22#', 'Ghana'],
+    authors: [{ name: post.author, url: absoluteUrl('/blog') }],
+    category: post.category,
+    alternates: {
+      canonical: url,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
+      url,
       type: 'article',
       publishedTime: post.date,
+      modifiedTime: post.date,
       authors: [post.author],
       tags: post.tags,
+      section: post.category,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
     },
   };
 }
@@ -75,9 +103,29 @@ export default async function BlogPost({
   const contentHtml = processedContent.toString();
   const readingMinutes = estimateReadingMinutes(post.content);
   const related = getRelatedPosts(post.slug, 3);
+  const wordCount = post.content.trim().split(/\s+/).filter(Boolean).length;
 
   return (
     <SiteShell>
+      <JsonLd
+        data={articleJsonLd({
+          slug: post.slug,
+          title: post.title,
+          excerpt: post.excerpt,
+          date: post.date,
+          author: post.author,
+          category: post.category,
+          tags: post.tags,
+          wordCount,
+        })}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Home', path: '/blog' },
+          { name: 'Blog', path: '/blog' },
+          { name: post.title, path: `/blog/${post.slug}` },
+        ])}
+      />
       <article className="bg-background">
         <SiteContainer className="py-12 md:py-16" narrow>
           <Link

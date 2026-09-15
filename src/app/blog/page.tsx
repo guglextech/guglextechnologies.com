@@ -1,17 +1,39 @@
 import type { Metadata } from 'next';
 import SiteShell from '@/components/SiteShell';
 import SiteContainer from '@/components/SiteContainer';
+import JsonLd from '@/components/JsonLd';
 import { estimateReadingMinutes, getAllPosts, getCategories } from '../../../lib/blog';
+import {
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  absoluteUrl,
+  blogJsonLd,
+  breadcrumbJsonLd,
+} from '@/lib/seo';
 import BlogClient, { type BlogListPost } from './BlogClient';
 
 export const metadata: Metadata = {
-  title: 'Blog',
-  description:
-    'Guides for everyday payments — result checkers, airtime, data, and bills in Ghana, plus how to pay on *714*22#.',
+  title: 'Blog — ECG, Ghana Water, airtime and *714*22# guides',
+  description: SITE_DESCRIPTION,
+  alternates: {
+    canonical: '/blog',
+  },
+  openGraph: {
+    title: `${SITE_NAME} Blog`,
+    description: SITE_DESCRIPTION,
+    url: absoluteUrl('/blog'),
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${SITE_NAME} Blog`,
+    description: SITE_DESCRIPTION,
+  },
 };
 
 export default function Blog() {
-  const posts: BlogListPost[] = getAllPosts().map(({ content, ...post }) => ({
+  const allPosts = getAllPosts();
+  const posts: BlogListPost[] = allPosts.map(({ content, ...post }) => ({
     ...post,
     readingMinutes: estimateReadingMinutes(content),
   }));
@@ -19,6 +41,13 @@ export default function Blog() {
 
   return (
     <SiteShell>
+      <JsonLd data={blogJsonLd(allPosts)} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Home', path: '/blog' },
+          { name: 'Blog', path: '/blog' },
+        ])}
+      />
       <section className="bg-background">
         <SiteContainer className="py-12 md:py-16" narrow>
           <p className="mb-2 text-center text-[11px] font-medium tracking-[0.2em] text-muted-foreground uppercase">

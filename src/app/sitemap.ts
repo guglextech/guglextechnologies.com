@@ -1,23 +1,23 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
 import { getAllPosts } from '../../lib/blog';
-
-const baseUrl = 'https://www.guglextechnologies.com';
+import { SITE_URL } from '@/lib/seo';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts();
+  const latestPostDate = posts[0] ? new Date(posts[0].date) : new Date();
 
   return [
     {
-      url: `${baseUrl}/blog`,
-      lastModified: new Date(),
+      url: `${SITE_URL}/blog`,
+      lastModified: latestPostDate,
       changeFrequency: 'daily',
-      priority: 1.0,
+      priority: 1,
     },
     ...posts.map((post) => ({
-      url: `${baseUrl}/blog/${post.slug}`,
+      url: `${SITE_URL}/blog/${post.slug}`,
       lastModified: new Date(post.date),
       changeFrequency: 'weekly' as const,
-      priority: 0.8,
+      priority: 0.9,
     })),
   ];
 }

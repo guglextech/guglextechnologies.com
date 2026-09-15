@@ -1,6 +1,5 @@
-import { MetadataRoute } from 'next';
-
-const baseUrl = 'https://www.guglextechnologies.com';
+import type { MetadataRoute } from 'next';
+import { SITE_URL } from '@/lib/seo';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -20,7 +19,21 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: ['/api/', '/private/'],
       },
+      {
+        userAgent: [
+          'GPTBot',
+          'ChatGPT-User',
+          'Google-Extended',
+          'ClaudeBot',
+          'Anthropic-AI',
+          'PerplexityBot',
+          'Applebot',
+        ],
+        allow: '/',
+        disallow: ['/api/', '/private/'],
+      },
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }

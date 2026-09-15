@@ -15,6 +15,10 @@ export default function Footer() {
             Blog
           </Link>
           <span className="mx-2">·</span>
+          <Link href="/feed.xml" className="hover:text-foreground">
+            RSS
+          </Link>
+          <span className="mx-2">·</span>
           <a
             href="mailto:guglex.technologies@gmail.com"
             className="hover:text-foreground"
