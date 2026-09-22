@@ -37,7 +37,7 @@ export default function Blog() {
     ...post,
     readingMinutes: estimateReadingMinutes(content),
   }));
-  const categories = getCategories().sort((a, b) => a.localeCompare(b));
+  const categories = getCategories();
 
   return (
     <SiteShell>
@@ -49,20 +49,9 @@ export default function Blog() {
         ])}
       />
       <section className="bg-background">
-        <SiteContainer className="py-12 md:py-16" narrow>
-          <p className="mb-2 text-center text-[11px] font-medium tracking-[0.2em] text-muted-foreground uppercase">
-            Blog
-          </p>
-          <h1 className="text-center text-2xl font-medium tracking-tight text-foreground md:text-[1.75rem]">
-            Guides for everyday payments
-          </h1>
-          <p className="text-muted-foreground mx-auto mt-2 max-w-sm text-center text-sm leading-relaxed">
-            Result checkers, airtime, data, and bills in Ghana — plus how to pay on *714*22#.
-          </p>
-
-          <div className="mt-8">
-            <BlogClient posts={posts} categories={categories} />
-          </div>
+        <SiteContainer className="py-10 md:py-14" narrow>
+          <h1 className="sr-only">Blog</h1>
+          <BlogClient posts={posts} categories={categories} />
         </SiteContainer>
       </section>
     </SiteShell>

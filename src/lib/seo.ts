@@ -2,25 +2,36 @@ export const SITE_URL = 'https://www.guglextechnologies.com';
 export const SITE_NAME = 'Guglex Technologies';
 export const SITE_TAGLINE = 'The Guglex Technologies blog';
 export const SITE_DESCRIPTION =
-  'The Guglex Technologies blog: guides for everyday payments in Ghana — ECG tokens, Ghana Water, airtime, data, result checkers, Ewale, and *714*22#.';
+  'Guides for everyday Ewale payments in Ghana: airtime, data, DSTV, GOtv, StarTimes, ECG, Ghana Water, result checkers, and *714*22#.';
 export const SITE_KEYWORDS = [
   'Guglex Technologies blog',
-  'Guglex Technologies',
-  'payment guides Ghana',
-  'Ewale guide',
   'Ewale',
+  'Ewalepay',
   '*714*22#',
+  'buy airtime Ghana',
+  'buy data bundle Ghana',
+  'pay DSTV Ghana USSD',
+  'pay GOtv Ghana',
+  'pay StarTimes Ghana',
   'how to buy ECG prepaid token',
   'how to pay Ghana Water bill',
+  'WASSCE result checker',
+  'BECE result checker',
+  'mobile money Ghana',
   'ECG token Ghana',
   'ecg power app',
   'ecg power app Ghana',
   'airtime Ghana',
   'data bundle Ghana',
+  'pay DSTV Ghana',
+  'pay GOtv Ghana',
+  'pay StarTimes Ghana',
+  'how to buy ECG prepaid token',
+  'how to pay Ghana Water bill',
   'WASSCE result checker',
+  'BECE result checker',
   'mobile money Ghana',
-  'USSD payments Ghana',
-  'fintech Ghana',
+  'ECG token Ghana',
 ];
 export const SITE_EMAIL = 'guglex.technologies@gmail.com';
 export const SITE_LOCALE = 'en_GH';

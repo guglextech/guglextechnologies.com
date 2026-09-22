@@ -11,7 +11,7 @@ export default function SiteContainer({
 }) {
   return (
     <div className={cn('site-container', className)}>
-      {narrow ? <div className="mx-auto w-full max-w-xl">{children}</div> : children}
+      {narrow ? <div className="mx-auto w-full max-w-2xl">{children}</div> : children}
     </div>
   );
 }

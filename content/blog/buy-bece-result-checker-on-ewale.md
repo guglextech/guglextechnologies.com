@@ -1,34 +1,36 @@
 ---
-title: "Buy a BECE result checker on Ewale"
-excerpt: "Buy a BECE result checker on Ewale, pay with mobile money, and use the serial and PIN with the candidate’s BECE index number."
-date: "2026-04-01"
+title: "How to buy a BECE result checker on Ewale"
+excerpt: "BECE checkers are a separate voucher from WASSCE. Select BECE on the Education menu, pay once, and keep the serial and PIN."
+date: "2026-09-10"
 author: "Guglex Technologies"
 category: "Education"
-tags: ["Ewale", "BECE", "Result Checker"]
+tags: ["BECE", "Result checker", "Ewale"]
 ---
 
-Buy a BECE result checker on Ewale, pay with mobile money, and use the serial and PIN with the candidate’s BECE index number.
+Parents buying BECE checkers on results week often mix the exam type. Ewale will sell whichever row you confirm. A WASSCE voucher does not unlock BECE, and the reverse is also true.
 
-This is a blog note for people searching that problem. Payments happen on **Ewale** ([ewalepay.com](https://ewalepay.com) or **\*714\*22#**), not on this website.
+Payments happen on **Ewale** ([ewalepay.com](https://ewalepay.com) or **\*714\*22#**), not on this blog.
 
-## Buying the checker
+## What you need
 
-1. Open Ewale or dial **\*714\*22#**.
-2. Choose **result checker**, then **BECE**.
-3. Confirm the amount. Approve the mobile money PIN once.
-4. Wait for SMS with **serial** and **PIN**.
-5. On the official WAEC results site, enter index number + serial + PIN.
+1. Certainty that the candidate sat **BECE**.
+2. The paying phone close by for the PIN and the SMS.
+3. A plan for who keeps the serial — the candidate or the guardian.
 
-## Do not mix this up
+## The flow on \*714\*22#
 
-- BECE is Junior High. WASSCE is Senior High. The vouchers are not interchangeable.
-- Ewale sells the checker. WAEC hosts the result.
-- A successful MoMo debit should not be followed by a panic second purchase.
+1. Dial **\*714\*22#** or use [ewalepay.com](https://ewalepay.com).
+2. Open **Education** → **BECE**.
+3. Confirm the product name on the summary. Approve once.
+4. Copy serial and PIN from SMS before the thread is deleted.
 
-If the voucher never arrives, keep the Ewale reference. If the grades look wrong, that is WAEC, not Ewale.
+## After you pay
 
-## If it fails
+Placement (CSSPS) is a different process from buying the checker. The voucher only lets you see results the way WAEC provides them.
 
-- Declined PIN: nothing was bought. Retry.
-- Debit with no SMS: wait, then support with the reference.
-- Wrong product selected: that payment cannot be “converted.” Use the correct flow next.
+## If something fails
+
+- **Shared family phone:** Agree who approves the PIN so two people do not buy two vouchers.
+- **Vendor scratch card still in the bag:** Do not buy digital and physical “to be safe” unless you need two checks.
+
+BECE on the menu means BECE on the voucher. Read that word before the PIN.
