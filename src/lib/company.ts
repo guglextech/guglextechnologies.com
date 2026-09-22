@@ -2,28 +2,26 @@ export const PROJECTS = [
   {
     name: 'Ewale',
     href: 'https://ewalepay.com',
-    summary: 'Everyday payments on *714*22# — airtime, data, bills, and checkers.',
+    tag: 'Consumer',
+    summary: 'Airtime, data, ECG, water, TV, and result checkers on any phone.',
+    color: 'var(--brand-blue)',
+    icon: 'phone',
+    highlights: ['*714*22#', 'Airtime', 'ECG', 'Checkers'],
   },
   {
     name: 'Gyepayment',
     href: 'mailto:guglex.technologies@gmail.com',
-    summary: 'Recurring collections for businesses — MoMo, bank, and cards.',
+    tag: 'Business',
+    summary: 'Recurring collections for loans, BNPL, and subscriptions.',
+    color: 'var(--brand-green)',
+    icon: 'repeat',
+    highlights: ['MoMo debit', 'Bank', 'Cards', 'Reconcile'],
   },
 ] as const;
 
 export const TEAM = [
-  {
-    name: 'Samuel Acquah',
-    role: 'Founder',
-    image: undefined as string | undefined,
-  },
+  { name: 'XXXX', role: 'Founder', color: 'var(--brand-blue)' },
+  { name: 'XXXX', role: 'CTO', color: 'var(--brand-green)' },
+  { name: 'XXXX', role: 'Business Development', color: 'var(--brand-orange)' },
+  { name: 'XXXX', role: 'Mobile Engineer', color: 'var(--brand-yellow)' },
 ] as const;
-
-export function personInitials(name: string) {
-  return name
-    .split(/\s+/)
-    .map((part) => part[0])
-    .join('')
-    .slice(0, 2)
-    .toUpperCase();
-}
