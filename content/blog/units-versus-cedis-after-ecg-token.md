@@ -58,7 +58,7 @@ Checkouts show money and meter name. The meter shows units after STS accept. Do 
 
 Trust the CIU for remaining energy. Use the app as a purchase log.
 
-### Do I get more units on *226# than on *714*22#?
+### Do I get more units on \*226# than on \*714\*22#?
 
 You get what the vending engine issues for that meter and amount after its rules. Compare confirmations. Prefer **\*714\*22#** for convenience, not for a secret tariff.
 

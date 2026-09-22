@@ -1,6 +1,6 @@
 ---
 title: "Lost ECG token SMS in Ghana: how to recover without paying twice"
-excerpt: "If the 20-digit STS token SMS vanished, do not buy again. Check the same inbox, PowerApp transactions, *226# history if offered, vendor reprints, then Ewale or ECG support with the first reference."
+excerpt: "If the 20-digit STS token SMS vanished, do not buy again. Check the same inbox, PowerApp transactions, \\*226# history if offered, vendor reprints, then Ewale or ECG support with the first reference."
 date: "2026-07-26"
 author: "Guglex Technologies"
 category: "Utilities"

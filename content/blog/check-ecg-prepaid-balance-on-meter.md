@@ -62,6 +62,10 @@ Load did that — fridge, welder, AC, a neighbour on a shared tank. Last token s
 
 Do not trust random *codes from Facebook. Read the glass. Official ECG tools may add features; verify against the CIU.
 
+### Should I check balance after every token?
+
+Yes. Remaining kWh after enter is how you know the twenty digits landed. If it did not rise, you have an error word, not a reason to open a second checkout. If it rose, you are done — even when the cedi amount on MoMo looks larger than the unit bump. Next time remaining is low, one name-checked vend on **\*714\*22#** (or ECG PowerApp / **\*226#** if that is what you have open) is enough.
+
 ## If it still fails
 
 - **Confused remaining with last token:** Twenty digits vs a small kWh figure. Different screens.

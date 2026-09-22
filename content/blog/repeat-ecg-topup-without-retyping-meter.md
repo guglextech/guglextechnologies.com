@@ -1,6 +1,6 @@
 ---
 title: "Repeat ECG top-up without retyping the meter number"
-excerpt: "Save the prepaid meter in PowerApp, register it on *226#, or rely on a checkout that remembers the last number. Still read the registered name every time. The 20-digit token is new; the meter identity is not."
+excerpt: "Save the prepaid meter in PowerApp, register it on \\*226#, or rely on a checkout that remembers the last number. Still read the registered name every time. The 20-digit token is new; the meter identity is not."
 date: "2026-07-13"
 author: "Guglex Technologies"
 category: "Utilities"
@@ -17,7 +17,7 @@ Add the meter once from the plate, wait for the registered name, save a nickname
 
 OTP failure means the saved list is trapped in the app. That is why a second memory exists: USSD. Do not create a second PowerApp profile in a panic and add the neighbour’s number from memory.
 
-## *226# and operator menus
+## \*226# and operator menus
 
 **\*226#** is the official shortcode; register the meter when you are calm. Later sessions should not need the full plate if ECG still has it on that number. Session drops still happen. **\*170#** and **\*110#** bury ECG among airtime; saved beneficiaries on telco menus can be the wrong biller. Read the header: prepaid electricity, this name.
 
@@ -63,6 +63,10 @@ The one that shows the registered name every time. ECG PowerApp and **\*714\*22#
 ### Vendor knows my meter already.
 
 Convenient. Still look at the till name. Familiarity is not cryptography.
+
+### Can I reuse last week’s USSD session?
+
+No. Each vend is a new PIN and a new twenty-digit token. Reusing a saved **meter number** is the point of this article. Reusing a saved **token** is Used. If **\*714\*22#** or ECG PowerApp prefills the meter, you still confirm the registered name and still enter whatever new SMS arrives. Session memory is identity, not credit.
 
 ## If it still fails
 

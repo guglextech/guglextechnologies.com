@@ -62,6 +62,10 @@ It is a second vend if PowerApp already took money. Safer is waiting on the firs
 
 Check MoMo. Failed USSD with no debit can move to the vendor. Failed USSD with a debit cannot.
 
+### How long should I wait before a second PIN?
+
+Long enough to search SMS, spam, the other SIM, and the first channel’s receipt. Fifteen minutes is a usable household rule. If remaining kWh already rose, you wait forever — you are done. If CRC / upgrade is the block, you wait for ECG, not for ECG PowerApp plus a vendor. A second PIN is a second STS credit, even when it feels like a retry.
+
 ## If it still fails
 
 - **Test vend on every logo:** Each test is real STS. Stop at one.

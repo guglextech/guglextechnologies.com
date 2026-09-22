@@ -50,7 +50,7 @@ Keep a photo of the seal after the visit. The next time a cousin offers to “bo
 
 ## FAQ
 
-### Will *714*22# show a tamper warning before I pay?
+### Will \*714\*22# show a tamper warning before I pay?
 
 Unlikely. Checkouts sell credit. The flag lives on the meter. Look at the glass before you PIN.
 
@@ -61,6 +61,10 @@ No. CRC is checksum / generation. Use the NURI Relay path or CLOU upgrade path a
 ### Can I keep using light if tamper has not cut yet?
 
 You can until it cuts. You should still call ECG. Flags do not age into legality.
+
+### Will remaining units survive a tamper lockout?
+
+Usually the kWh already on the meter is still there after a legitimate ECG clear. Unused twenty-digit SMS should still be enterable afterwards. Do not buy a “replacement” credit while the flag is active — it may sit behind the same cutoff. Photograph remaining units when you can see the glass, keep the SMS, and let ECG speak first.
 
 ## If it still fails
 

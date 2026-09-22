@@ -62,6 +62,10 @@ Visual grouping. Type digits only.
 
 Treat typical credit as twenty. Shorter is often a reference. Do not pad with zeros.
 
+### The SMS wrapped onto two lines. Did I miss a digit?
+
+Join the lines in your head as one number. Count twenty. If you have nineteen, the wrap ate a digit — open the original **\*714\*22#**, ECG PowerApp, or **\*226#** message, not a screenshot. If you have twenty-one, you counted a space or a hyphen. Never pad. Never drop a zero at the start of a group. Retype once from the original, then stop. Invalid after a true twenty on the correct plate is no longer a hyphen problem.
+
 ## If it still fails
 
 - **Third retype plus a new USSD:** Wallet first. One unused string. Then type.

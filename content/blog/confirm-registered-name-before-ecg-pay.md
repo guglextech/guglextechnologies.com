@@ -60,6 +60,10 @@ Do not guess. Re-read the plate. If lookup fails, ECG 0302 611 611, not a random
 
 Ask. If they refuse, use ${E} yourself.
 
+### The name matches but I still feel unsure.
+
+Match the ~eleven digits on the plate to the digits on the confirm screen, not only the surname. Two customers can share a family name on a compound. If both match, pay once. If the number disagrees, abort even if the name looks friendly. Then take a new photo of the metal and update ECG PowerApp / the fridge paper before you try **\*714\*22#** again.
+
 ## If it still fails
 
 - **Recognised the amount, ignored the name:** Amounts repeat. Names distinguish houses.

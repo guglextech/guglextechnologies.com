@@ -50,7 +50,7 @@ Large personal vends on a shared meter need a chat announcement, not a bigger mi
 
 ## FAQ
 
-### What is the minimum on *714*22#?
+### What is the minimum on \*714\*22#?
 
 Whatever the confirm screen allows tonight. If it rejects, raise to the amount it states. Do not hop to **\*226#** and PowerApp with the same GH₵1 as a scientific experiment.
 

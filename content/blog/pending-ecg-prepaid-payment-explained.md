@@ -62,7 +62,7 @@ Usually no. Cancelling is a wallet/biller process. Hammering cancel-by-new-purch
 
 Follow what the wallet actually reverses. Do not assume. Read the history lines.
 
-### Should I stay on *714*22# while it is pending, or jump to *226#?
+### Should I stay on **\*714\*22#** while it is pending, or jump to **\*226#**?
 
 Stay with the checkout that already holds the debit. Jumping to **\*226#** is a new story. After a confirmed reversal, **\*714\*22#** is still the everyday retry.
 

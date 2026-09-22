@@ -261,7 +261,7 @@ Tamper flags are also not CRC. A tamper message needs ECG, and sometimes a visit
         a: `Customer messaging treats the ECG STS upgrade as free. You pay for electricity credit, not for the upgrade token from a stranger. Confirm with ECG on ${CARE}.`,
       },
       {
-        q: 'Can I keep using *714*22# after the upgrade?',
+        q: 'Can I keep using \\*714\\*22# after the upgrade?',
         a: `Yes. ${E} vends ordinary credit tokens. After the meter speaks the current STS dialect, those tokens should load like any other honest vend.`,
       },
     ],
@@ -395,7 +395,7 @@ Smart prepaid and split-CIU meters still speak STS or a close cousin. If units d
         a: 'No. One STS credit, one meter identity. Shared compounds need a social rule about who pays, not a split token.',
       },
       {
-        q: 'Is *226# more “STS official” than *714*22#?',
+        q: 'Is \\*226# more “STS official” than \\*714\\*22#?',
         a: `${A} is ECG’s shortcode. ${E} is a payments shortcode in front of vending. The meter speaks STS either way. Prefer ${E} for everyday recall; keep ${A} as the utility’s own door.`,
       },
     ],
@@ -615,7 +615,7 @@ Brand matters for keys: NURI Display-hold is CRC theatre; on a CLOU CIU the same
     slug: 'lost-ecg-token-sms-how-to-recover',
     title: 'Lost ECG token SMS in Ghana: how to recover without paying twice',
     excerpt:
-      'If the 20-digit STS token SMS vanished, do not buy again. Check the same inbox, PowerApp transactions, *226# history if offered, vendor reprints, then Ewale or ECG support with the first reference.',
+      'If the 20-digit STS token SMS vanished, do not buy again. Check the same inbox, PowerApp transactions, \\*226# history if offered, vendor reprints, then Ewale or ECG support with the first reference.',
     tags: ['ECG', 'Token', 'SMS', 'Receipt'],
     date: dates[8],
     lead: `The token is a twenty-digit STS string. The SMS is only a delivery truck. When the truck disappears — full inbox, dual-SIM, a child deleting “promotions”, a session that died after MoMo debit — the instinct is to vend again on a different logo. That instinct creates **Old** tokens and double debit. The first purchase is often sitting in a channel you have not opened yet.
@@ -744,7 +744,7 @@ Do not convert Y back into a fake cedi refund in your head and buy a second toke
         a: 'Trust the CIU for remaining energy. Use the app as a purchase log.',
       },
       {
-        q: 'Do I get more units on *226# than on *714*22#?',
+        q: 'Do I get more units on \\*226# than on \\*714\\*22#?',
         a: `You get what the vending engine issues for that meter and amount after its rules. Compare confirmations. Prefer ${E} for convenience, not for a secret tariff.`,
       },
     ],
@@ -1146,7 +1146,7 @@ Keep a photo of the seal after the visit. The next time a cousin offers to “bo
     ],
     faqs: [
       {
-        q: 'Will *714*22# show a tamper warning before I pay?',
+        q: 'Will \\*714\\*22# show a tamper warning before I pay?',
         a: 'Unlikely. Checkouts sell credit. The flag lives on the meter. Look at the glass before you PIN.',
       },
       {
@@ -1505,7 +1505,7 @@ Large personal vends on a shared meter need a chat announcement, not a bigger mi
     ],
     faqs: [
       {
-        q: 'What is the minimum on *714*22#?',
+        q: 'What is the minimum on \\*714\\*22#?',
         a: `Whatever the confirm screen allows tonight. If it rejects, raise to the amount it states. Do not hop to ${A} and PowerApp with the same GH₵1 as a scientific experiment.`,
       },
       {
@@ -1528,7 +1528,7 @@ Large personal vends on a shared meter need a chat announcement, not a bigger mi
     slug: 'repeat-ecg-topup-without-retyping-meter',
     title: 'Repeat ECG top-up without retyping the meter number',
     excerpt:
-      'Save the prepaid meter in PowerApp, register it on *226#, or rely on a checkout that remembers the last number. Still read the registered name every time. The 20-digit token is new; the meter identity is not.',
+      'Save the prepaid meter in PowerApp, register it on \\*226#, or rely on a checkout that remembers the last number. Still read the registered name every time. The 20-digit token is new; the meter identity is not.',
     tags: ['ECG', 'Meter number', 'PowerApp', 'USSD'],
     date: dates[21],
     lead: `Eleven-ish digits in the dark is how 6 becomes 8. Repeat vending should not mean retyping the plate every Thursday. ${APP} was built to **save** prepaid meters. ECG’s ${A} can keep a registered meter on the official USSD. Some people keep a paper sticker on the CIU and a phone contact. Ewale ${E} / ${WEB} is the everyday path this blog prefers for the **purchase**, and you still must not blindly reuse a wrong last number.
@@ -1542,7 +1542,7 @@ ${PAY} Saving identity is good. Skipping the **name** on confirm is how saved co
 OTP failure means the saved list is trapped in the app. That is why a second memory exists: USSD. Do not create a second PowerApp profile in a panic and add the neighbour’s number from memory.`,
       },
       {
-        title: '*226# and operator menus',
+        title: '\\*226# and operator menus',
         body: `${A} is the official shortcode; register the meter when you are calm. Later sessions should not need the full plate if ECG still has it on that number. Session drops still happen. ${M} and ${T} bury ECG among airtime; saved beneficiaries on telco menus can be the wrong biller. Read the header: prepaid electricity, this name.
 
 If USSD asks you to re-enter the meter, that is safer than assuming. Type from the CIU sticker, not from swagger.`,

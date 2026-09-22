@@ -60,6 +60,10 @@ It is an interface. The meter behind it may be ordinary STS prepaid. Speak preci
 
 The one that shows the name and delivers digits you can still enter. This blog prefers **\*714\*22#** for everyday use; ECG PowerApp and **\*226#** remain official ECG-side doors.
 
+### Does a smart meter remove Used / Old / Invalid / CRC?
+
+No. Those words are STS behaviour. A radio or a CIU screen does not delete sequence rules. Remote-load claims still end at remaining kWh on the glass. If the glass did not move, type the twenty digits. If the glass says CRC on a NURI, you are in Relay-and-upgrade country, not “smarter app” country.
+
 ## If it still fails
 
 - **Waited overnight for remote load:** Type the SMS. Then wait on ECG only if the glass rejects with CRC/tamper/upgrade.

@@ -54,7 +54,7 @@ It produces a credit token for the amount and meter you confirmed. Fees are not 
 
 No. One STS credit, one meter identity. Shared compounds need a social rule about who pays, not a split token.
 
-### Is *226# more “STS official” than *714*22#?
+### Is \*226# more “STS official” than \*714\*22#?
 
 **\*226#** is ECG’s shortcode. **\*714\*22#** is a payments shortcode in front of vending. The meter speaks STS either way. Prefer **\*714\*22#** for everyday recall; keep **\*226#** as the utility’s own door.
 

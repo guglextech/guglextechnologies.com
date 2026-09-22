@@ -1491,7 +1491,7 @@ Pending is not a moral judgement on your household. It is a queue. Queues are no
       a: 'Follow what the wallet actually reverses. Do not assume. Read the history lines.',
     },
     {
-      q: 'Should I stay on \\*714\\*22# while it is pending, or jump to \\*226#?',
+      q: `Should I stay on ${E} while it is pending, or jump to ${A}?`,
       a: `Stay with the checkout that already holds the debit. Jumping to ${A} is a new story. After a confirmed reversal, ${E} is still the everyday retry.`,
     },
   ],

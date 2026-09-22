@@ -64,7 +64,7 @@ It is a documented customer step for this error class, not an instruction to bre
 
 Customer messaging treats the ECG STS upgrade as free. You pay for electricity credit, not for the upgrade token from a stranger. Confirm with ECG on 0302 611 611.
 
-### Can I keep using *714*22# after the upgrade?
+### Can I keep using \*714\*22# after the upgrade?
 
 Yes. **\*714\*22#** vends ordinary credit tokens. After the meter speaks the current STS dialect, those tokens should load like any other honest vend.
 
