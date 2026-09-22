@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark, .dark *));
 
 @utility site-container {
-  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  @apply mx-auto w-full max-w-5xl px-5 sm:px-6;
 }
 
 @utility site-section {
@@ -129,7 +129,8 @@
   --color-brand-green: var(--brand-green);
   --color-brand-yellow: var(--brand-yellow);
   --color-brand-orange: var(--brand-orange);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-sans);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
@@ -272,26 +273,26 @@
 .blog-content h3,
 .blog-content h4 {
   color: var(--foreground);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.02em;
-  margin-top: 1.75rem;
-  margin-bottom: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
 }
 
 .blog-content h2 {
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
 }
 
 .blog-content h3 {
-  font-size: 1rem;
+  font-size: 0.975rem;
 }
 
 .blog-content strong {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .blog-content p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.15rem;
 }
 
 .blog-content a {
@@ -302,7 +303,7 @@
 
 .blog-content ul,
 .blog-content ol {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.35rem;
   padding-left: 1.25rem;
 }
 
@@ -315,20 +316,30 @@
 }
 
 .blog-content li {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.45rem;
+}
+
+.blog-content li::marker {
+  color: var(--muted-foreground);
 }
 
 .blog-content blockquote {
   border-left: 3px solid var(--brand-blue);
   padding-left: 1rem;
   color: var(--muted-foreground);
-  margin: 1.5rem 0;
+  margin: 1.75rem 0;
 }
 
 .blog-content pre,
 .blog-content code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--font-mono);
   font-size: 0.9em;
+}
+
+.blog-content :not(pre) > code {
+  background: var(--muted);
+  border-radius: 0.35rem;
+  padding: 0.12em 0.4em;
 }
 
 .blog-content pre {
@@ -337,13 +348,14 @@
   padding: 1rem 1.25rem;
   overflow-x: auto;
   margin: 1.5rem 0;
+  border-radius: var(--radius-lg);
 }
 
 .blog-content table {
   width: 100%;
   border-collapse: collapse;
   margin: 1.5rem 0;
-  font-size: 0.95rem;
+  font-size: 0.875rem;
 }
 
 .blog-content th,

@@ -15,6 +15,11 @@ export interface BlogPost {
   content: string;
 }
 
+/** Keep USSD *714*22# from being parsed as markdown italics. */
+export function escapeUssdShortcode(markdown: string) {
+  return markdown.replaceAll('*714*22#', '\\*714\\*22#');
+}
+
 function parsePost(slug: string, fileContents: string): BlogPost {
   const { data, content } = matter(fileContents);
 
@@ -55,7 +60,11 @@ export function getPostBySlug(slug: string): BlogPost | null {
 }
 
 export function getCategories(): string[] {
-  return [...new Set(getAllPosts().map((post) => post.category))];
+  const present = new Set(getAllPosts().map((post) => post.category));
+  const preferred = ['Telco', 'Education', 'Utilities', 'Services', 'TV Bills', 'Tips'];
+  const ordered = preferred.filter((category) => present.has(category));
+  const extras = [...present].filter((category) => !preferred.includes(category)).sort();
+  return [...ordered, ...extras];
 }
 
 export function estimateReadingMinutes(content: string): number {

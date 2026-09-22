@@ -1,42 +1,41 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import BrandLogo from '@/components/BrandLogo';
 import ThemeToggle from '@/components/ThemeToggle';
-import { Button } from '@/components/ui/button';
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  navigationMenuTriggerStyle,
-} from '@/components/ui/navigation-menu';
+import { EWALE_DIAL_HREF } from '@/lib/blog-cta';
+import { cn } from '@/lib/utils';
 
 export default function Navigation() {
-  return (
-    <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-md">
-      <nav className="site-container flex h-16 items-center justify-between">
-        <BrandLogo href="/blog" />
+  const pathname = usePathname();
+  const onBlog = pathname === '/blog' || pathname.startsWith('/blog/');
 
-        <div className="flex items-center gap-2">
-          <NavigationMenu className="hidden sm:flex" align="end">
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuLink render={<Link href="/blog" />} className={navigationMenuTriggerStyle()}>
-                  Blog
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-          <ThemeToggle />
-          <Button
-            variant="outline"
-            size="sm"
-            className="sm:hidden"
-            render={<Link href="/blog" />}
+  return (
+    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md">
+      <nav className="site-container flex h-14 items-center gap-8">
+        <BrandLogo href="/" />
+
+        <div className="flex flex-1 items-center gap-6">
+          <Link
+            href="/blog"
+            className={cn(
+              'text-[13px] transition-colors',
+              onBlog ? 'text-foreground' : 'text-muted-foreground hover:text-foreground',
+            )}
           >
             Blog
-          </Button>
+          </Link>
+        </div>
+
+        <div className="flex items-center gap-5">
+          <a
+            href={EWALE_DIAL_HREF}
+            className="text-[13px] text-muted-foreground transition-colors hover:text-brand-blue"
+          >
+            *714*22#
+          </a>
+          <ThemeToggle />
         </div>
       </nav>
     </header>
