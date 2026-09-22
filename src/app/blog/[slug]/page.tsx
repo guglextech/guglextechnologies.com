@@ -121,7 +121,7 @@ export default async function BlogPost({
       />
       <JsonLd
         data={breadcrumbJsonLd([
-          { name: 'Home', path: '/blog' },
+          { name: 'Home', path: '/' },
           { name: 'Blog', path: '/blog' },
           { name: post.title, path: `/blog/${post.slug}` },
         ])}

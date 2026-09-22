@@ -8,10 +8,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
+      url: SITE_URL,
+      lastModified: latestPostDate,
+      changeFrequency: 'weekly',
+      priority: 1,
+    },
+    {
       url: `${SITE_URL}/blog`,
       lastModified: latestPostDate,
       changeFrequency: 'daily',
-      priority: 1,
+      priority: 0.9,
     },
     ...posts.map((post) => ({
       url: `${SITE_URL}/blog/${post.slug}`,

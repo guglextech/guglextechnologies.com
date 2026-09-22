@@ -44,7 +44,7 @@ export default function Blog() {
       <JsonLd data={blogJsonLd(allPosts)} />
       <JsonLd
         data={breadcrumbJsonLd([
-          { name: 'Home', path: '/blog' },
+          { name: 'Home', path: '/' },
           { name: 'Blog', path: '/blog' },
         ])}
       />

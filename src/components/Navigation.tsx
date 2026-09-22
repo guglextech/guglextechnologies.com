@@ -16,7 +16,7 @@ export default function Navigation() {
   return (
     <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-md">
       <nav className="site-container flex h-16 items-center justify-between">
-        <BrandLogo href="/blog" />
+        <BrandLogo href="/" />
 
         <div className="flex items-center gap-2">
           <NavigationMenu className="hidden sm:flex" align="end">

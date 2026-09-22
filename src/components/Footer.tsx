@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="border-t bg-background">
       <div className="site-container flex flex-col items-center gap-3 py-6 text-center sm:flex-row sm:justify-between sm:text-left">
-        <BrandLogo href="/blog" />
+        <BrandLogo href="/" />
         <p className="text-muted-foreground text-xs">
           <span>&copy; {year} Guglex Technologies</span>
           <span className="mx-2">·</span>
