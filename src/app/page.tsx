@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import type { LucideIcon } from 'lucide-react';
-import Link from 'next/link';
 import {
   ArrowUpRight,
   CreditCard,
@@ -10,10 +9,9 @@ import {
   Smartphone,
   Zap,
 } from 'lucide-react';
-import BrandLogo from '@/components/BrandLogo';
-import ThemeToggle from '@/components/ThemeToggle';
+import Navigation from '@/components/Navigation';
 import { PROJECTS, TEAM } from '@/lib/company';
-import { SITE_NAME } from '@/lib/seo';
+import { SITE_EMAIL, SITE_NAME } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: { absolute: SITE_NAME },
@@ -43,24 +41,11 @@ const VITALS = [
 
 export default function Home() {
   return (
-    <div className="flex h-svh flex-col overflow-y-auto bg-background">
-      <header className="shrink-0">
-        <nav className="site-container flex h-14 items-center justify-between md:h-16">
-          <BrandLogo href="/" />
-          <div className="flex items-center gap-3">
-            <Link
-              href="/blog"
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Blog
-            </Link>
-            <ThemeToggle />
-          </div>
-        </nav>
-      </header>
+    <div className="flex h-svh flex-col overflow-hidden bg-background">
+      <Navigation />
 
-      <main className="site-container flex flex-1 flex-col justify-center overflow-y-auto py-4">
-        <div className="mx-auto flex w-full max-w-3xl flex-col gap-7 md:gap-9">
+      <main className="site-container flex flex-1 flex-col justify-center overflow-y-auto py-5">
+        <div className="flex w-full flex-col gap-7 md:gap-8">
           <section>
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
               <span className="text-[var(--brand-blue)]">Guglex</span>{' '}
@@ -75,8 +60,7 @@ export default function Home() {
               </span>
             </div>
             <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-[15px]">
-              Payment products for Ghana — USSD, mobile money, utilities, and
-              recurring collections.
+                Empowering the next frontier of African business with digital infrastructure.
             </p>
             <ul className="mt-4 flex flex-wrap gap-2">
               {VITALS.map((item) => {
@@ -189,6 +173,18 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+          </section>
+
+          <section>
+            <h2 className="mb-2 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+              Contact
+            </h2>
+            <a
+              href={`mailto:${SITE_EMAIL}`}
+              className="text-sm text-foreground transition-colors hover:text-brand-blue"
+            >
+              {SITE_EMAIL}
+            </a>
           </section>
         </div>
       </main>

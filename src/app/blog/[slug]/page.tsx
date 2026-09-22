@@ -127,7 +127,7 @@ export default async function BlogPost({
         ])}
       />
       <article id="blog-article" className="bg-background">
-        <SiteContainer className="py-10 md:py-14" narrow>
+        <SiteContainer className="py-10 md:py-14">
           <nav className="text-muted-foreground mb-8 text-[13px]">
             <Link href="/blog" className="hover:text-foreground">
               Blog

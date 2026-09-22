@@ -23,7 +23,7 @@ export default function ReadingProgress() {
 
   return (
     <div
-      className="pointer-events-none fixed inset-x-0 top-16 z-[60] h-[3px]"
+      className="pointer-events-none fixed inset-x-0 top-14 z-[60] h-[3px]"
       role="progressbar"
       aria-label="Reading progress"
       aria-valuemin={0}

@@ -33,7 +33,7 @@ export const SITE_KEYWORDS = [
   'mobile money Ghana',
   'ECG token Ghana',
 ];
-export const SITE_EMAIL = 'guglex.technologies@gmail.com';
+export const SITE_EMAIL = 'business@guglextechnologies.com';
 export const SITE_LOCALE = 'en_GH';
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/logo.png`;
 export const EWALE_URL = 'https://ewalepay.com';

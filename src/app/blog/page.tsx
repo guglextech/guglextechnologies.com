@@ -49,7 +49,7 @@ export default function Blog() {
         ])}
       />
       <section className="bg-background">
-        <SiteContainer className="py-10 md:py-14" narrow>
+        <SiteContainer className="py-10 md:py-14">
           <h1 className="sr-only">Blog</h1>
           <BlogClient posts={posts} categories={categories} />
         </SiteContainer>

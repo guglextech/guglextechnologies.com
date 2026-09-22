@@ -10,7 +10,7 @@ export const PROJECTS = [
   },
   {
     name: 'Gyepayment',
-    href: 'mailto:guglex.technologies@gmail.com',
+    href: 'mailto:business@guglextechnologies.com',
     tag: 'Business',
     summary: 'Recurring collections for loans, BNPL, and subscriptions.',
     color: 'var(--brand-green)',
