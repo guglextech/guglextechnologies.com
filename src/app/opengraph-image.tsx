@@ -1,12 +1,15 @@
 import { ImageResponse } from 'next/og';
+import { getOgFonts, ogFontFamily } from '@/lib/og-fonts';
 import { SITE_NAME, SITE_TAGLINE } from '@/lib/seo';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 export const alt = `${SITE_NAME} — ${SITE_TAGLINE}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-export default function OpenGraphImage() {
+export default async function OpenGraphImage() {
+  const fonts = await getOgFonts();
+
   return new ImageResponse(
     (
       <div
@@ -19,6 +22,7 @@ export default function OpenGraphImage() {
           background: '#0B1220',
           color: '#F8FAFC',
           padding: '72px',
+          fontFamily: ogFontFamily,
         }}
       >
         <div
@@ -42,6 +46,9 @@ export default function OpenGraphImage() {
         </div>
       </div>
     ),
-    size,
+    {
+      ...size,
+      fonts,
+    },
   );
 }

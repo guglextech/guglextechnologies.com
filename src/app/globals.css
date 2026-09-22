@@ -129,7 +129,8 @@
   --color-brand-green: var(--brand-green);
   --color-brand-yellow: var(--brand-yellow);
   --color-brand-orange: var(--brand-orange);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-sans);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
@@ -327,7 +328,7 @@
 
 .blog-content pre,
 .blog-content code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--font-mono);
   font-size: 0.9em;
 }
 

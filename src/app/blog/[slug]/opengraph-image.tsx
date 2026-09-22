@@ -1,5 +1,6 @@
 import { ImageResponse } from 'next/og';
 import { getPostBySlug } from '../../../../lib/blog';
+import { getOgFonts, ogFontFamily } from '@/lib/og-fonts';
 import { SITE_NAME } from '@/lib/seo';
 
 export const runtime = 'nodejs';
@@ -16,6 +17,7 @@ export default async function OpenGraphImage({
   const post = getPostBySlug(slug);
   const title = post?.title ?? SITE_NAME;
   const category = post?.category ?? 'Blog';
+  const fonts = await getOgFonts();
 
   return new ImageResponse(
     (
@@ -29,6 +31,7 @@ export default async function OpenGraphImage({
           background: '#0B1220',
           color: '#F8FAFC',
           padding: '72px',
+          fontFamily: ogFontFamily,
         }}
       >
         <div
@@ -56,6 +59,9 @@ export default async function OpenGraphImage({
         </div>
       </div>
     ),
-    size,
+    {
+      ...size,
+      fonts,
+    },
   );
 }
