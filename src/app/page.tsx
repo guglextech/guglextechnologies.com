@@ -120,7 +120,7 @@ export default function Home() {
                   </div>
                   <h3 className="mt-8 text-lg font-semibold tracking-tight">{service.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{service.summary}</p>
-                  <span className="mt-6 inline-flex items-center gap-1.5 text-[13px] font-medium text-muted-foreground transition-colors group-hover:text-foreground">
+                  <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-[13px] font-medium text-muted-foreground transition-colors group-hover:text-foreground">
                     Learn more
                     <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
                   </span>

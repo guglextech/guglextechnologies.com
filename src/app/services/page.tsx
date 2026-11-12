@@ -33,14 +33,14 @@ export default function ServicesPage() {
               href={`#${service.slug}`}
               className="rounded-full bg-muted px-3.5 py-1.5 text-[13px] text-muted-foreground transition-colors hover:text-foreground"
             >
-              {service.title}
+              {service.shortTitle}
             </a>
           ))}
         </nav>
       </PageHeader>
 
-      <Section>
-        <div className="divide-y border-y">
+      <Section className="py-0 md:py-0">
+        <div className="divide-y">
           {SERVICES.map((service, index) => {
             const Icon = service.icon;
             return (

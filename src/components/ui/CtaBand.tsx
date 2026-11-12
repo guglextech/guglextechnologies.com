@@ -10,7 +10,7 @@ export default function CtaBand({
   intro?: string;
 }) {
   return (
-    <section className="py-20 md:py-28">
+    <section className="pt-4 pb-20 md:pb-28">
       <div className="site-container">
         <div className="relative overflow-hidden rounded-3xl bg-inverse px-6 py-14 text-inverse-foreground sm:px-12 md:py-20">
           <div aria-hidden className="glow pointer-events-none absolute -right-20 -bottom-32 h-96 w-[40rem] opacity-90" />

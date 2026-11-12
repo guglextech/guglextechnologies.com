@@ -55,6 +55,7 @@ export const FOCUS_AREAS = [
 
 export type Service = {
   slug: string;
+  shortTitle: string;
   title: string;
   summary: string;
   description: string;
@@ -65,6 +66,7 @@ export type Service = {
 export const SERVICES: Service[] = [
   {
     slug: 'fintech',
+    shortTitle: 'Fintech & payments',
     title: 'Fintech & payments engineering',
     summary: 'Payment rails, wallets, collections, and lending systems built for real money movement.',
     description:
@@ -79,6 +81,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: 'saas',
+    shortTitle: 'SaaS platforms',
     title: 'SaaS & product engineering',
     summary: 'Customer-facing platforms, dashboards, and APIs — from first release to scale.',
     description:
@@ -93,6 +96,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: 'automation',
+    shortTitle: 'Automation & AI',
     title: 'Business automation & AI',
     summary: 'Remove manual work from operations with workflows, integrations, and intelligence.',
     description:
@@ -107,6 +111,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: 'cloud',
+    shortTitle: 'Cloud infrastructure',
     title: 'Cloud & digital infrastructure',
     summary: 'Resilient, observable infrastructure designed for growth and high availability.',
     description:
@@ -121,6 +126,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: 'identity',
+    shortTitle: 'Security & identity',
     title: 'Identity, security & compliance',
     summary: 'Trust built into every layer — identity, access, data protection, and resilience.',
     description:
@@ -135,6 +141,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: 'advisory',
+    shortTitle: 'Technology strategy',
     title: 'Technology strategy & modernisation',
     summary: 'Clear technical direction for transformation programmes and legacy systems.',
     description:
