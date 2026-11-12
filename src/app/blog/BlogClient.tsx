@@ -2,199 +2,181 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { ChevronLeft, ChevronRight, Search, X } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight, Search, X } from 'lucide-react';
 import { type BlogPost } from '../../../lib/blog';
 import { formatBlogDate } from '@/lib/blog-ui';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 export type BlogListPost = Omit<BlogPost, 'content'> & {
   readingMinutes: number;
 };
 
-interface BlogClientProps {
-  posts: BlogListPost[];
-  categories: string[];
-}
+const PAGE_SIZE = 12;
 
-const PAGE_SIZE = 10;
-
-export default function BlogClient({ posts, categories }: BlogClientProps) {
+export default function BlogClient({ posts, categories }: { posts: BlogListPost[]; categories: string[] }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [page, setPage] = useState(1);
   const query = searchQuery.trim().toLowerCase();
-  const isSearching = query.length > 0;
 
-  const filteredPosts = useMemo(() => {
-    return posts.filter((post) => {
-      if (activeCategory && post.category !== activeCategory) return false;
-      if (!isSearching) return true;
-      return (
-        post.title.toLowerCase().includes(query) ||
-        post.excerpt.toLowerCase().includes(query) ||
-        post.category.toLowerCase().includes(query) ||
-        post.tags.some((tag) => tag.toLowerCase().includes(query))
-      );
-    });
-  }, [posts, query, isSearching, activeCategory]);
+  const filteredPosts = useMemo(
+    () =>
+      posts.filter((post) => {
+        if (activeCategory && post.category !== activeCategory) return false;
+        if (!query) return true;
+        return (
+          post.title.toLowerCase().includes(query) ||
+          post.excerpt.toLowerCase().includes(query) ||
+          post.category.toLowerCase().includes(query) ||
+          post.tags.some((tag) => tag.toLowerCase().includes(query))
+        );
+      }),
+    [posts, query, activeCategory],
+  );
 
   const pageCount = Math.max(1, Math.ceil(filteredPosts.length / PAGE_SIZE));
   const currentPage = Math.min(page, pageCount);
   const start = (currentPage - 1) * PAGE_SIZE;
   const visiblePosts = filteredPosts.slice(start, start + PAGE_SIZE);
 
-  const rangeLabel =
-    filteredPosts.length === 0
-      ? '0 articles'
-      : `${start + 1}–${start + visiblePosts.length} of ${filteredPosts.length}`;
-
   function setCategory(next: string | null) {
     setActiveCategory(next);
     setPage(1);
   }
 
+  function goTo(next: number) {
+    setPage(next);
+    document.getElementById('insights-list')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   return (
     <div>
-      <div className="relative">
-        <Search className="text-muted-foreground pointer-events-none absolute top-1/2 left-3 size-3.5 -translate-y-1/2" />
-        <Input
-          type="search"
-          placeholder="Search articles"
-          value={searchQuery}
-          onChange={(e) => {
-            setSearchQuery(e.target.value);
-            setPage(1);
-          }}
-          className="h-11 rounded-xl pl-9 text-[13px]"
-          aria-label="Search articles"
-        />
-        {searchQuery ? (
-          <Button
-            type="button"
-            variant="ghost"
-            size="icon-xs"
-            onClick={() => {
-              setSearchQuery('');
+      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div className="-mx-1 flex flex-wrap gap-1.5">
+          {['All', ...categories].map((category) => {
+            const active = category === 'All' ? activeCategory === null : activeCategory === category;
+            return (
+              <button
+                key={category}
+                type="button"
+                aria-pressed={active}
+                onClick={() => setCategory(category === 'All' ? null : category)}
+                className={cn(
+                  'rounded-full px-3.5 py-1.5 text-[13px] transition-colors',
+                  active ? 'bg-foreground text-background' : 'text-muted-foreground hover:bg-muted hover:text-foreground',
+                )}
+              >
+                {category}
+              </button>
+            );
+          })}
+        </div>
+
+        <label className="relative block w-full md:w-72">
+          <span className="sr-only">Search insights</span>
+          <Search className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-muted-foreground" />
+          <input
+            type="search"
+            value={searchQuery}
+            onChange={(event) => {
+              setSearchQuery(event.target.value);
               setPage(1);
             }}
-            className="absolute top-1/2 right-1.5 -translate-y-1/2"
-            aria-label="Clear search"
-          >
-            <X />
-          </Button>
-        ) : null}
+            placeholder="Search insights"
+            className="h-10 w-full rounded-full border bg-card pr-9 pl-10 text-sm outline-none focus:border-primary [&::-webkit-search-cancel-button]:hidden"
+          />
+          {searchQuery ? (
+            <button
+              type="button"
+              aria-label="Clear search"
+              onClick={() => {
+                setSearchQuery('');
+                setPage(1);
+              }}
+              className="absolute top-1/2 right-2.5 -translate-y-1/2 rounded-full p-1 text-muted-foreground hover:text-foreground"
+            >
+              <X className="size-3.5" />
+            </button>
+          ) : null}
+        </label>
       </div>
 
-      {categories.length > 0 ? (
-        <div className="mt-5 flex flex-wrap items-center gap-x-1 gap-y-1">
-          <CategoryChip
-            label="All"
-            active={activeCategory === null}
-            onClick={() => setCategory(null)}
-          />
-          {categories.map((category) => (
-            <CategoryChip
-              key={category}
-              label={category}
-              active={activeCategory === category}
-              onClick={() =>
-                setCategory(activeCategory === category ? null : category)
-              }
-            />
-          ))}
-        </div>
-      ) : null}
-
-      <p className="text-muted-foreground mt-6 mb-3 text-xs tabular-nums">{rangeLabel}</p>
+      <p id="insights-list" className="mt-10 scroll-mt-24 text-xs text-muted-foreground tabular-nums">
+        {filteredPosts.length === 0
+          ? 'No articles'
+          : `${start + 1}–${start + visiblePosts.length} of ${filteredPosts.length} articles`}
+      </p>
 
       {filteredPosts.length === 0 ? (
-        <div className="rounded-2xl border px-4 py-12">
-          <p className="text-center text-sm font-medium">No matching articles</p>
-          <p className="text-muted-foreground mt-1 text-center text-[13px]">
-            Try another search or category.
-          </p>
+        <div className="mt-4 rounded-2xl border px-6 py-16 text-center">
+          <p className="font-medium">No matching articles</p>
+          <p className="mt-1 text-sm text-muted-foreground">Try another search or category.</p>
         </div>
       ) : (
-        <div className="divide-y overflow-hidden rounded-2xl border">
+        <ul className="mt-4 border-t">
           {visiblePosts.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/blog/${post.slug}`}
-              className="block px-4 py-5 transition-colors hover:bg-muted/40"
-            >
-              <p className="text-muted-foreground text-[12px]">
-                {post.category}
-                <span className="mx-1.5">·</span>
-                <time dateTime={post.date}>{formatBlogDate(post.date)}</time>
-                <span className="mx-1.5">·</span>
-                {post.readingMinutes} min read
-              </p>
-              <h2 className="mt-1.5 text-[15px] font-medium tracking-tight">
-                {post.title}
-              </h2>
-              <p className="text-muted-foreground mt-1 line-clamp-2 text-[13px] leading-relaxed">
-                {post.excerpt}
-              </p>
-            </Link>
+            <li key={post.slug} className="border-b">
+              <Link
+                href={`/blog/${post.slug}`}
+                className="group grid gap-2 py-7 md:grid-cols-[180px_1fr_auto] md:gap-8"
+              >
+                <div className="flex items-center gap-2 text-xs text-muted-foreground md:block md:pt-1">
+                  <time dateTime={post.date}>{formatBlogDate(post.date)}</time>
+                  <span className="md:hidden">·</span>
+                  <p className="md:mt-1.5">{post.category}</p>
+                </div>
+                <div className="max-w-2xl">
+                  <h2 className="text-lg font-semibold tracking-tight transition-colors group-hover:text-primary">
+                    {post.title}
+                  </h2>
+                  <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted-foreground">{post.excerpt}</p>
+                </div>
+                <span className="hidden items-center gap-1.5 pt-1 text-xs whitespace-nowrap text-muted-foreground md:inline-flex">
+                  {post.readingMinutes} min
+                  <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       )}
 
       {pageCount > 1 ? (
-        <div className="mt-8 flex items-center justify-center gap-3">
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            disabled={currentPage === 1}
-            onClick={() => setPage((p) => Math.max(1, p - 1))}
-          >
-            <ChevronLeft />
+        <nav aria-label="Pagination" className="mt-10 flex items-center justify-between">
+          <PageButton disabled={currentPage === 1} onClick={() => goTo(currentPage - 1)}>
+            <ChevronLeft className="size-4" />
             Previous
-          </Button>
-          <span className="text-muted-foreground text-xs tabular-nums">
-            {currentPage} / {pageCount}
+          </PageButton>
+          <span className="text-xs text-muted-foreground tabular-nums">
+            Page {currentPage} of {pageCount}
           </span>
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            disabled={currentPage === pageCount}
-            onClick={() => setPage((p) => Math.min(pageCount, p + 1))}
-          >
+          <PageButton disabled={currentPage === pageCount} onClick={() => goTo(currentPage + 1)}>
             Next
-            <ChevronRight />
-          </Button>
-        </div>
+            <ChevronRight className="size-4" />
+          </PageButton>
+        </nav>
       ) : null}
     </div>
   );
 }
 
-function CategoryChip({
-  label,
-  active,
+function PageButton({
+  disabled,
   onClick,
+  children,
 }: {
-  label: string;
-  active: boolean;
+  disabled: boolean;
   onClick: () => void;
+  children: React.ReactNode;
 }) {
   return (
     <button
       type="button"
+      disabled={disabled}
       onClick={onClick}
-      aria-pressed={active}
-      className={cn(
-        'rounded-full px-3 py-1.5 text-[13px] transition-colors',
-        active
-          ? 'bg-muted font-medium text-foreground'
-          : 'text-muted-foreground hover:text-foreground',
-      )}
+      className="inline-flex h-10 items-center gap-1.5 rounded-full bg-muted px-4 text-sm transition-colors hover:text-primary disabled:pointer-events-none disabled:opacity-40"
     >
-      {label}
+      {children}
     </button>
   );
 }

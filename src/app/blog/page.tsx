@@ -1,43 +1,29 @@
 import type { Metadata } from 'next';
-import SiteShell from '@/components/SiteShell';
-import SiteContainer from '@/components/SiteContainer';
+import SiteShell from '@/components/layout/SiteShell';
 import JsonLd from '@/components/JsonLd';
+import PageHeader from '@/components/ui/PageHeader';
 import { estimateReadingMinutes, getAllPosts, getCategories } from '../../../lib/blog';
-import {
-  SITE_DESCRIPTION,
-  SITE_NAME,
-  absoluteUrl,
-  blogJsonLd,
-  breadcrumbJsonLd,
-} from '@/lib/seo';
+import { BLOG_DESCRIPTION, SITE_NAME, absoluteUrl, blogJsonLd, breadcrumbJsonLd } from '@/lib/seo';
 import BlogClient, { type BlogListPost } from './BlogClient';
 
 export const metadata: Metadata = {
-  title: 'Blog',
-  description: SITE_DESCRIPTION,
-  alternates: {
-    canonical: '/blog',
-  },
+  title: 'Insights',
+  description: BLOG_DESCRIPTION,
+  alternates: { canonical: '/blog' },
   openGraph: {
-    title: `${SITE_NAME} Blog`,
-    description: SITE_DESCRIPTION,
+    title: `${SITE_NAME} Insights`,
+    description: BLOG_DESCRIPTION,
     url: absoluteUrl('/blog'),
     type: 'website',
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: `${SITE_NAME} Blog`,
-    description: SITE_DESCRIPTION,
-  },
 };
 
-export default function Blog() {
+export default function BlogPage() {
   const allPosts = getAllPosts();
   const posts: BlogListPost[] = allPosts.map(({ content, ...post }) => ({
     ...post,
     readingMinutes: estimateReadingMinutes(content),
   }));
-  const categories = getCategories();
 
   return (
     <SiteShell>
@@ -45,14 +31,18 @@ export default function Blog() {
       <JsonLd
         data={breadcrumbJsonLd([
           { name: 'Home', path: '/' },
-          { name: 'Blog', path: '/blog' },
+          { name: 'Insights', path: '/blog' },
         ])}
       />
-      <section className="bg-background">
-        <SiteContainer className="py-10 md:py-14">
-          <h1 className="sr-only">Blog</h1>
-          <BlogClient posts={posts} categories={categories} />
-        </SiteContainer>
+      <PageHeader
+        eyebrow="Insights"
+        title="Field guides and notes from the team."
+        intro="Practical, detailed guides on everyday payments in Ghana — from the people who build and run Ewale."
+      />
+      <section className="py-12 md:py-16">
+        <div className="site-container">
+          <BlogClient posts={posts} categories={getCategories()} />
+        </div>
       </section>
     </SiteShell>
   );

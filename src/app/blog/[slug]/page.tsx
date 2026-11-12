@@ -1,65 +1,44 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import SiteShell from '@/components/SiteShell';
-import SiteContainer from '@/components/SiteContainer';
-import JsonLd from '@/components/JsonLd';
-import { ArticleCtaCard, ArticleCtaStrip } from '@/components/blog/ArticleCta';
-import ReadingProgress from '@/components/blog/ReadingProgress';
-import ShareRow from '@/components/blog/ShareRow';
-import {
-  estimateReadingMinutes,
-  getAllPosts,
-  escapeUssdShortcode,
-  getPostBySlug,
-  getRelatedPosts,
-} from '../../../../lib/blog';
-import { articleJsonLd, breadcrumbJsonLd, SITE_NAME, absoluteUrl } from '@/lib/seo';
-import { formatBlogDate } from '@/lib/blog-ui';
-import { getDialNowCopy } from '@/lib/blog-cta';
+import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { remark } from 'remark';
 import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
 import rehypeRaw from 'rehype-raw';
 import rehypeStringify from 'rehype-stringify';
+import SiteShell from '@/components/layout/SiteShell';
+import JsonLd from '@/components/JsonLd';
+import ReadingProgress from '@/components/blog/ReadingProgress';
+import ShareLinks from '@/components/blog/ShareLinks';
+import CtaBand from '@/components/ui/CtaBand';
+import {
+  estimateReadingMinutes,
+  escapeUssdShortcode,
+  getAllPosts,
+  getPostBySlug,
+  getRelatedPosts,
+} from '../../../../lib/blog';
+import { formatBlogDate } from '@/lib/blog-ui';
+import { EWALE_URL, SITE_NAME, absoluteUrl, articleJsonLd, breadcrumbJsonLd } from '@/lib/seo';
 
 export async function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
-
-  if (!post) {
-    return { title: 'Article' };
-  }
+  if (!post) return { title: 'Article' };
 
   const url = absoluteUrl(`/blog/${post.slug}`);
-
   return {
     title: post.title,
     description: post.excerpt,
     keywords: [post.category, ...post.tags, SITE_NAME, 'Ewale', '*714*22#', 'Ghana'],
     authors: [{ name: post.author, url: absoluteUrl('/blog') }],
     category: post.category,
-    alternates: {
-      canonical: url,
-    },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
-    },
+    alternates: { canonical: url },
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -71,38 +50,27 @@ export async function generateMetadata({
       tags: post.tags,
       section: post.category,
     },
-    twitter: {
-      card: 'summary_large_image',
-      title: post.title,
-      description: post.excerpt,
-    },
+    twitter: { card: 'summary_large_image', title: post.title, description: post.excerpt },
   };
 }
 
-export default async function BlogPost({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
+  if (!post) notFound();
 
-  if (!post) {
-    notFound();
-  }
-
-  const processedContent = await remark()
+  const processed = await remark()
     .use(remarkGfm)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
-    .use(rehypeStringify, { allowDangerousText: true } as never)
+    .use(rehypeStringify)
     .process(escapeUssdShortcode(post.content));
-  const contentHtml = processedContent.toString();
+
+  const contentHtml = processed.toString();
   const readingMinutes = estimateReadingMinutes(post.content);
   const related = getRelatedPosts(post.slug, 3);
   const wordCount = post.content.trim().split(/\s+/).filter(Boolean).length;
   const url = absoluteUrl(`/blog/${post.slug}`);
-  const authorInitial = (post.author || SITE_NAME).charAt(0).toUpperCase();
 
   return (
     <SiteShell>
@@ -122,104 +90,127 @@ export default async function BlogPost({
       <JsonLd
         data={breadcrumbJsonLd([
           { name: 'Home', path: '/' },
-          { name: 'Blog', path: '/blog' },
+          { name: 'Insights', path: '/blog' },
           { name: post.title, path: `/blog/${post.slug}` },
         ])}
       />
-      <article id="blog-article" className="bg-background">
-        <SiteContainer className="py-10 md:py-14">
-          <nav className="text-muted-foreground mb-8 text-[13px]">
-            <Link href="/blog" className="hover:text-foreground">
-              Blog
-            </Link>
-            <span className="mx-1.5">›</span>
-            <span className="text-foreground/80">{post.title}</span>
-          </nav>
 
-          <header>
-            <span className="bg-brand-blue/10 text-brand-blue inline-flex rounded-full px-2.5 py-0.5 text-[12px] font-medium">
+      <article>
+        <header className="relative overflow-hidden border-b">
+          <div aria-hidden className="grid-backdrop pointer-events-none absolute inset-0" />
+          <div className="site-container relative pt-12 pb-12 md:pt-16 md:pb-14">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-1.5 text-[13px] text-muted-foreground hover:text-foreground"
+            >
+              <ArrowLeft className="size-3.5" />
+              Insights
+            </Link>
+            <p className="mt-8 text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase">
               {post.category}
-            </span>
-            <h1 className="mt-4 text-[1.55rem] font-medium tracking-tight text-foreground md:text-[1.85rem] md:leading-snug">
+            </p>
+            <h1 className="mt-4 max-w-4xl text-3xl font-semibold tracking-[-0.03em] text-balance md:text-5xl md:leading-[1.08]">
               {post.title}
             </h1>
-            <p className="text-muted-foreground mt-3 text-[14px] leading-relaxed">
+            <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
               {post.excerpt}
             </p>
-
-            <div className="mt-5 flex items-center gap-3">
-              <span className="bg-muted flex size-8 items-center justify-center rounded-full text-[12px] font-medium">
-                {authorInitial}
-              </span>
-              <div>
-                <p className="text-[13px] font-medium">{post.author}</p>
-                <p className="text-muted-foreground text-[12px]">
-                  <time dateTime={post.date}>{formatBlogDate(post.date)}</time>
-                  <span className="mx-1.5">·</span>
-                  {readingMinutes} min read
-                </p>
-              </div>
-            </div>
-
-            <ArticleCtaStrip category={post.category} title={post.title} />
-          </header>
-
-          <div
-            id="article-content"
-            dangerouslySetInnerHTML={{ __html: contentHtml }}
-            className="blog-content mt-10"
-          />
-
-          <section className="mt-10">
-            <h2 className="text-[1.05rem] font-medium tracking-tight">Dial Ewale now</h2>
-            <p className="text-muted-foreground mt-2 text-[14px] leading-relaxed">
-              Keep{' '}
-              <span className="bg-muted text-foreground mx-0.5 inline-flex rounded-full px-1.5 py-0.5 align-middle text-[12px] font-medium">
-                *714*22#
-              </span>{' '}
-              saved. {getDialNowCopy(post.category)}
+            <p className="mt-8 text-sm text-muted-foreground">
+              <span className="text-foreground">{post.author}</span>
+              <span className="mx-2">·</span>
+              <time dateTime={post.date}>{formatBlogDate(post.date, 'long')}</time>
+              <span className="mx-2">·</span>
+              {readingMinutes} min read
             </p>
-          </section>
+          </div>
+        </header>
 
-          {post.tags.length > 0 ? (
-            <div className="mt-6 flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="text-muted-foreground rounded-full border px-2.5 py-1 text-[12px]"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          ) : null}
+        <div className="site-container grid gap-12 py-12 md:py-16 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-16">
+          <div className="min-w-0 max-w-[720px]">
+            <div className="blog-content" dangerouslySetInnerHTML={{ __html: contentHtml }} />
 
-          <ShareRow url={url} title={post.title} />
-          <ArticleCtaCard category={post.category} title={post.title} />
-
-          {related.length > 0 ? (
-            <aside className="mt-12">
-              <p className="text-muted-foreground mb-3 text-[13px]">Related</p>
-              <div className="divide-y overflow-hidden rounded-2xl border">
-                {related.map((item) => (
-                  <Link
-                    key={item.slug}
-                    href={`/blog/${item.slug}`}
-                    className="block px-4 py-4 transition-colors hover:bg-muted/40"
-                  >
-                    <p className="text-muted-foreground text-[12px]">
-                      {item.category}
-                      <span className="mx-1.5">·</span>
-                      {formatBlogDate(item.date)}
-                    </p>
-                    <h2 className="mt-1 text-[14px] font-medium tracking-tight">{item.title}</h2>
-                  </Link>
+            {post.tags.length > 0 ? (
+              <ul className="mt-12 flex flex-wrap gap-2 border-t pt-8">
+                {post.tags.map((tag) => (
+                  <li key={tag} className="rounded-full bg-muted px-3 py-1 text-xs text-muted-foreground">
+                    {tag}
+                  </li>
                 ))}
+              </ul>
+            ) : null}
+          </div>
+
+          <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start">
+            <div className="rounded-2xl border bg-card p-6">
+              <p className="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase">Share</p>
+              <div className="mt-4">
+                <ShareLinks url={url} title={post.title} />
               </div>
-            </aside>
-          ) : null}
-        </SiteContainer>
+            </div>
+
+            <div className="rounded-2xl border bg-card p-6">
+              <p className="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase">Pay with Ewale</p>
+              <p className="mt-3 text-sm leading-relaxed">
+                Dial <span className="font-semibold">*714*22#</span> on any phone, or pay online. Built and operated by
+                Guglex.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-4 text-sm font-medium">
+                <a href="tel:*714*22%23" className="hover:text-primary">
+                  Dial *714*22#
+                </a>
+                <a
+                  href={EWALE_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1 hover:text-primary"
+                >
+                  ewalepay.com
+                  <ArrowUpRight className="size-3.5" />
+                </a>
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-2xl bg-inverse p-6 text-inverse-foreground">
+              <div aria-hidden className="absolute inset-x-0 top-0 h-px bg-gradient-neon" />
+              <p className="text-base font-semibold tracking-tight">Building a payments product?</p>
+              <p className="mt-2 text-sm leading-relaxed opacity-70">
+                We engineer fintech systems, integrations, and collections platforms.
+              </p>
+              <Link href="/contact" className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium">
+                Talk to Guglex
+                <ArrowRight className="size-3.5" />
+              </Link>
+            </div>
+          </aside>
+        </div>
       </article>
+
+      {related.length > 0 ? (
+        <section className="border-t py-16 md:py-20">
+          <div className="site-container">
+            <h2 className="text-xl font-semibold tracking-tight">Related reading</h2>
+            <ul className="mt-8 grid gap-4 md:grid-cols-3">
+              {related.map((item) => (
+                <li key={item.slug}>
+                  <Link
+                    href={`/blog/${item.slug}`}
+                    className="group flex h-full flex-col rounded-2xl border bg-card p-6 transition-colors hover:border-foreground/20"
+                  >
+                    <p className="text-xs text-muted-foreground">
+                      {item.category} · {formatBlogDate(item.date)}
+                    </p>
+                    <h3 className="mt-3 text-[15px] leading-snug font-semibold tracking-tight group-hover:text-primary">
+                      {item.title}
+                    </h3>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
+
+      <CtaBand />
     </SiteShell>
   );
 }
