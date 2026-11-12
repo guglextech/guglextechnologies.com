@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { Mail, MapPin } from 'lucide-react';
+import { Location01Icon, Mail01Icon } from '@hugeicons/core-free-icons';
+import Icon from '@/components/ui/Icon';
 import SiteShell from '@/components/layout/SiteShell';
 import ContactForm from '@/components/contact/ContactForm';
 import PageHeader from '@/components/ui/PageHeader';
@@ -13,9 +14,18 @@ export const metadata: Metadata = {
 };
 
 const NEXT_STEPS = [
-  { title: 'We reply within two business days', description: 'With questions or a time for a discovery call.' },
-  { title: 'Discovery call', description: 'We learn your goals, constraints, and current systems.' },
-  { title: 'Proposal', description: 'A clear scope, approach, team, and timeline — no surprises.' },
+  {
+    title: 'We reply within two business days',
+    description: 'With questions or a time for a discovery call.',
+  },
+  {
+    title: 'Discovery call',
+    description: 'We learn your goals, constraints, and current systems.',
+  },
+  {
+    title: 'Proposal',
+    description: 'A clear scope, approach, team, and timeline — no surprises.',
+  },
 ] as const;
 
 export default function ContactPage() {
@@ -23,11 +33,7 @@ export default function ContactPage() {
     <SiteShell>
       <PageHeader
         eyebrow="Contact"
-        title={
-          <>
-            Let’s build <span className="text-gradient">what’s next.</span>
-          </>
-        }
+        title={<>Let’s build what’s next.</>}
         intro="Tell us about your product, payment flow, or platform challenge. We will respond with a clear next step."
       />
 
@@ -41,14 +47,14 @@ export default function ContactPage() {
                   href={`mailto:${SITE_EMAIL}`}
                   className="mt-2 inline-flex items-center gap-2 text-lg font-medium tracking-tight break-all hover:text-primary"
                 >
-                  <Mail className="size-4 shrink-0 text-primary" />
+                  <Icon icon={Mail01Icon} className="size-4 shrink-0 text-primary" />
                   {SITE_EMAIL}
                 </a>
               </li>
               <li>
                 <p className="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase">Office</p>
                 <p className="mt-2 inline-flex items-center gap-2 text-lg font-medium tracking-tight">
-                  <MapPin className="size-4 text-primary" />
+                  <Icon icon={Location01Icon} className="size-4 text-primary" />
                   {LOCATION}
                 </p>
               </li>

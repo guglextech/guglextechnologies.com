@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowRight02Icon, ArrowUpRight01Icon } from '@hugeicons/core-free-icons';
+import Icon from '@/components/ui/Icon';
 import { cn } from '@/lib/utils';
 
 type Variant = 'primary' | 'ghost';
@@ -17,7 +18,7 @@ export default function ButtonLink({
   external?: boolean;
   className?: string;
 }) {
-  const Icon = external ? ArrowUpRight : ArrowRight;
+  const arrow = external ? ArrowUpRight01Icon : ArrowRight02Icon;
   const classes = cn(
     'group inline-flex h-11 items-center gap-2 rounded-full text-sm font-medium transition-all',
     variant === 'primary' && 'bg-foreground px-5 text-background hover:opacity-85',
@@ -27,7 +28,7 @@ export default function ButtonLink({
   const content = (
     <>
       {children}
-      <Icon className="size-4 transition-transform group-hover:translate-x-0.5" />
+      <Icon icon={arrow} className="size-4 transition-transform group-hover:translate-x-0.5" />
     </>
   );
 
@@ -35,11 +36,7 @@ export default function ButtonLink({
 
   if (isExternal) {
     return (
-      <a
-        href={href}
-        className={classes}
-        {...(href.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {})}
-      >
+      <a href={href} className={classes} {...(href.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {})}>
         {content}
       </a>
     );

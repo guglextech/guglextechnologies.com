@@ -6,17 +6,6 @@
   @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
 }
 
-@utility text-gradient {
-  background-image: var(--gradient-neon);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-@utility bg-gradient-neon {
-  background-image: var(--gradient-neon);
-}
-
 :root {
   --background: #fbfbfc;
   --foreground: #0b0d12;
@@ -29,11 +18,6 @@
   --primary-foreground: #ffffff;
   --inverse: #0b0d12;
   --inverse-foreground: #f5f6f8;
-  --neon-blue: #0194ff;
-  --neon-cyan: #06b6d4;
-  --neon-green: #01b378;
-  --gradient-neon: linear-gradient(100deg, var(--neon-blue) 0%, var(--neon-cyan) 50%, var(--neon-green) 100%);
-  --grid-line: rgb(11 13 18 / 0.06);
   --code: #0b0d12;
   --code-fg: #e8e8e4;
   color-scheme: light;
@@ -49,12 +33,8 @@
   --ring: #38a8ff;
   --primary: #2ea4ff;
   --primary-foreground: #04070d;
-  --inverse: #0d1422;
+  --inverse: #121418;
   --inverse-foreground: #f3f4f6;
-  --neon-blue: #2ea4ff;
-  --neon-cyan: #22d3ee;
-  --neon-green: #2bd99a;
-  --grid-line: rgb(255 255 255 / 0.05);
   --code: #050608;
   color-scheme: dark;
 }
@@ -71,10 +51,8 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-inverse: var(--inverse);
   --color-inverse-foreground: var(--inverse-foreground);
-  --color-neon-blue: var(--neon-blue);
-  --color-neon-cyan: var(--neon-cyan);
-  --color-neon-green: var(--neon-green);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-host-grotesk), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
@@ -101,6 +79,15 @@
     font-feature-settings: "cv11", "ss01";
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  blockquote {
+    font-family: var(--font-display);
+    font-feature-settings: normal;
+  }
+
   ::selection {
     background: color-mix(in oklab, var(--primary) 22%, transparent);
   }
@@ -109,44 +96,6 @@
     outline: 2px solid var(--ring);
     outline-offset: 2px;
     border-radius: 6px;
-  }
-}
-
-.grid-backdrop {
-  background-image:
-    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 30%, transparent 80%);
-}
-
-.glow {
-  background:
-    radial-gradient(40% 50% at 30% 40%, color-mix(in oklab, var(--neon-blue) 22%, transparent), transparent 70%),
-    radial-gradient(35% 45% at 70% 60%, color-mix(in oklab, var(--neon-green) 16%, transparent), transparent 70%);
-  filter: blur(40px);
-}
-
-.hairline-gradient {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--neon-cyan) 60%, transparent), transparent);
-}
-
-@keyframes flow {
-  to {
-    stroke-dashoffset: -40;
-  }
-}
-
-@keyframes pulse-node {
-  0%,
-  100% {
-    opacity: 0.35;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0;
-    transform: scale(2.4);
   }
 }
 
@@ -161,24 +110,11 @@
   }
 }
 
-.mesh-flow {
-  stroke-dasharray: 4 6;
-  animation: flow 2.4s linear infinite;
-}
-
-.mesh-pulse {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: pulse-node 3.2s ease-out infinite;
-}
-
 .rise {
   animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .mesh-flow,
-  .mesh-pulse,
   .rise {
     animation: none;
   }

@@ -1,24 +1,24 @@
-import type { LucideIcon } from 'lucide-react';
+import type { IconSvgElement } from '@/components/ui/Icon';
 import {
-  Building2,
-  Cloud,
-  Compass,
-  Fingerprint,
-  Gauge,
-  Globe,
-  HeartHandshake,
-  Landmark,
-  Layers,
-  Rocket,
-  ShieldCheck,
-  Sparkles,
-  Store,
-  Target,
-  Users,
-  Wallet,
-  Workflow,
-  Zap,
-} from 'lucide-react';
+  Agreement01Icon,
+  BankIcon,
+  Building03Icon,
+  CloudIcon,
+  Compass01Icon,
+  DashboardSpeed01Icon,
+  FingerPrintIcon,
+  FlashIcon,
+  Globe02Icon,
+  Layers01Icon,
+  Rocket01Icon,
+  SecurityCheckIcon,
+  SparklesIcon,
+  Store01Icon,
+  Target02Icon,
+  UserGroupIcon,
+  Wallet01Icon,
+  WorkflowSquare10Icon,
+} from '@hugeicons/core-free-icons';
 
 export const NAV_LINKS = [
   { href: '/services', label: 'Services' },
@@ -36,13 +36,7 @@ export const VISION =
 export const VISION_DETAIL =
   'We envision a world where every business — regardless of size or location — has access to tools that make operations faster, smarter, and more reliable. Guglex aims to be the backbone of the next wave of digital transformation: infrastructure and products that enable efficiency, financial inclusion, and sustainable growth.';
 
-export const PRODUCT_QUALITIES = [
-  'Scalable',
-  'Secure',
-  'User-focused',
-  'Reliable',
-  'Globally accessible',
-] as const;
+export const PRODUCT_QUALITIES = ['Scalable', 'Secure', 'User-focused', 'Reliable', 'Globally accessible'] as const;
 
 export const FOCUS_AREAS = [
   'Payments',
@@ -60,7 +54,7 @@ export type Service = {
   summary: string;
   description: string;
   deliverables: string[];
-  icon: LucideIcon;
+  icon: IconSvgElement;
 };
 
 export const SERVICES: Service[] = [
@@ -77,7 +71,7 @@ export const SERVICES: Service[] = [
       'Wallets, ledgers & reconciliation',
       'Recurring collections & lending flows',
     ],
-    icon: Wallet,
+    icon: Wallet01Icon,
   },
   {
     slug: 'saas',
@@ -92,7 +86,7 @@ export const SERVICES: Service[] = [
       'API-driven architectures',
       'Internal tools & dashboards',
     ],
-    icon: Layers,
+    icon: Layers01Icon,
   },
   {
     slug: 'automation',
@@ -107,7 +101,7 @@ export const SERVICES: Service[] = [
       'Applied AI & machine learning',
       'Data intelligence & reporting',
     ],
-    icon: Workflow,
+    icon: WorkflowSquare10Icon,
   },
   {
     slug: 'cloud',
@@ -122,7 +116,7 @@ export const SERVICES: Service[] = [
       'Observability & reliability',
       'Cost & performance optimisation',
     ],
-    icon: Cloud,
+    icon: CloudIcon,
   },
   {
     slug: 'identity',
@@ -137,7 +131,7 @@ export const SERVICES: Service[] = [
       'Security reviews & hardening',
       'Compliance-ready architecture',
     ],
-    icon: Fingerprint,
+    icon: FingerPrintIcon,
   },
   {
     slug: 'advisory',
@@ -152,7 +146,7 @@ export const SERVICES: Service[] = [
       'Legacy system modernisation',
       'Fractional technical leadership',
     ],
-    icon: Compass,
+    icon: Compass01Icon,
   },
 ];
 
@@ -215,7 +209,7 @@ export type Market = {
   title: string;
   description: string;
   needs: string[];
-  icon: LucideIcon;
+  icon: IconSvgElement;
 };
 
 export const MARKETS: Market[] = [
@@ -223,25 +217,25 @@ export const MARKETS: Market[] = [
     title: 'Small & medium businesses',
     description: 'Affordable digital tools that improve how the business runs and gets paid.',
     needs: ['Operations', 'Payments', 'Customer management', 'Automation'],
-    icon: Store,
+    icon: Store01Icon,
   },
   {
     title: 'Financial institutions',
     description: 'Microfinance, savings & loans, digital lenders, cooperatives, and fintech startups.',
     needs: ['Lending systems', 'Collections', 'Digital channels', 'Reconciliation'],
-    icon: Landmark,
+    icon: BankIcon,
   },
   {
     title: 'Startups & digital businesses',
     description: 'Technology-driven teams that need to ship fast on infrastructure that scales.',
     needs: ['Scalable infrastructure', 'APIs', 'Custom platforms', 'Product engineering'],
-    icon: Rocket,
+    icon: Rocket01Icon,
   },
   {
     title: 'Enterprises',
     description: 'Organisations modernising legacy systems and running digital transformation.',
     needs: ['Modernisation', 'Integration', 'Cloud migration', 'Process automation'],
-    icon: Building2,
+    icon: Building03Icon,
   },
 ];
 
@@ -249,32 +243,32 @@ export const ADVANTAGES = [
   {
     title: 'Deep emerging-market understanding',
     description: 'We build with local realities in mind while holding to global engineering standards.',
-    icon: Globe,
+    icon: Globe02Icon,
   },
   {
     title: 'Engineering-first culture',
     description: 'Our foundation is technical excellence — not marketing-driven software.',
-    icon: Target,
+    icon: Target02Icon,
   },
   {
     title: 'Flexibility & speed',
     description: 'We move faster than large enterprise vendors while staying highly adaptable.',
-    icon: Zap,
+    icon: FlashIcon,
   },
   {
     title: 'Cost-efficient innovation',
     description: 'Enterprise-grade technology delivered at accessible pricing.',
-    icon: Gauge,
+    icon: DashboardSpeed01Icon,
   },
   {
     title: 'Scalable infrastructure',
     description: 'Systems designed for high growth and long-term expansion from day one.',
-    icon: Layers,
+    icon: Layers01Icon,
   },
   {
     title: 'Developer ecosystem vision',
     description: 'We build platforms other businesses and developers can build on top of.',
-    icon: Sparkles,
+    icon: SparklesIcon,
   },
 ] as const;
 
@@ -306,27 +300,27 @@ export const VALUES = [
   {
     title: 'Engineering excellence',
     description: 'Modern, robust practices that deliver reliability, performance, and high availability.',
-    icon: Target,
+    icon: Target02Icon,
   },
   {
     title: 'User-centred design',
     description: 'Guided by empathy, usability, and simplicity. Technology should adapt to people.',
-    icon: Users,
+    icon: UserGroupIcon,
   },
   {
     title: 'Trust & security',
     description: 'Data protection, compliance, and resilient architecture that safeguard users and money.',
-    icon: ShieldCheck,
+    icon: SecurityCheckIcon,
   },
   {
     title: 'Collaboration',
     description: 'We build ecosystems — through APIs, integrations, and partnerships.',
-    icon: HeartHandshake,
+    icon: Agreement01Icon,
   },
   {
     title: 'Impact',
     description: 'We measure value by the positive, lasting change our work creates.',
-    icon: Sparkles,
+    icon: SparklesIcon,
   },
 ] as const;
 

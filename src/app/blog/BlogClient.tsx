@@ -2,7 +2,14 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, ChevronLeft, ChevronRight, Search, X } from 'lucide-react';
+import {
+  ArrowLeft01Icon,
+  ArrowRight01Icon,
+  ArrowRight02Icon,
+  Cancel01Icon,
+  Search01Icon,
+} from '@hugeicons/core-free-icons';
+import Icon from '@/components/ui/Icon';
 import { type BlogPost } from '../../../lib/blog';
 import { formatBlogDate } from '@/lib/blog-ui';
 import { cn } from '@/lib/utils';
@@ -63,7 +70,9 @@ export default function BlogClient({ posts, categories }: { posts: BlogListPost[
                 onClick={() => setCategory(category === 'All' ? null : category)}
                 className={cn(
                   'rounded-full px-3.5 py-1.5 text-[13px] transition-colors',
-                  active ? 'bg-foreground text-background' : 'text-muted-foreground hover:bg-muted hover:text-foreground',
+                  active
+                    ? 'bg-foreground text-background'
+                    : 'text-muted-foreground hover:bg-muted hover:text-foreground',
                 )}
               >
                 {category}
@@ -74,7 +83,10 @@ export default function BlogClient({ posts, categories }: { posts: BlogListPost[
 
         <label className="relative block w-full md:w-72">
           <span className="sr-only">Search insights</span>
-          <Search className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-muted-foreground" />
+          <Icon
+            icon={Search01Icon}
+            className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-muted-foreground"
+          />
           <input
             type="search"
             value={searchQuery}
@@ -95,7 +107,7 @@ export default function BlogClient({ posts, categories }: { posts: BlogListPost[
               }}
               className="absolute top-1/2 right-2.5 -translate-y-1/2 rounded-full p-1 text-muted-foreground hover:text-foreground"
             >
-              <X className="size-3.5" />
+              <Icon icon={Cancel01Icon} className="size-3.5" />
             </button>
           ) : null}
         </label>
@@ -133,7 +145,7 @@ export default function BlogClient({ posts, categories }: { posts: BlogListPost[
                 </div>
                 <span className="hidden items-center gap-1.5 pt-1 text-xs whitespace-nowrap text-muted-foreground md:inline-flex">
                   {post.readingMinutes} min
-                  <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
+                  <Icon icon={ArrowRight02Icon} className="size-3.5 transition-transform group-hover:translate-x-0.5" />
                 </span>
               </Link>
             </li>
@@ -144,7 +156,7 @@ export default function BlogClient({ posts, categories }: { posts: BlogListPost[
       {pageCount > 1 ? (
         <nav aria-label="Pagination" className="mt-10 flex items-center justify-between">
           <PageButton disabled={currentPage === 1} onClick={() => goTo(currentPage - 1)}>
-            <ChevronLeft className="size-4" />
+            <Icon icon={ArrowLeft01Icon} className="size-4" />
             Previous
           </PageButton>
           <span className="text-xs text-muted-foreground tabular-nums">
@@ -152,7 +164,7 @@ export default function BlogClient({ posts, categories }: { posts: BlogListPost[
           </span>
           <PageButton disabled={currentPage === pageCount} onClick={() => goTo(currentPage + 1)}>
             Next
-            <ChevronRight className="size-4" />
+            <Icon icon={ArrowRight01Icon} className="size-4" />
           </PageButton>
         </nav>
       ) : null}

@@ -3,7 +3,8 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ArrowRight, Menu, X } from 'lucide-react';
+import { ArrowRight02Icon, Cancel01Icon, Menu01Icon } from '@hugeicons/core-free-icons';
+import Icon from '@/components/ui/Icon';
 import Logo from '@/components/layout/Logo';
 import ThemeToggle from '@/components/layout/ThemeToggle';
 import { NAV_LINKS } from '@/lib/site';
@@ -51,9 +52,7 @@ export default function Header() {
                 aria-current={isActive(link.href) ? 'page' : undefined}
                 className={cn(
                   'rounded-full px-3.5 py-2 text-[13.5px] transition-colors',
-                  isActive(link.href)
-                    ? 'text-foreground'
-                    : 'text-muted-foreground hover:text-foreground',
+                  isActive(link.href) ? 'text-foreground' : 'text-muted-foreground hover:text-foreground',
                 )}
               >
                 {link.label}
@@ -69,7 +68,7 @@ export default function Header() {
             className="hidden h-9 items-center gap-1.5 rounded-full bg-foreground px-4 text-[13px] font-medium text-background transition-opacity hover:opacity-85 md:inline-flex"
           >
             Start a project
-            <ArrowRight className="size-3.5" />
+            <Icon icon={ArrowRight02Icon} className="size-3.5" />
           </Link>
           <button
             type="button"
@@ -79,7 +78,7 @@ export default function Header() {
             aria-controls="mobile-menu"
             onClick={() => setOpenOn(open ? null : pathname)}
           >
-            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+            {open ? <Icon icon={Cancel01Icon} className="size-5" /> : <Icon icon={Menu01Icon} className="size-5" />}
           </button>
         </div>
       </nav>
@@ -90,24 +89,22 @@ export default function Header() {
         className="h-[calc(100svh-4rem)] overflow-y-auto border-t border-border/70 bg-background md:hidden"
       >
         <ul className="site-container flex flex-col py-4">
-          {[{ href: '/', label: 'Home' }, ...NAV_LINKS, { href: '/contact', label: 'Contact' }].map(
-            (link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={cn(
-                    'flex items-center justify-between border-b border-border/60 py-4 text-lg tracking-tight',
-                    (link.href === '/' ? pathname === '/' : isActive(link.href))
-                      ? 'text-foreground'
-                      : 'text-muted-foreground',
-                  )}
-                >
-                  {link.label}
-                  <ArrowRight className="size-4 opacity-50" />
-                </Link>
-              </li>
-            ),
-          )}
+          {[{ href: '/', label: 'Home' }, ...NAV_LINKS, { href: '/contact', label: 'Contact' }].map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className={cn(
+                  'flex items-center justify-between border-b border-border/60 py-4 text-lg tracking-tight',
+                  (link.href === '/' ? pathname === '/' : isActive(link.href))
+                    ? 'text-foreground'
+                    : 'text-muted-foreground',
+                )}
+              >
+                {link.label}
+                <Icon icon={ArrowRight02Icon} className="size-4 opacity-50" />
+              </Link>
+            </li>
+          ))}
         </ul>
         <div className="site-container pb-10">
           <Link
@@ -115,7 +112,7 @@ export default function Header() {
             className="mt-2 flex h-12 items-center justify-center gap-2 rounded-full bg-foreground text-sm font-medium text-background"
           >
             Start a project
-            <ArrowRight className="size-4" />
+            <Icon icon={ArrowRight02Icon} className="size-4" />
           </Link>
         </div>
       </div>

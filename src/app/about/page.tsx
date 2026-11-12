@@ -1,19 +1,11 @@
 import type { Metadata } from 'next';
-import { Check } from 'lucide-react';
+import { Tick02Icon } from '@hugeicons/core-free-icons';
+import Icon from '@/components/ui/Icon';
 import SiteShell from '@/components/layout/SiteShell';
 import CtaBand from '@/components/ui/CtaBand';
 import PageHeader from '@/components/ui/PageHeader';
 import { Eyebrow, Section, SectionHeader } from '@/components/ui/Section';
-import {
-  COMMITMENTS,
-  LOCATION,
-  MISSION_PILLARS,
-  PHILOSOPHY,
-  TEAM,
-  VALUES,
-  VISION,
-  VISION_DETAIL,
-} from '@/lib/site';
+import { COMMITMENTS, LOCATION, MISSION_PILLARS, PHILOSOPHY, TEAM, VALUES, VISION, VISION_DETAIL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -27,11 +19,7 @@ export default function AboutPage() {
     <SiteShell>
       <PageHeader
         eyebrow="About Guglex"
-        title={
-          <>
-            A catalyst for <span className="text-gradient">digital transformation.</span>
-          </>
-        }
+        title={<>A catalyst for digital transformation.</>}
         intro="Guglex Technologies is a software engineering and digital infrastructure company, founded by young, highly skilled engineers with deep experience in financial systems, software architecture, cloud infrastructure, and product development."
       />
 
@@ -61,13 +49,13 @@ export default function AboutPage() {
         <ol className="mt-14 grid gap-4 lg:grid-cols-3">
           {MISSION_PILLARS.map((pillar) => (
             <li key={pillar.index} className="flex flex-col rounded-2xl border bg-background p-7 md:p-8">
-              <span className="text-sm font-medium text-gradient tabular-nums">{pillar.index}</span>
+              <span className="text-sm font-medium text-muted-foreground tabular-nums">{pillar.index}</span>
               <h3 className="mt-6 text-xl font-semibold tracking-tight">{pillar.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{pillar.description}</p>
               <ul className="mt-auto grid grid-cols-2 gap-2 pt-8">
                 {pillar.points.map((point) => (
                   <li key={point} className="flex items-start gap-1.5 text-[13px]">
-                    <Check className="mt-0.5 size-3.5 shrink-0 text-neon-green" />
+                    <Icon icon={Tick02Icon} className="mt-0.5 size-3.5 shrink-0 text-primary" />
                     {point}
                   </li>
                 ))}
@@ -82,10 +70,9 @@ export default function AboutPage() {
         <SectionHeader eyebrow="What we stand for" title="Our core values." />
         <ul className="mt-14 grid gap-px overflow-hidden rounded-2xl border bg-border sm:grid-cols-2 lg:grid-cols-5">
           {VALUES.map((value) => {
-            const Icon = value.icon;
             return (
               <li key={value.title} className="bg-background p-7">
-                <Icon className="size-5 text-primary" />
+                <Icon icon={value.icon} className="size-5 text-primary" />
                 <h3 className="mt-8 text-base font-semibold tracking-tight">{value.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{value.description}</p>
               </li>
@@ -96,11 +83,9 @@ export default function AboutPage() {
 
       {/* Philosophy + commitments */}
       <section className="relative overflow-hidden bg-inverse py-20 text-inverse-foreground md:py-28">
-        <div aria-hidden className="glow pointer-events-none absolute -right-20 -bottom-40 h-[28rem] w-[44rem] opacity-80" />
         <div className="site-container relative grid gap-14 md:grid-cols-2 md:gap-16">
           <div>
             <p className="inline-flex items-center gap-2 text-xs font-medium tracking-[0.14em] uppercase opacity-60">
-              <span className="h-px w-5 bg-gradient-neon" aria-hidden />
               Philosophy
             </p>
             <p className="mt-6 text-2xl font-medium tracking-[-0.025em] text-balance md:text-[2rem] md:leading-[1.3]">
@@ -109,13 +94,12 @@ export default function AboutPage() {
           </div>
           <div>
             <p className="inline-flex items-center gap-2 text-xs font-medium tracking-[0.14em] uppercase opacity-60">
-              <span className="h-px w-5 bg-gradient-neon" aria-hidden />
               Our commitment
             </p>
             <ul className="mt-6 divide-y divide-current/15 border-y border-current/15">
               {COMMITMENTS.map((item) => (
                 <li key={item} className="flex items-start gap-3 py-4 text-[15px]">
-                  <Check className="mt-1 size-4 shrink-0 text-neon-cyan" />
+                  <Icon icon={Tick02Icon} className="mt-1 size-4 shrink-0 text-primary" />
                   {item}
                 </li>
               ))}
@@ -138,7 +122,6 @@ export default function AboutPage() {
                 aria-hidden
                 className="relative flex size-16 items-center justify-center rounded-full bg-muted text-sm font-medium text-muted-foreground"
               >
-                <span className="absolute inset-0 rounded-full bg-gradient-neon opacity-20" />
                 XX
               </span>
               <p className="mt-6 text-[15px] font-semibold tracking-tight">{person.name}</p>

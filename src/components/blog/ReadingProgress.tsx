@@ -30,7 +30,7 @@ export default function ReadingProgress() {
       aria-valuenow={Math.round(progress)}
     >
       <div
-        className="h-full origin-left bg-gradient-neon transition-transform duration-75 ease-out motion-reduce:transition-none"
+        className="h-full origin-left bg-foreground transition-transform duration-75 ease-out motion-reduce:transition-none"
         style={{ transform: `scaleX(${progress / 100})` }}
       />
     </div>

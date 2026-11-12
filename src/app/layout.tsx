@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { Host_Grotesk, Inter } from 'next/font/google';
 import ThemeProvider from '@/components/layout/ThemeProvider';
 import JsonLd from '@/components/JsonLd';
 import {
@@ -17,6 +17,12 @@ import './globals.css';
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
+});
+
+const hostGrotesk = Host_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-host-grotesk',
   display: 'swap',
 });
 
@@ -85,7 +91,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-GH" className={inter.variable} suppressHydrationWarning>
+    <html lang="en-GH" className={`${inter.variable} ${hostGrotesk.variable}`} suppressHydrationWarning>
       <body>
         <JsonLd data={organizationJsonLd()} />
         <a

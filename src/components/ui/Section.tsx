@@ -1,14 +1,6 @@
 import { cn } from '@/lib/utils';
 
-export function Section({
-  id,
-  className,
-  children,
-}: {
-  id?: string;
-  className?: string;
-  children: React.ReactNode;
-}) {
+export function Section({ id, className, children }: { id?: string; className?: string; children: React.ReactNode }) {
   return (
     <section id={id} className={cn('py-20 md:py-28', className)}>
       <div className="site-container">{children}</div>
@@ -24,7 +16,6 @@ export function Eyebrow({ children, className }: { children: React.ReactNode; cl
         className,
       )}
     >
-      <span className="h-px w-5 bg-gradient-neon" aria-hidden />
       {children}
     </p>
   );
@@ -58,9 +49,7 @@ export function SectionHeader({
         <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-balance md:text-[2.5rem] md:leading-[1.1]">
           {title}
         </h2>
-        {intro ? (
-          <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground md:text-base">{intro}</p>
-        ) : null}
+        {intro ? <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground md:text-base">{intro}</p> : null}
       </div>
       {action ? <div className="shrink-0">{action}</div> : null}
     </div>

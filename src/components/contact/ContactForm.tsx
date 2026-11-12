@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight02Icon, Tick02Icon } from '@hugeicons/core-free-icons';
+import Icon from '@/components/ui/Icon';
 import { ENGAGEMENT_OPTIONS } from '@/lib/site';
 import { cn } from '@/lib/utils';
 
@@ -80,7 +81,12 @@ export default function ContactForm({ email }: { email: string }) {
           <span className="text-sm font-medium">
             Company <span className="font-normal text-muted-foreground">(optional)</span>
           </span>
-          <input name="company" autoComplete="organization" className={cn(fieldClass, 'mt-2')} placeholder="Company name" />
+          <input
+            name="company"
+            autoComplete="organization"
+            className={cn(fieldClass, 'mt-2')}
+            placeholder="Company name"
+          />
         </label>
         <label className="block sm:col-span-2">
           <span className="text-sm font-medium">Project details</span>
@@ -98,7 +104,7 @@ export default function ContactForm({ email }: { email: string }) {
         <p className="text-xs text-muted-foreground">
           {sent ? (
             <span className="inline-flex items-center gap-1.5 text-foreground">
-              <Check className="size-3.5 text-neon-green" />
+              <Icon icon={Tick02Icon} className="size-3.5 text-primary" />
               Your email app should open with the details filled in.
             </span>
           ) : (
@@ -110,7 +116,7 @@ export default function ContactForm({ email }: { email: string }) {
           className="group inline-flex h-11 items-center justify-center gap-2 rounded-full bg-foreground px-6 text-sm font-medium text-background transition-opacity hover:opacity-85"
         >
           Send enquiry
-          <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+          <Icon icon={ArrowRight02Icon} className="size-4 transition-transform group-hover:translate-x-0.5" />
         </button>
       </div>
     </form>

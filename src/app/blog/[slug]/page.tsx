@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowLeft02Icon, ArrowRight02Icon, ArrowUpRight01Icon } from '@hugeicons/core-free-icons';
+import Icon from '@/components/ui/Icon';
 import { remark } from 'remark';
 import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
@@ -50,7 +51,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       tags: post.tags,
       section: post.category,
     },
-    twitter: { card: 'summary_large_image', title: post.title, description: post.excerpt },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+    },
   };
 }
 
@@ -97,13 +102,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
       <article>
         <header className="relative overflow-hidden border-b">
-          <div aria-hidden className="grid-backdrop pointer-events-none absolute inset-0" />
           <div className="site-container relative pt-12 pb-12 md:pt-16 md:pb-14">
             <Link
               href="/blog"
               className="inline-flex items-center gap-1.5 text-[13px] text-muted-foreground hover:text-foreground"
             >
-              <ArrowLeft className="size-3.5" />
+              <Icon icon={ArrowLeft02Icon} className="size-3.5" />
               Insights
             </Link>
             <p className="mt-8 text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase">
@@ -112,9 +116,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <h1 className="mt-4 max-w-4xl text-3xl font-semibold tracking-[-0.03em] text-balance md:text-5xl md:leading-[1.08]">
               {post.title}
             </h1>
-            <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              {post.excerpt}
-            </p>
+            <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">{post.excerpt}</p>
             <p className="mt-8 text-sm text-muted-foreground">
               <span className="text-foreground">{post.author}</span>
               <span className="mx-2">·</span>
@@ -165,20 +167,19 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                   className="inline-flex items-center gap-1 hover:text-primary"
                 >
                   ewalepay.com
-                  <ArrowUpRight className="size-3.5" />
+                  <Icon icon={ArrowUpRight01Icon} className="size-3.5" />
                 </a>
               </div>
             </div>
 
             <div className="relative overflow-hidden rounded-2xl bg-inverse p-6 text-inverse-foreground">
-              <div aria-hidden className="absolute inset-x-0 top-0 h-px bg-gradient-neon" />
               <p className="text-base font-semibold tracking-tight">Building a payments product?</p>
               <p className="mt-2 text-sm leading-relaxed opacity-70">
                 We engineer fintech systems, integrations, and collections platforms.
               </p>
               <Link href="/contact" className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium">
                 Talk to Guglex
-                <ArrowRight className="size-3.5" />
+                <Icon icon={ArrowRight02Icon} className="size-3.5" />
               </Link>
             </div>
           </aside>

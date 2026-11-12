@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { Check } from 'lucide-react';
+import { Tick02Icon } from '@hugeicons/core-free-icons';
+import Icon from '@/components/ui/Icon';
 import SiteShell from '@/components/layout/SiteShell';
 import ButtonLink from '@/components/ui/ButtonLink';
 import CtaBand from '@/components/ui/CtaBand';
@@ -19,11 +20,7 @@ export default function ServicesPage() {
     <SiteShell>
       <PageHeader
         eyebrow="Services"
-        title={
-          <>
-            Engineering capability across the <span className="text-gradient">full stack</span> of your business.
-          </>
-        }
+        title={<>Engineering capability across the full stack of your business.</>}
         intro="We combine technical excellence with strategic thinking — taking you from a clear plan to a secure, scalable system in production."
       >
         <nav aria-label="Services" className="flex flex-wrap gap-2">
@@ -42,7 +39,6 @@ export default function ServicesPage() {
       <Section className="py-0 md:py-0">
         <div className="divide-y">
           {SERVICES.map((service, index) => {
-            const Icon = service.icon;
             return (
               <article
                 key={service.slug}
@@ -52,7 +48,7 @@ export default function ServicesPage() {
                 <div>
                   <div className="flex items-center gap-4">
                     <span className="inline-flex size-11 items-center justify-center rounded-xl border bg-card">
-                      <Icon className="size-5" />
+                      <Icon icon={service.icon} className="size-5" />
                     </span>
                     <span className="text-sm text-muted-foreground tabular-nums">
                       {String(index + 1).padStart(2, '0')}
@@ -66,7 +62,7 @@ export default function ServicesPage() {
                   <ul className="mt-8 grid gap-3 sm:grid-cols-2">
                     {service.deliverables.map((item) => (
                       <li key={item} className="flex items-start gap-2.5 rounded-xl border bg-card px-4 py-3 text-sm">
-                        <Check className="mt-0.5 size-4 shrink-0 text-neon-green" />
+                        <Icon icon={Tick02Icon} className="mt-0.5 size-4 shrink-0 text-primary" />
                         {item}
                       </li>
                     ))}
@@ -120,7 +116,7 @@ export default function ServicesPage() {
           {PROCESS.map((item) => (
             <li key={item.step}>
               <div className="flex items-center gap-3">
-                <span className="text-sm font-medium text-gradient tabular-nums">{item.step}</span>
+                <span className="text-sm font-medium text-muted-foreground tabular-nums">{item.step}</span>
                 <span className="h-px flex-1 bg-border" aria-hidden />
               </div>
               <h3 className="mt-5 text-lg font-semibold tracking-tight">{item.title}</h3>

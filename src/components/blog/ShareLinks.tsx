@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Check, Link2 } from 'lucide-react';
+import { Link01Icon, Tick02Icon } from '@hugeicons/core-free-icons';
+import Icon from '@/components/ui/Icon';
 
 function shareUrl(network: 'x' | 'linkedin' | 'whatsapp', url: string, title: string) {
   const u = encodeURIComponent(url);
@@ -30,12 +31,22 @@ export default function ShareLinks({ url, title }: { url: string; title: string 
   return (
     <div className="flex flex-wrap gap-2">
       {(['x', 'linkedin', 'whatsapp'] as const).map((network) => (
-        <a key={network} href={shareUrl(network, url, title)} target="_blank" rel="noopener noreferrer" className={linkClass}>
+        <a
+          key={network}
+          href={shareUrl(network, url, title)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={linkClass}
+        >
           {network === 'x' ? 'X' : network === 'linkedin' ? 'LinkedIn' : 'WhatsApp'}
         </a>
       ))}
       <button type="button" onClick={copy} className={linkClass}>
-        {copied ? <Check className="size-3.5 text-neon-green" /> : <Link2 className="size-3.5" />}
+        {copied ? (
+          <Icon icon={Tick02Icon} className="size-3.5 text-primary" />
+        ) : (
+          <Icon icon={Link01Icon} className="size-3.5" />
+        )}
         {copied ? 'Copied' : 'Copy link'}
       </button>
     </div>

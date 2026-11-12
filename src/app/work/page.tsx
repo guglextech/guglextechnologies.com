@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { ArrowUpRight, Check } from 'lucide-react';
+import { ArrowUpRight01Icon, Tick02Icon } from '@hugeicons/core-free-icons';
+import Icon from '@/components/ui/Icon';
 import SiteShell from '@/components/layout/SiteShell';
 import CtaBand from '@/components/ui/CtaBand';
 import PageHeader from '@/components/ui/PageHeader';
@@ -20,11 +21,7 @@ export default function WorkPage() {
     <SiteShell>
       <PageHeader
         eyebrow="Work"
-        title={
-          <>
-            Proof in production, <span className="text-gradient">every day.</span>
-          </>
-        }
+        title={<>Proof in production, every day.</>}
         intro="Beyond client engagements, we build and operate our own platforms. They are where our engineering practices are tested by real users, real money, and real market conditions."
       />
 
@@ -52,13 +49,11 @@ export default function WorkPage() {
                     className="mt-8 inline-flex items-center gap-1.5 text-sm font-medium hover:text-primary"
                   >
                     {platform.linkLabel}
-                    <ArrowUpRight className="size-4" />
+                    <Icon icon={ArrowUpRight01Icon} className="size-4" />
                   </a>
                 </div>
                 <div className="border-t bg-background/60 p-8 md:border-t-0 md:border-l md:p-12">
-                  <p className="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase">
-                    The challenge
-                  </p>
+                  <p className="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase">The challenge</p>
                   <p className="mt-3 text-[15px] leading-relaxed">{platform.challenge}</p>
                   <p className="mt-10 text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase">
                     What we built
@@ -66,7 +61,7 @@ export default function WorkPage() {
                   <ul className="mt-4 space-y-3">
                     {platform.built.map((item) => (
                       <li key={item} className="flex items-start gap-2.5 text-sm">
-                        <Check className="mt-0.5 size-4 shrink-0 text-neon-green" />
+                        <Icon icon={Tick02Icon} className="mt-0.5 size-4 shrink-0 text-primary" />
                         {item}
                       </li>
                     ))}

@@ -1,6 +1,7 @@
 'use client';
 
-import { Moon, Sun } from 'lucide-react';
+import { Moon02Icon, Sun03Icon } from '@hugeicons/core-free-icons';
+import Icon from '@/components/ui/Icon';
 import { useTheme } from 'next-themes';
 import { cn } from '@/lib/utils';
 
@@ -18,8 +19,8 @@ export default function ThemeToggle({ className }: { className?: string }) {
         className,
       )}
     >
-      <Sun className="hidden size-4 dark:block" />
-      <Moon className="size-4 dark:hidden" />
+      <Icon icon={Sun03Icon} className="hidden size-4 dark:block" />
+      <Icon icon={Moon02Icon} className="size-4 dark:hidden" />
     </button>
   );
 }
