@@ -1,41 +1,29 @@
 export const SITE_URL = 'https://www.guglextechnologies.com';
 export const SITE_NAME = 'Guglex Technologies';
-export const SITE_TAGLINE = 'The Guglex Technologies blog';
+export const SITE_TAGLINE = 'Software engineering & digital infrastructure';
 export const SITE_DESCRIPTION =
-  'Guides for everyday Ewale payments in Ghana: airtime, data, DSTV, GOtv, StarTimes, ECG, Ghana Water, result checkers, and *714*22#.';
+  'Guglex Technologies is a software engineering and digital infrastructure consultancy. We design, build, and scale fintech systems, SaaS platforms, automation, and cloud infrastructure for SMEs, financial institutions, startups, and enterprises.';
+export const BLOG_DESCRIPTION =
+  'Practical guides for everyday payments in Ghana — airtime, data, ECG, Ghana Water, TV bills, WASSCE and BECE result checkers, and *714*22#.';
 export const SITE_KEYWORDS = [
-  'Guglex Technologies blog',
+  'Guglex Technologies',
+  'software engineering consultancy Ghana',
+  'fintech development company Africa',
+  'payments integration Ghana',
+  'mobile money integration',
+  'USSD development Ghana',
+  'SaaS development',
+  'business automation',
+  'cloud infrastructure consulting',
+  'digital transformation Ghana',
+  'software development Accra',
   'Ewale',
-  'Ewalepay',
-  '*714*22#',
-  'buy airtime Ghana',
-  'buy data bundle Ghana',
-  'pay DSTV Ghana USSD',
-  'pay GOtv Ghana',
-  'pay StarTimes Ghana',
-  'how to buy ECG prepaid token',
-  'how to pay Ghana Water bill',
-  'WASSCE result checker',
-  'BECE result checker',
-  'mobile money Ghana',
-  'ECG token Ghana',
-  'ecg power app',
-  'ecg power app Ghana',
-  'airtime Ghana',
-  'data bundle Ghana',
-  'pay DSTV Ghana',
-  'pay GOtv Ghana',
-  'pay StarTimes Ghana',
-  'how to buy ECG prepaid token',
-  'how to pay Ghana Water bill',
-  'WASSCE result checker',
-  'BECE result checker',
-  'mobile money Ghana',
-  'ECG token Ghana',
+  'Gyepayment',
 ];
 export const SITE_EMAIL = 'business@guglextechnologies.com';
 export const SITE_LOCALE = 'en_GH';
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/logo.png`;
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/opengraph-image`;
+export const LOGO_URL = `${SITE_URL}/logo.png`;
 export const EWALE_URL = 'https://ewalepay.com';
 
 export function absoluteUrl(path = '/') {
@@ -48,22 +36,38 @@ export function organizationJsonLd() {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'Organization',
+        '@type': ['Organization', 'ProfessionalService'],
         '@id': `${SITE_URL}/#organization`,
         name: SITE_NAME,
         url: SITE_URL,
         email: SITE_EMAIL,
-        logo: {
-          '@type': 'ImageObject',
-          url: DEFAULT_OG_IMAGE,
+        description: SITE_DESCRIPTION,
+        logo: { '@type': 'ImageObject', url: LOGO_URL },
+        image: DEFAULT_OG_IMAGE,
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Accra',
+          addressRegion: 'Greater Accra',
+          addressCountry: 'GH',
         },
+        areaServed: ['GH', 'Africa', 'Worldwide'],
+        knowsAbout: [
+          'Fintech engineering',
+          'Payments',
+          'Mobile money',
+          'USSD',
+          'SaaS',
+          'Business automation',
+          'Cloud infrastructure',
+          'Identity systems',
+        ],
         sameAs: [EWALE_URL],
       },
       {
         '@type': 'WebSite',
         '@id': `${SITE_URL}/#website`,
         url: SITE_URL,
-        name: `${SITE_NAME} Blog`,
+        name: SITE_NAME,
         description: SITE_DESCRIPTION,
         inLanguage: 'en-GH',
         publisher: { '@id': `${SITE_URL}/#organization` },
@@ -80,8 +84,8 @@ export function blogJsonLd(
     '@type': 'Blog',
     '@id': `${SITE_URL}/blog/#blog`,
     url: absoluteUrl('/blog'),
-    name: `${SITE_NAME} Blog`,
-    description: SITE_DESCRIPTION,
+    name: `${SITE_NAME} Insights`,
+    description: BLOG_DESCRIPTION,
     publisher: { '@id': `${SITE_URL}/#organization` },
     blogPost: posts.slice(0, 20).map((post) => ({
       '@type': 'BlogPosting',
@@ -109,10 +113,7 @@ export function articleJsonLd(post: {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     '@id': `${url}#article`,
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': url,
-    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
@@ -121,13 +122,9 @@ export function articleJsonLd(post: {
     articleSection: post.category,
     keywords: post.tags.join(', '),
     wordCount: post.wordCount,
-    author: {
-      '@type': 'Organization',
-      name: post.author || SITE_NAME,
-      url: SITE_URL,
-    },
+    author: { '@type': 'Organization', name: post.author || SITE_NAME, url: SITE_URL },
     publisher: { '@id': `${SITE_URL}/#organization` },
-    image: [DEFAULT_OG_IMAGE, absoluteUrl(`/blog/${post.slug}/opengraph-image`)],
+    image: [absoluteUrl(`/blog/${post.slug}/opengraph-image`)],
     url,
     isPartOf: { '@id': `${SITE_URL}/blog/#blog` },
   };

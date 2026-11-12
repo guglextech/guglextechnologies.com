@@ -1,9 +1,10 @@
 import { getAllPosts } from '../../../lib/blog';
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL, absoluteUrl } from '@/lib/seo';
+import { SERVICES } from '@/lib/site';
+import { SITE_DESCRIPTION, SITE_EMAIL, SITE_NAME, SITE_URL, absoluteUrl } from '@/lib/seo';
 
 export async function GET() {
-  const posts = getAllPosts();
-  const listing = posts
+  const services = SERVICES.map((service) => `- ${service.title}: ${service.summary}`).join('\n');
+  const articles = getAllPosts()
     .map((post) => `- [${post.title}](${absoluteUrl(`/blog/${post.slug}`)}): ${post.excerpt}`)
     .join('\n');
 
@@ -11,15 +12,29 @@ export async function GET() {
 
 > ${SITE_DESCRIPTION}
 
-This site is a blog, not a place to make payments. The consumer product is Ewale.
+Contact: ${SITE_EMAIL}
+Location: Accra, Ghana
 
-Blog: ${SITE_URL}/blog
-Product: https://ewalepay.com
-USSD: *714*22#
+## Pages
+
+- [Services](${SITE_URL}/services)
+- [Work](${SITE_URL}/work)
+- [About](${SITE_URL}/about)
+- [Contact](${SITE_URL}/contact)
+- [Insights](${SITE_URL}/blog)
+
+## Services
+
+${services}
+
+## Platforms
+
+- Ewale (https://ewalepay.com): consumer payments on USSD *714*22# and the web. This site does not process payments.
+- Gyepayment: automated recurring collections from mobile money, bank accounts, and cards.
 
 ## Articles
 
-${listing}
+${articles}
 `;
 
   return new Response(body, {

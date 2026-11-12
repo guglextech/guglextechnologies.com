@@ -1,5 +1,5 @@
 import { getAllPosts } from '../../../lib/blog';
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL, absoluteUrl } from '@/lib/seo';
+import { BLOG_DESCRIPTION, SITE_NAME, SITE_URL, absoluteUrl } from '@/lib/seo';
 
 function escapeXml(value: string) {
   return value
@@ -30,9 +30,9 @@ export async function GET() {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>${escapeXml(SITE_NAME)}</title>
+    <title>${escapeXml(`${SITE_NAME} Insights`)}</title>
     <link>${SITE_URL}/blog</link>
-    <description>${escapeXml(SITE_DESCRIPTION)}</description>
+    <description>${escapeXml(BLOG_DESCRIPTION)}</description>
     <language>en-gh</language>
     <lastBuildDate>${new Date(posts[0]?.date ?? Date.now()).toUTCString()}</lastBuildDate>
     <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
